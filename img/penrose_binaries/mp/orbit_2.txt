@@ -1,0 +1,15 @@
+λmin = 0
+λmax = 8.5
+Razão carga massa da partícula = -9.63222
+Massa do BN 1 = 1
+Massa do BN 2 = 1
+Distância dos BNs = 1
+z(0) = 4.06
+z'(0) = 0
+ρ(0) = 1.e-40
+ρ'(0) = -2.218687365621243660133434
+Energia pedida = -1
+Energia média = -0.999999770720232
+Energia no ponto inicial = -1.
+Energia no ponto final = -1.0000000000000000006
+Energia efetiva no ponto inicial = 2.313631242691792777

@@ -1,0 +1,18 @@
+λmin = -164.
+λmax = 164.
+Razão carga massa da partícula = -6
+Massa do BN 1 = 1
+Massa do BN 2 = 1
+Distância dos BNs = 1
+z(0) = 0
+z'(0) = 0
+ρ(0) = 2
+ρ'(0) = -1.067502009674133819845537
+ϕ(0) = 0
+L = 10
+Energia pedida = -1
+Energia média = AvgEnergy
+Energia no ponto inicial = Energy(0)
+Energia no ponto final = Energy(164.)
+Energia efetiva no ponto inicial = EffectiveEnergy(0)
+pontos de retorno 0.435236707264662, 2.809086971146355

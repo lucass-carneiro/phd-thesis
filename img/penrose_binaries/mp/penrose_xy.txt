@@ -1,0 +1,48 @@
+-------------------------------- Penrose --------------------------------
+λmin = -100.
+λmax = 100.
+Razão carga massa da partícula = -4
+Massa do BN 1 = 1
+Massa do BN 2 = 1
+Distância dos BNs = 1
+z(0) = 0
+z'(0) = 0
+ρ(0) = 2
+ρ'(0) = -0.6582014658707849166231899
+ϕ(0) = 0
+L = 2
+Energia pedida = -1
+Energia média = -1.00000005284143
+Energia no ponto inicial = -1.
+Energia no ponto final = -1.
+Energia efetiva no ponto inicial = 0.8885438199983175713
+
+-------------------------------- Outgoing --------------------------------
+λmin = -1.
+λmax = 1.
+Razão carga massa da partícula = 0.5
+Massa do BN 1 = 1
+Massa do BN 2 = 1
+Distância dos BNs = 1
+z(0) = 0
+z'(0) = 0
+ρ(0) = 2
+ρ'(0) = -9.724735212983175400447111
+ϕ(0) = 0
+L = 5
+Energia pedida = 10
+Energia média = 9.99999998968103
+Energia no ponto inicial = 10.
+Energia no ponto final = 10.000000000000000001
+Energia efetiva no ponto inicial = 9.7639320225002103036
+
+-------------------------------- Ingoing --------------------------------
+Razao carga massa da particula inicial = -0.85050262421163109864
+Energia por unidade de massa da particula inicial = 2.1870067479727656822
+Momento angular por unidade de massa da particula inicial = 1.7010052484232621973
+ρ(0) da partícula inicial = 2
+ρ'(0) da partícula inicial = 2.5230613978252831026
+z(0) da partícula inicial = 0
+z'(0) da partícula inicial = 0
+Massa da particula = 4.1152136399864802959e-30
+ΔMassa = -2.1152136399864802959e-30

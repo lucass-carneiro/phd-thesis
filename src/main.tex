@@ -1,0 +1,369 @@
+\documentclass[12pt, twoside, american, brazil]{report}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Tex Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=4cm,bmargin=3cm,lmargin=4cm,rmargin=3cm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\usepackage{babel}
+\usepackage{calc}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage[
+unicode=true,
+pdfusetitle,
+bookmarks=true,
+bookmarksnumbered=false,
+bookmarksopen=false,
+breaklinks=false,
+pdfborder={0 0 1},
+backref=false,
+colorlinks=false
+]{hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% USER PACKAGES
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{listings}
+\usepackage{subfig}
+
+\usepackage[svgnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=NavyBlue,linkcolor=NavyBlue,citecolor=CornflowerBlue,naturalnames=true,hypertexnames=true}
+
+\usepackage[numbers]{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% MATH MACROS
+
+% Upright d
+\newcommand{\ud}{\mathrm{d}}
+
+% Integration element
+\usepackage{xifthen}
+\newcommand{\intelm}[2] {
+  \ifthenelse{\isempty{#2}}
+    {\ud #1 \,}
+    {\ud^{#2} {#1} \,}
+}
+
+% Derivatives
+\newcommand{\der}[2]{\frac{\ud #1}{\ud #2}}
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\nder}[3]{\frac{\ud^{#3} #1}{\ud {#2}^{#3}}}
+\newcommand{\ndel}[3]{\frac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+
+% Tensors
+\newcommand{\tens}[3]{#1^{#2}_{\phantom{#2} #3}}
+\newcommand{\itens}[3]{#1_{#3}^{\phantom{#3} #2}}
+
+% Covariant derivative
+\newcommand{\covd}[1]{\tens{\nabla}{}{#1}}
+\newcommand{\ucovd}[1]{\tens{\nabla}{#1}{}}
+
+% Metric tensor
+\newcommand{\g}{\textsl{g}}
+\newcommand{\mtrtens}[2]{\tens{\g}{}{#1#2}}
+\newcommand{\umtrtens}[2]{\tens{\g}{#1#2}{}}
+
+% Kronecker delta
+\newcommand{\kdelta}[2]{\tens{\delta}{#1}{#2}}
+
+% Connection symbols
+\newcommand{\chris}[3]{\tens{\Gamma}{#1}{#2 #3}}
+
+% Index partial derivative
+\newcommand{\indexdel}[1]{\tens{\partial}{}{#1}}
+
+% References
+\newcommand{\myref}[1]{Eq. (\ref{#1})}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% SPACING MACROS
+
+\usepackage{slashed}
+
+\usepackage{nextpage}
+\newcommand\myclearpage{\cleartooddpage[\thispagestyle{empty}]}
+
+\usepackage[fit]{truncate}
+\fancyhf{}
+\fancyhead[LE]{\truncate{.95\headwidth}{\leftmark}}
+\fancyhead[RO]{\truncate{.95\headwidth}{\rightmark}}
+\fancyfoot[C]{\thepage}
+
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DOCUMENT START
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% AUTHOR'S NAME
+
+\begin{center}
+  Lucas Timotheo Sanches
+  \par\end{center}
+
+\vspace{3cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% THESIS TITLE
+
+\begin{center}
+  {\huge{}A TITLE GOES HERE}{\huge\par}
+  \par\end{center}
+
+\begin{center}
+  \vspace{4cm}
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% THESIS DESCRIPTION
+
+\begin{center}
+  \begin{minipage}[t]{0.6\columnwidth}
+    \begin{center}
+      Thesis presented to the Post-Graduation program in Physics of
+      Federal University of ABC as a requirement for obtaining the title
+      of Doctor in Physics.
+      \par\end{center}
+  \end{minipage}
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ADVISORS
+
+\begin{center}
+  \vspace{2cm}
+  Advisor: Prof. Dr. Maurício Richartz
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CITY
+
+\begin{center}
+  \vspace{3cm}
+  Santo André - SP
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% YEAR
+
+\begin{center}
+  2022
+  \par\end{center}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \pagebreak{}
+  \par\end{center}
+
+\vfill{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LIBRARY STUFF
+
+\begin{center}
+  \fbox{\begin{minipage}[t]{0.8\columnwidth}%
+      TIMOTHEO SANCHES, Lucas
+
+      \hspace{1cm}TÍTULO:SUBTÍTULO / Lucas Timotheo Sanches - Santo André,
+      Universidade Federal do ABC, 2021.
+
+      \vspace{0.5cm}
+
+      \hspace{1cm}XX fls. XX cm\vspace{0.5cm}
+
+      \hspace{1cm}Orientador: Maurício Richartz\vspace{0.5cm}
+
+      \hspace{1cm}Tese (doutorado) - Universidade
+      Federal do ABC, Programa de Pós-Graduação em Física, 2021\vspace{0.5cm}
+
+      \hspace{1cm}1. Palavra-chave. 2. Palavra-chave.  3. Palavra-chave.
+      I. TIMOTHEO SANCHES, Lucas. II. Programa de Pós-Graduação em Física,
+      2021. III. Título: subtítulo%
+    \end{minipage}}
+  \par\end{center}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \pagebreak{}
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DEDICATION
+
+\begin{minipage}[t]{0.9\columnwidth}%
+  \begin{center}
+    \textbf{\large{}\rule[0.5ex]{1\columnwidth}{1pt}}{\large\par}
+    \par\end{center}
+  \begin{doublespace}
+    AGRADECIMENTOS, DEDICATÓRIA, ETC...
+  \end{doublespace}
+
+  \rule[0.5ex]{1\columnwidth}{1pt}%
+\end{minipage}
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \myclearpage
+  \par\end{center}
+
+\begin{center}
+  \textbf{\large{}\rule[0.5ex]{1\columnwidth}{1pt}}{\large\par}
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ABSTRACT 1
+
+\selectlanguage{american}%
+\begin{center}
+  \textbf{\Large{}Abstract}{\Large\par}
+  \par\end{center}
+
+\vspace{0.5cm}
+
+ABSTRACT HERE.
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% KEYWORDS 1
+
+\textbf{Keywords: Keyword1, keyword2, ...}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \myclearpage
+  \par\end{center}
+
+\begin{center}
+  \textbf{\large{}\rule[0.5ex]{1\columnwidth}{1pt}}{\large\par}
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ABSTRACT 2
+
+\selectlanguage{brazil}%
+\begin{center}
+  \textbf{\Large{}Resumo}{\Large\par}
+  \par\end{center}
+
+\vspace{0.5cm}
+
+RESUMO AQUI.
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% KEYWORDS 2
+
+\textbf{Palavras chave: palavra1, palavra2, ...}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \myclearpage
+  \par\end{center}
+
+\selectlanguage{american}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% TABLE OF CONTENTS
+
+\tableofcontents{}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \myclearpage
+  \par\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CHAPTERS
+\chapter{Introduction}
+\label{ch:introduction}
+\input{src/chapters/intro.tex}
+
+\myclearpage
+\par
+
+% \begin{center}
+%\myclearpage
+%\par\end{center}
+
+\chapter{The Penrose process in binary spacetimes}
+\label{ch:penrose_binaries}
+\input{src/chapters/penrose_binaries.tex}
+
+\myclearpage
+\par
+
+\chapter{Quasinormal modes in binary spacetimes}
+\label{ch:qnm_binaries}
+\input{src/chapters/qnm_binaries.tex}
+
+\myclearpage
+\par
+
+\chapter{Conclusions and perspectives}
+\label{ch:conclusion}
+\input{src/chapters/conc.tex}
+
+\myclearpage
+\par
+
+%\appendix
+
+%\chapter{Some appendix}
+%\label{app:conformal-invariance}
+%\input{chapters/appendix-conformal-invariance.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BIBLIOGRAPHY
+\bibliographystyle{apsrev4-2}
+\bibliography{src/ref.bib}
+
+\end{document}
