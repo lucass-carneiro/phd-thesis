@@ -103,6 +103,10 @@ colorlinks=false
 % References
 \newcommand{\myref}[1]{Eq. (\ref{#1})}
 
+% Definitions, theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SPACING MACROS
 
@@ -323,6 +327,7 @@ RESUMO AQUI.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CHAPTERS
+
 \chapter{Introduction}
 \label{ch:introduction}
 \input{src/chapters/intro.tex}
@@ -330,20 +335,16 @@ RESUMO AQUI.
 \myclearpage
 \par
 
-% \begin{center}
-%\myclearpage
-%\par\end{center}
-
-\chapter{The Penrose process in binary spacetimes}
+\chapter{Energy Extraction From Black Hole Binaries}
 \label{ch:penrose_binaries}
-\input{src/chapters/penrose_binaries.tex}
+\input{src/chapters/penrose_binaries/penrose_binaries.tex}
 
 \myclearpage
 \par
 
-\chapter{Quasinormal modes in binary spacetimes}
-\label{ch:qnm_binaries}
-\input{src/chapters/qnm_binaries.tex}
+\chapter{Numerical Scalar Wave Scattering in GW150914}
+\label{ch:wave_scattering}
+\input{src/chapters/wave_scattering.tex}
 
 \myclearpage
 \par

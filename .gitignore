@@ -1,5 +1,7 @@
 .idea
 out/main.aux
+out/main.bbl
+out/main.blg
 out/main.log
 out/main.out
 out/main.toc
