@@ -6,10 +6,10 @@ out_dir = ./out
 
 pdf:
 	mkdir -p out
-	lualatex -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
+	lualatex -shell-escape -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
 	bibtex ${out_dir}/${main_file_name}||true
-	lualatex -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
-	lualatex -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
+	lualatex -shell-escape -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
+	lualatex -shell-escape -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
 	mv ${out_dir}/${main_file_name}.pdf ${out_dir}/${outputname}.pdf
 
 clean:

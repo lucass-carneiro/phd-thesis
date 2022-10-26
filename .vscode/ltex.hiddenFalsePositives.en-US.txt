@@ -1,0 +1,9 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[scale = 1.0]img/penrose_binaries/kerr_horizons_and_ergosphere.svg Schematic representation of important boundaries and regions in a Kerr black hole.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QNotice that the choice of a leading minus sing in Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QBy substituting \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q (using Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) in Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QNotice also that using \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q in Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSince we would like the energy to be positive infinitely far away from the BH, we must introduce a leading minus sign in Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe law of conservation of 4-momentum applied at point \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q implies that \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q Contracting Eq.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[scale = 1.0]img/penrose_binaries/kerr_breakup.svg Schematic representation of a Penrose process.\\E$"}

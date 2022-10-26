@@ -1,1 +1,103 @@
-Our review will follow closely Ref.~\cite{carroll}
+Our review will follow closely Ref.~\cite{carroll}. We start by reminding that the Kerr metric, in Boyer-Lindquist coordinates $(t, r, \theta, \phi)$ is given by
+
+\begin{multline}
+  \ud s^2 = -\left(1 - \frac{2 M r}{\rho^2}\right)\ud t^2 - \frac{2 M a r \sin^2\theta}{\rho^2}\left( \ud t \ud \phi + \ud \phi \ud t \right)\\
+  + \frac{\rho^2}{\Delta} \ud r^2 + \rho^2 \ud\theta^2 + \frac{\sin^2\theta}{\rho^2}\left[ (r^2 + a^2)^2 - a^2\Delta\sin^2\theta \right]\ud\phi^2,
+  \label{eq:kerr_penrose_review_kerr_metric}
+\end{multline}
+%
+where
+%
+\begin{equation}
+  \Delta(r) = r^2 - 2Mr + a^2
+  \label{eq:kerr_penrose_review_kerr_delta}
+\end{equation}
+%
+and
+%
+\begin{equation}
+  \rho^2(r, \theta) = r^2 + a^2\cos^2\theta.
+  \label{eq:kerr_penrose_review_kerr_rho}
+\end{equation}
+
+The constants $M$ and $a$ represent, respectively the black hole's mass and spin parameter (angular momentum per unit mass). The metric possesses two event horizons, located at
+%
+\begin{equation}
+  r_{H\pm} = M \pm \sqrt{M^2 - a^2}
+  \label{eq:kerr_penrose_review_kerr_horizons}
+\end{equation}
+%
+and since its components are independent of both the coordinate time $t$ and the axial angular variable $\phi$, there are global Killing vector fields $K = \partial_t$ and $R = \partial_\phi$ that generate these symmetries. Since the metric is stationary, the region where the time-like global Killing vector field changes its sign and thus static observers become prohibited does not coincide with the event horizons. In fact, one can easily see that
+%
+\begin{equation}
+  K^\mu K_\mu = -\frac{1}{\rho^2}\left({\Delta - a^2 \sin^2\theta}\right) = -\frac{a^2 + r(r-2M)-a^2\sin^2\theta}{(r^2+a^2\cos^2\theta)^2}.
+  \label{eq:kerr_penrose_review_kerr_killing_horizon_equation}
+\end{equation}
+%
+and thus $K^\mu K_\mu = 0$ implies that the killing horizons are located at
+%
+\begin{equation}
+  r_{K\pm} = M \pm \sqrt{M^2 - a^2\cos^2\theta}.
+  \label{eq:kerr_penrose_review_kerr_killing_horizon_solution}
+\end{equation}
+%
+which means that $r_{K+}$ is outside $r_{H+}$, coinciding with it only at the poles ($\theta=0$ or $\theta=\pi$). Notice also that using $r_{H+}$ in Eq.~\eqref{eq:kerr_penrose_review_kerr_killing_horizon_equation} yields $\Delta=0$ and thus
+%
+\begin{equation}
+  K^\mu K_\mu = \frac{a^2}{\rho^2}\sin^2\theta \geq 0.
+  \label{eq:kerr_penrose_review_kerr_killing_horizon_solution}
+\end{equation}
+%
+The region that lies in-between $r_{K+}$ and $r_{H+}$ is called the \emph{ergosphere} or \emph{ergoregion}. The fact that this region is outside the event horizons and that $K^\mu K_\mu>0$ in it is paramount to the Penrose mechanism, as we shall see further on. A schematic representation of important structures in the Kerr spacetime can be found in Fig. \ref{fig:kerr_penrose_review_kerr_surfaces}, where the ergosphere is shaded in gray.
+
+\begin{figure}[!htbp]
+  \centering
+  \includesvg[scale = 1.0]{img/penrose_binaries/kerr_horizons_and_ergosphere.svg}
+  \caption{Schematic representation of important boundaries and regions in a Kerr black hole. The gray region represents the BH's ergosphere. The black hole's rotational axis goes across the figure, from bottom to top.}
+  \label{fig:kerr_penrose_review_kerr_surfaces}
+\end{figure}
+
+Let us now consider a particle of mass $m$ and 4-momentum $p^\mu$ moving along a time-like geodesic in the Kerr spacetime parametrized by its proper time $\tau$. The energy per unit mass of the particle along its trajectory, as measured by a static observer infinitely far away from the black hole, is given by
+%
+\begin{equation}
+  E = -K_\mu p^\mu/m.
+  \label{eq:kerr_penrose_review_kerr_enrgy_per_unit_mass_full}
+\end{equation}
+%
+Outside the ergosphere, $K^\mu$ is time-like and $K_\mu p^\mu/<0$. Since we would like the energy to be positive infinitely far away from the BH, we must introduce a leading minus sign in Eq.~\eqref{eq:kerr_penrose_review_kerr_enrgy_per_unit_mass_full}. On the other hand, inside the ergosphere $K^\mu$ is space-like and $K_\mu p^\mu/ >0$ which implies that in this region $E < 0$.
+
+Let us now imagine that a particle labeled as $(0)$ traveling in the Kerr spacetime comes from infinity with 4-momentum $p^{(0)\mu}$ and decays \emph{inside} the ergosphere in a break-up point $b$ into two other particles, the first of which labeled $(1)$ has 4-momentum $p^{(1)\mu}$ and gets absorbed by the black hole and the second of which labeled $(2)$, 4-momentum $p^{(2)\mu}$ and escapes the gravitational pull of the system and returns to infinity. The law of conservation of 4-momentum applied at point $b$ implies that
+%
+\begin{equation}
+  p^{(0)\mu} = p^{(1)\mu} + p^{(2)\mu}.
+  \label{eq:kerr_penrose_review_kerr_4_momentum_conservation}
+\end{equation}
+%
+Contracting Eq.~\eqref{eq:kerr_penrose_review_kerr_4_momentum_conservation} with $K^\mu$ we get
+\begin{equation}
+  E^{(0)} = E^{(1)} + E^{(2)}.
+  \label{eq:kerr_penrose_review_kerr_energy_conservation}
+\end{equation}
+%
+If we engineer the trajectory of particle $(1)$ such that $E^{(1)} < 0$, we get
+\begin{equation}
+  E^{(2)} = E^{(0)} + E^{(1)} > E^{(0)},
+  \label{eq:kerr_penrose_review_kerr_energy_increase}
+\end{equation}
+%
+which means that the energy of the returning particle is greater than the energy of the original. This mechanism is precisely the one proposed by Penrose and Floyd, and has since been known simple as the \emph{Penrose Process} or \emph{Penrose Mechanism}. This break-up process is represented in Fig.~\ref{fig:kerr_penrose_review_kerr_breakup}.
+
+\begin{figure}[!htbp]
+  \centering
+  \includesvg[scale = 1.0]{img/penrose_binaries/kerr_breakup.svg}
+  \caption{Schematic representation of a Penrose process. A particle of energy $E^{(0)}$ (red) comes in from infinity and decays at point $b$ inside the ergosphere in a negative energy $E^{(1)}$ trajectory (black) and a positive energy $E^{(2)}>E^{(0)}$ trajectory (blue) that returns to infinity. The black hole's rotational axis is pointing outside the page, towards the reader.}
+  \label{fig:kerr_penrose_review_kerr_breakup}
+\end{figure}
+
+To do:
+\begin{itemize}
+  \item Discuss where the energy comes from: Carroll + Reversib1e and Irreversible Transformations in Black-Hole physics
+  \item Show irreducible mass and max energy that can be extracted
+  \item Discuss that the negative energy particle must be confined in the ergosphere
+  \item Discuss that the local energy is still positive
+\end{itemize}
