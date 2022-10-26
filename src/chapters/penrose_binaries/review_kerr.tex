@@ -20,7 +20,7 @@ and
   \label{eq:kerr_penrose_review_kerr_rho}
 \end{equation}
 
-The constants $M$ and $a$ represent, respectively the black hole's mass and spin parameter (angular momentum per unit mass). The metric possesses two event horizons, located at
+The constants $M$, $J$ and $a = J/M$ represent, respectively the black hole's mass, angular momentum and spin parameter. The metric possesses two event horizons, located at
 %
 \begin{equation}
   r_{H\pm} = M \pm \sqrt{M^2 - a^2}
@@ -57,10 +57,10 @@ The region that lies in-between $r_{K+}$ and $r_{H+}$ is called the \emph{ergosp
   \label{fig:kerr_penrose_review_kerr_surfaces}
 \end{figure}
 
-Let us now consider a particle of mass $m$ and 4-momentum $p^\mu$ moving along a time-like geodesic in the Kerr spacetime parametrized by its proper time $\tau$. The energy per unit mass of the particle along its trajectory, as measured by a static observer infinitely far away from the black hole, is given by
+Let us now consider a particle of 4-momentum $p^\mu$ moving along a time-like geodesic in the Kerr spacetime parametrized by its proper time $\tau$. The energy of the particle along its trajectory, as measured by a static observer infinitely far away from the black hole, is given by
 %
 \begin{equation}
-  E = -K_\mu p^\mu/m.
+  E = -K_\mu p^\mu.
   \label{eq:kerr_penrose_review_kerr_enrgy_per_unit_mass_full}
 \end{equation}
 %
@@ -94,10 +94,82 @@ which means that the energy of the returning particle is greater than the energy
   \label{fig:kerr_penrose_review_kerr_breakup}
 \end{figure}
 
+Where does the excess energy of particle $(2)$ comes from? To answer that, let us analyze particle $(1)$ as it crosses the outer horizon. In the Kerr metric, the event horizons are Killing horizons of the Killing vector formed by a linear combination of the two spacetime symmetries, namely
+%
+\begin{equation}
+  \chi^\mu = K^\mu + \Omega R^\mu
+  \label{eq:kerr_penrose_review_kerr_killing_horizon}
+\end{equation}
+%
+where $\Omega$ is the horizon's angular velocity. Considering that particle $(1)$ crosses the event horizon while remaining time-like and $\chi^\mu$ is null at the outer horizon, we must have that
+%
+\begin{equation}
+  p^{(1)\mu}\chi_\mu = -E^{(1)} + \Omega L^{(1)} < 0
+  \label{eq:kerr_penrose_review_kerr_energy_momentum_inequality}
+\end{equation}
+%
+where $L^{(1)}$ represents the particle's angular momentum. In order to satisfy Eq.~\eqref{eq:kerr_penrose_review_kerr_energy_momentum_inequality} given that $E^{(1)} < 0$ and $\Omega > 0$ we must have that
+%
+\begin{equation}
+  L^{(1)} < \frac{E^{(1)}}{\Omega},
+  \label{eq:kerr_penrose_review_kerr_energy_momentum_inequality_L}
+\end{equation}
+%
+which implies that $L^{(1)} < 0$ and thus the negative energy particle must be rotating in the opposite direction of the black hole. This means that when the negative energy particle gets absorbed, the BH looses a small amount of its own angular momentum, transferring it to the particle that is to be ejected back to infinity.
+
+Naturally at this point one may start to wander if it is possible to completely ``drain'' the black hole via repeated Penrose processes. Christodoulou in Ref.~\cite{CHRISTODOULOU1970} has determined that there is a limit of energy extraction, expressed by an \emph{irreducible mass}, that is, a lower mass bound for the black hole to achieve from which no further energy can be extracted. To see that, let us consider that when particle $(1)$ interacts with the BH, energy is conserved and thus the loss in mass and angular momentum of the black hole corresponds respectively to $E^{(1)}$ and $L^{(1)}$, that is,
+%
+\begin{align}
+  \ud M & = E^{(1)} \label{eq:kerr_penrose_review_kerr_mass_change}, \\
+  \ud J & = L^{(1)} \label{eq:kerr_penrose_review_kerr_L_change}.
+\end{align}
+%
+By virtue of Eq.~\eqref{eq:kerr_penrose_review_kerr_energy_momentum_inequality_L}, we get that
+%
+\begin{equation}
+  \ud J < \frac{\ud M}{\Omega}.
+  \label{eq:kerr_penrose_review_kerr_energy_momentum_inequality_L_diff}
+\end{equation}
+%
+The maximum energy extraction occurs when we exactly reach this limit. Given that
+%
+\begin{equation}
+  \Omega = \frac{a}{r_{H+}^2 + a^2}
+  \label{eq:kerr_penrose_review_kerr_angular_momentum_def}
+\end{equation}
+%
+we can solve
+%
+\begin{equation}
+  \frac{\ud M}{\ud J} = \frac{a}{r_{H+}^2 + a^2}
+  \label{eq:kerr_penrose_review_kerr_mass_ODE}
+\end{equation}
+%
+for $M(J)$ with $M(0) = M_0$ to find
+%
+\begin{equation}
+  M_0^2 = \frac{1}{2}\left( M^2 + \sqrt{M^4 - J^2} \right),
+  \label{eq:kerr_penrose_review_kerr_irreducible_mass}
+\end{equation}
+%
+which is known as the \emph{irreducible mass}. To see why that is the case, one can take the differential of Eq.~\eqref{eq:kerr_penrose_review_kerr_irreducible_mass} to find
+%
+\begin{equation}
+  \ud M_0 = \frac{a}{4 M_0 \sqrt{M^2 - a^2}}\left( \Omega^{-1} \ud M - \ud J \right).
+  \label{eq:kerr_penrose_review_kerr_irreducible_mass_diff}
+\end{equation}
+%
+Thanks to Eq.~\eqref{eq:kerr_penrose_review_kerr_energy_momentum_inequality_L_diff}, we can infer from Eq.~\eqref{eq:kerr_penrose_review_kerr_irreducible_mass_diff} that $\ud M_0 > 0$ always, thus $M_0$ cannot be reduced (hence it's name) and gives the lower energy bound that the black hole can achieve. The formula for the maximum energy that can be extracted is thus
+%
+\begin{equation}
+  M - M_0 = M - \frac{1}{\sqrt{2}}\left( M^2 + \sqrt{M^4 - J^2} \right)^{1/2}.
+  \label{eq:kerr_penrose_review_kerr_max_energy_formula}
+\end{equation}
+%
+By considering an extreme BH (with $a=1$), Eq.~\eqref{eq:kerr_penrose_review_kerr_max_energy_formula} states that approximately $29\%$ of the BH's energy can be extracted via the Penrose process. One can get to the same conclusion by starting of with Hawking's area theorem, which states that the event horizon area cannot decrease (See Ref.~\cite{carroll} page 270).
+
 To do:
 \begin{itemize}
-  \item Discuss where the energy comes from: Carroll + Reversib1e and Irreversible Transformations in Black-Hole physics
-  \item Show irreducible mass and max energy that can be extracted
   \item Discuss that the negative energy particle must be confined in the ergosphere
   \item Discuss that the local energy is still positive
 \end{itemize}
