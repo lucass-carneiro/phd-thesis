@@ -14,3 +14,6 @@ pdf:
 
 clean:
 	rm -f ${out_dir}/${main_file_name}.{aux,bbl,blg,dvi,log,out,ps,toc,pdf}
+
+labels:
+	grep -rho "\\\label{[^}]*}" src | uniq -dc | sort

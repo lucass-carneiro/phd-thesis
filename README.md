@@ -8,3 +8,7 @@ Run `make` or `make pdf` from the root directory. The created PDF will be found 
 # Cleanup
 
 To clean temporary compilation files, run `make clean`
+
+# Multiply defined labels
+
+To find multiply defined labels run `make labels`

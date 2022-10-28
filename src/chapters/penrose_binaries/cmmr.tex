@@ -1,434 +1,172 @@
-\section{CMMR spacetime}
+We now consider the extension of our previous results to a binary system of rotating black holes described by the CMMR metric. In Weyl's cylindrical coordinates, the CMMR line element reads
+%
+\begin{align}
+  \ud s^2 & = -f(\rho,z)\left[\ud t - \omega(\rho,z)\ud\phi\right]^2 \nonumber                                   \\
+          & + f(\rho,z)^{-1}\left[e^{2\gamma(\rho,z)}\left(\ud \rho^2 + \ud z^2\right) + \rho^2\ud\phi^2\right],
+  \label{eq:cmmr_line_element}
+\end{align}
+%
+where the real valued functions $f(\rho,z)$, $\omega(\rho,z)$ and $\exp[2\gamma(\rho,z)]$ are defined as in Sec.~IV of Ref.~\cite{manko_ruiz_thermo}. As in the case of the MP metric, only the exterior of the black holes is described by these coordinates. In particular, the outer event horizons of the constituent black holes are straight lines in these coordinates (see Fig.~\ref{fig:cmmr_ergospheres}).
 
-We will now perform an analysis similar to that of the previous section but using the solution class found by Cabrera-Munguia, Manko and Ruiz (CMMR). This metric describes a pair of static Kerr black holes and thus we will show that one can extract rotational energy from the system using geodesic motion.
+The CMMR solution is fully characterized by five independent parameters, namely the masses $M_{1,2}$, the angular momenta per unit mass $a_{1,2}$ and the coordinate distance $R$ between the black hole centers. From these, we define three additional parameters, namely $M_T = M_1 + M_2$, which represents the total mass of the system, $J_T = M_1 a_1 + M_2 a_2$, which represents the total angular momentum of the system, and $a_*$, which is a root of the cubic equation
+%
+\begin{align}
+  \left(R^2 - M_T^2 + a_*^2\right) & \left(a_1 + a_2 - a_*\right) \nonumber \\  + \, & 2 \left(R + M_T \right)\left(J_T - M_T a_* \right) = 0.
+  \label{eq:cubic_eq_for_a}
+\end{align}
+%It is also convenient to introduce two dimensionless quantities: the mass ratio $M_R=M_1/M_2$ and the mass-to-distance parameter $b = M_T/R$.
+%as
+%%
+%\begin{equation}
+%    q \equiv \frac{m_1}{m_2}
+%    \label{eq:cmmr_mass_ratio}
+%\end{equation}
+%%
+%and a distance parameter $b$ as
+%%
+%\begin{equation}
+%    b \equiv \frac{M}{R}.
+%    \label{eq:cmmr_distance_parameter}
+%\end{equation}
+%
+%We also perform the coordinate transformation $x^\mu \rightarrow x^\mu/M$, where $x^\mu$ are the spacetime coordinates, which amounts to rescaling the metric functions $f$, $\omega$ and $e^{2\gamma}$ by $M$ and thus making them dimensionless as well as the spacetime coordinate dimensionless.
 
-\subsection{Spacetime metric}
+We note that, depending on the parameters, the CMMR metric can represent a black hole-black hole binary, a naked singularity-naked singularity binary, or a black hole-naked singularity binary~\cite{cabrera_metric,manko_ruiz_metric, manko_ruiz_thermo}. In our analysis, the chosen parameters always correspond to a binary black hole solution. In practice, this means that the chosen parameters must: (i) produce real valued and positive horizon lengths\footnote{The horizon half-lengths are given by the expressions $\sigma_1$ and $\sigma_2$ in Sec.~IV of Ref.~\cite{manko_ruiz_thermo}.}, (ii) produce horizons that do not touch or overlap, and (iii) produce a single real root for $a_*$ in Eq.~\eqref{eq:cubic_eq_for_a}.
 
-In Weyl's cylindrical coordinates, the CMMR line element reads
+% ($\sigma_1$ and $\sigma_2$ in Ref.~\cite{manko_ruiz_thermo}).
+%    \item Produce horizons that do not touch or overlap.
+%    \item Produce a single real root for $a$ when solving Eq.~\eqref{eq:cubic_eq_for_a}. This can be easily done since the determinant for cubic equations has closed analytic form.
+%\end{enumerate}
+
+\subsection{Geodesics}
+
+Following the procedure on Sec.~IIA, we will make use of the Lagrangian formalism to determine the geodesic equations and the conserved quantities corresponding to the symmetries of the system. The Lagrangian associated with the geodesic motion of a massive and neutral test particle in the CMMR metric is~\cite{Dubeibe2016}
 %
 \begin{equation}
-  \ud s^2 = -f(\rho,z)\left[\ud t - \omega(\rho,z)\ud\varphi\right]^2 \\
-  + f(\rho,z)^{-1}\left[e^{2\gamma(\rho,z)}\left(\ud \rho^2 + \ud z^2\right) + \rho^2\ud\varphi^2\right]
-  \label{ch:penrose_binaries/eq:line_element}
+  2\mathcal{L} = -f(\dot{t} - \omega\dot{\phi})^2 +f^{-1}\left[e^{2\gamma}\left( \dot{\rho}^2 + \dot{z}^2 \right) + \rho^2\dot{\phi}^2 \right],
+  \label{eq:cmmr_lagrangian}
 \end{equation}
-%
-where the real valued functions $f(\rho,z)$, $\omega(\rho,z)$ and $\exp[2\gamma(\rho,z)]$ were implemented as described in Sec.~IV of Ref.~\cite{MANKO2020}. We shall not reproduce these functions here as they take a few pages worth of equations.
+where, once again, dots represent derivatives with respect to the proper time $\lambda$.
 
-This solution is characterized by a set five parameters: The masses of the Kerr constituents $m_1$ and $m_2$, their angular momenta per unit mass $a_1$ and $a_2$ and the coordinate distance between the centers of the two black holes $R$. In Weyl's coordinates, each horizon is a line that extends over the $z$ axis centered around $z=\pm R/2$ (See Fig.~3 of Ref.~\cite{MANKO2020}). In order to work with dimensionless quantities, we will introduce the three additional parameters given in terms of the preceding five. The first is the total mass of the system $M$, given by
+%
+Due to the stationarity and the axisymmetry of the system, we can identify two constants of the motion analogous to the quantities defined in Eqs.~\eqref{eq:conserved_energy}  and \eqref{eq:conserved_momentum}. The energy per unit mass, as measured by a static observer at infinity, is given by
 %
 \begin{equation}
-  M = m_1 + m_2.
-  \label{ch:penrose_binaries/eq:total_mass_def}
+  E = f\dot{t} - \omega f\dot{\phi},
+  \label{eq:cmmr_energy_t_phi}
 \end{equation}
 %
-The second is the system's mass ratio $q$ given by
+and the angular momentum (with respect to the $z$ axis) per unit mass, as measured by a static observer at infinity, is given by
 %
 \begin{equation}
-  q = \frac{m_1}{m_2}
-  \label{ch:penrose_binaries/eq:mass_ratio_def}
+  L = \omega f \dot{t} + \left( \frac{\rho^2}{f} - \omega^2 f \right)\dot{\phi}.
+  \label{eq:cmmr_ang_mom_t_phi}
 \end{equation}
 %
-and finally, the third is a dimensionless distance parameter $b$ given by
+
+Using Eqs.~\eqref{eq:cmmr_energy_t_phi} and \eqref{eq:cmmr_ang_mom_t_phi} to eliminate $\dot{t}$ and $\dot{\phi}$ from the the normalization of the four velocity, i.e. $\dot{x}^\mu\dot{x}_\mu = -1$, we obtain an expression for the energy $E$ in  terms of $\dot{\rho}$, $\dot{z}$ and the angular momentum $L$:
 %
-\begin{equation}
-  b = \frac{M}{R}.
-  \label{ch:penrose_binaries/eq:dist_param_def}
-\end{equation}
-
-By performing the coordinate transformation
+\begin{align}
+  E  = & \frac{-f^2\omega L}{\rho^2-\omega^2 f^2}  + \left[ \frac{\rho^2e^{2\gamma}(\dot{\rho}^2 + \dot{z}^2)}{\rho^2 - \omega^2f^2}  \right. \nonumber \\
+       & \left. + \left( \frac{\rho fL}{\rho^2 - \omega^2f^2} \right)^2 + \frac{\rho^2f}{\rho^2 - \omega^2f^2} \right]^{1/2},
+  \label{eq:cmmr_energy_rho_z}
+\end{align}
 %
-\begin{equation}
-  x^{\mu} \rightarrow \frac{x^\mu}{M}
-  \label{ch:penrose_binaries/eq:coord_transf_dimensionless}
-\end{equation}
-%
-where the $x^\mu$ are the space-time coordinates, we effectively rescale the metric functions $f$, $\omega$ and $e^{2\gamma}$ by a factor of $1/M$ and as a result they become dimensionless quantities with the added benefit that the space-time coordinates $t$, $\rho$, $z$ and $\varphi$ are also dimensionless quantities.
-
-If additionally we fixate $M$ to be unitary, we can fully describe the CMMR metric by specifying four dimensionless parameters $q$, $b$, $a_1$ and $a_2$ from which all necessary quantities appearing in the metric functions can be calculated. Explicitly, we can write the inverse relations
-%
-\begin{equation}
-  m_1 = \frac{Mq}{1+q},
-  \label{ch:penrose_binaries/eq:m1_from_q}
-\end{equation}
-%
-\begin{equation}
-  m_2 = \frac{M}{1+q}
-  \label{ch:penrose_binaries/eq:m2_from_q}
-\end{equation}
-%
-and
-\begin{equation}
-  R = \frac{M}{b}.
-  \label{ch:penrose_binaries/eq:r_from_b}
-\end{equation}
-
-The CMMR solution when written in the form given by Ref.~\cite{MANKO2020} can appropriately describe not only a ``standard'' Kerr black hole binary but also extreme and naked Kerr sources, depending on the values chosen for the solution's parameters. In order to study scenarios of greater astrophysical relevance we shall limit ourselves to discussions pertaining only to the black hole sector of the metric which is given by the set of parameters that cause the constituent black holes horizons half lengths (the expressions for $\sigma_1$ and $\sigma_2$ after Eq. (18) of Ref.~\cite{MANKO2020}) to be real valued and greater than zero. By choosing values of $q$ and $b$, we are able to determine which values of $a_1$ and $a_2$ represent black hole binary solutions. The results are presented in Fig.~\ref{ch:penrose_binaries/fig:parameter_space}. For each $q$ and $b$ pair, a blue shape represents the region of $a_1$ and $a_2$ values representing black hole configurations.
-
-\begin{figure}
-  \centering
-  \subfloat[$b=0.1$, $q=0.1$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.1_q_0.1.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_a}
-  }
-  \subfloat[$b=0.1$, $q=0.5$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.1_q_0.5.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_b}
-  }
-  \subfloat[$b=0.1$, $q=1.0$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.1_q_1.0.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_c}
-  }
-  \newline
-  \subfloat[$b=0.5$, $q=0.1$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.5_q_0.1.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_d}
-  }
-  \subfloat[$b=0.5$, $q=0.5$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.5_q_0.5.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_e}
-  }
-  \subfloat[$b=0.5$, $q=1.0$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.5_q_1.0.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_f}
-  }
-  \newline
-  \subfloat[$b=0.98$, $q=0.1$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.98_q_0.1.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_g}
-  }
-  \subfloat[$b=0.98$, $q=0.5$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.98_q_0.5.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_h}
-  }
-  \subfloat[$b=0.98$, $q=1.0$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_par_region/par_region_b_0.98_q_1.0.pdf}
-    \label{ch:penrose_binaries/fig:par_reg_i}
-  }
-  \caption{Parameter space variations in the CMMR solution. All $a_1$ and $a_2$ values inside of the blue region represent a valid black hole binary solution for a set of indicated $q$ and $b$ values.}
-  \label{ch:penrose_binaries/fig:parameter_space}
-\end{figure}
-
-\subsection{Ergospheres}
-
-In the context of stationary space-times the ergosphere is defined as the region in which observers can no longer be static and are ``dragged'' along the space-time's rotation. More precisely it is the region in which the time translation Killing vector field $K = \partial_t$ becomes space-like, that is, $\mtrtens{\mu}{\nu}\tens{K}{\mu}{}\tens{K}{\nu}{} >0$~\cite{carroll}. In the specific case of the CMMR metric, by employing Eq.~\eqref{ch:penrose_binaries/eq:line_element} we see that the ergosphere is the locus of all points $(\rho,z)$ that satisfy
-%
-\begin{equation}
-  f(\rho,z) < 0.
-  \label{ch:penrose_binaries/eq:ergosphere_def}
-\end{equation}
-
-Given the complexity of $f(\rho,z)$ it is extremely difficult (or even impossible) to find an explicit expression for $\rho$ and $z$ that satisfy Eq.~\eqref{ch:penrose_binaries/eq:ergosphere_def} thus we will visualize the ergospheres and their features in the CMMR solution numerically. Knowing that the relation between Weyl's radial coordinate $\rho$ and Cartesian coordinates $x$ and $y$ are $x = \rho\cos\varphi$ and $y = \rho\sin\varphi$ we can project and plot $f(\rho,z)$ in the $x$-$z$ plane by choosing $\varphi=0$.
-
-To create the plots, we have fixed $q = 1.0$ and $|a_{1,2}| = 0.65$ while gradually increased $b$ from $0.3$ to $0.98$. This allows us to view the ergosphere around each constituent of the binary changing as their mutual interaction grows stronger. In Fig.~\ref{ch:penrose_binaries/fig:ergo_equal_spin} we show the variation of the ergosphere for constituents of aligned spins and in Fig.~\ref{ch:penrose_binaries/fig:ergo_unequal_spin} for constituents with anti-aligned spins. In all of the figures the ergosphere is the light blue region, bounded by the darker blue line and the event horizons are black lines. In both cases, the ergospheres start localized around each black hole. The choice of parameters in the figures intentionally lead to horizons that are initially very short which means that the black hole are spinning close to extremality.
-
-\begin{figure}
-  \centering
-  \subfloat[$b=0.3$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.3_q_1.0_a1_0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_equal_a}
-  }
-  \subfloat[$b=0.5$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.5_q_1.0_a1_0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_equal_b}
-  }
-  \newline
-  \subfloat[$b=0.7$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.7_q_1.0_a1_0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_equal_c}
-  }
-  \subfloat[$b=0.98$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.98_q_1.0_a1_0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_equal_d}
-  }
-  \caption{Ergosphere of a binary Kerr black hole system with mass ratio $q=1.0$ and aligned spins $a_1=0.65$ and $a_2=0.65$ for differente separation parameters. The blu region represents the ergosphere while the black lines represent the event horizons.}
-  \label{ch:penrose_binaries/fig:ergo_equal_spin}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \subfloat[$b=0.3$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.3_q_1.0_a1_-0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_unequal_a}
-  }
-  \subfloat[$b=0.5$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.5_q_1.0_a1_-0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_unequal_b}
-  }
-  \newline
-  \subfloat[$b=0.7$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.7_q_1.0_a1_-0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:ergo_unequal_c}
-  }
-  \subfloat[$b=0.98$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_ergo/ergo_b_0.98_q_1.0_a1_-0.65_a2_0.65}
-    \label{ch:penrose_binaries/fig:ergo_unequal_d}
-  }
-  \caption{Ergosphere of a binary Kerr black hole system with mass ratio $q=1.0$ and aligned spins $a_1=0.65$ and $a_2=0.65$ for differente separation parameters. The blu region represents the ergosphere while the black lines represent the event horizons.}
-  \label{ch:penrose_binaries/fig:ergo_unequal_spin}
-\end{figure}
-
-Let us now focus on Fig.~\ref{ch:penrose_binaries/fig:ergo_equal_spin}. As the holes get closer, the familiar ``infinity shaped'' ergosphere around each hole starts to deform in a very particular way: both of the tips of each ergosphere start to bend towards the other until they touch and eventually form a larger region that encompasses both holes and. Even more interesting, as the system gets closer to merging, the event horizons themselves get ``stretched'' along the $z$ direction. It becomes clear that in this case the ergospheres and event horizons ``add up'' to create structures larger than the originals.
-
-Switching focus to Fig.~\ref{ch:penrose_binaries/fig:ergo_unequal_spin} that in spite of the fact that the event horizons still ``stretch'' what appears to be the opposite of the aligned spin case happens for the ergospheres. Instead of bending towards each other they are repelled to the point that when they are close to merging, their shape becomes very thin and elongated. In other words, the ergospheres become \textit{spaghettifyied} and ``cancel out'' in the case of equal but anti-aligned spins.
-
-These results are not physically surprising. One expects that black holes that have exactly the same spin but in opposite directions when merged create a resulting black hole that has more mass but no spin, that is, their counter rotation balances and cancels out. The opposite is expected to happen for black holes with aligned spins: both their masses and angular momenta are added up upon merging. The novelty of our work is, we believe, in the fact that even using an analytic solution containing an unphysical strut that keeps the black holes from colliding such features are apparent and can be demonstrated with relative ease.
-
-Now that the general shapes and features of the ergospheres have been established, we can ask ourselves how far appart should the Kerr black holes be so that their individual ergospheres merge into one? From Fig.~\ref{ch:penrose_binaries/fig:ergo_unequal_spin} we can see that if the spins are exactly equal in modulus but differ in sign such merging is impossible. Nevertheless, from Fig.~\ref{ch:penrose_binaries/fig:ergo_equal_spin} we see that when the spins are equal we can be sure that such merging occurs for some value of $b$. It is not unreasonable to imagine that in the intermediary case is considered, that is anti-aligned spins that are not exactly equal, such merging also occurs.
-
-In order to visualize the parameter regions that are able to produce connected ergospheres we plot the regions for which the parameters produce physical black hole binarys (i.e., black holes and not naked singularities) and $f(\rho,0) = 0$ for some value of $\rho$. These are the blue regions shown in Fig.~\ref{ch:penrose_binaries/fig:ergo_joined} where we increased $b$ from $0.89$ to $0.98$ while also increasing the mass ratio from $0.1$ to $1.0$ and in Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_2} where $a_1$ and $q$ where fixed but $a_2$ and $b$ were allowed to change instead. It is extremely important to point out that despite what the figures indicate the configuration $a_1=a_2=0$ does not produce an ergosphere. These points are included in our graphs but should be disregarded as the CMMR solution in the form presented in Ref.~\cite{MANKO2020} (which is the source of all metric quantities used in this work) does not describe the black hole system correctly if one of the spins is zero. This case must be treated separately and is discussed in detail in Ref.~\cite{MANKO2019}.
-
-Let us now focus on Fig.~\ref{ch:penrose_binaries/fig:ergo_joined}. For any given mass ratio, it is apparent that the increase in the distance parameter increases the overall size of the parameter region producing joint ergospheres. The most interesting feature is that certain configurations of equal but opposite spins can also produce a joined ergosphere if the masses are not equal. This can be easily seen in Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_e} if $a_1=0.5$ and $a_2=-0.5$.
-
-In Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_2} we look at the influence of the distance parameter in more detail. The first apparent feature is that for equal mass binaries, the configuration where $a_2=-a_1$ never produces a joined ergosphere, even for very large distance parameters (and thus very small distances). This can easily be seen in Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_2_b} and Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_2_d}. We can also observe that for a fixed mas ratio, an increase in the fixed spin parameter $a_1$ causes the area of the graph to become larger in the negative region of $a_2$ which can be seen in Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_2_a} and Fig.~\ref{ch:penrose_binaries/fig:ergo_joined_2_c}. This indicates that for binaries with unequal masses, configurations with opposite spins can generate joined ergospheres more easily. Furthermore we can observe the universal need of $b$ being large in order to create joined ergospheres.
-
-\begin{figure}
-  \centering
-  \subfloat[$b=0.89$, $q=0.1$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.89_q_0.1}
-    \label{ch:penrose_binaries/fig:ergo_joined_a}
-  }
-  \subfloat[$b=0.89$, $q=0.5$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.89_q_0.5}
-    \label{ch:penrose_binaries/fig:ergo_joined_b}
-  }
-  \subfloat[$b=0.89$, $q=1.0$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.89_q_1.0}
-    \label{ch:penrose_binaries/fig:ergo_joined_c}
-  }
-  \newline
-  \subfloat[$b=0.93$, $q=0.1$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.93_q_0.1}
-    \label{ch:penrose_binaries/fig:ergo_joined_d}
-  }
-  \subfloat[$b=0.93$, $q=0.5$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.93_q_0.5}
-    \label{ch:penrose_binaries/fig:ergo_joined_e}
-  }
-  \subfloat[$b=0.93$, $q=1.0$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.93_q_1.0}
-    \label{ch:penrose_binaries/fig:ergo_joined_f}
-  }
-  \newline
-  \subfloat[$b=0.98$, $q=0.1$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.98_q_0.1}
-    \label{ch:penrose_binaries/fig:ergo_joined_g}
-  }
-  \subfloat[$b=0.98$, $q=0.5$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.98_q_0.5}
-    \label{ch:penrose_binaries/fig:ergo_joined_h}
-  }
-  \subfloat[$b=0.98$, $q=1.0$]{
-    \includegraphics[scale = 0.15]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_b_0.98_q_1.0}
-    \label{ch:penrose_binaries/fig:ergo_joined_i}
-  }
-  \caption{Parameter spaces that allow for a common ergosphere. The blue regions represent pairs of $a_1$ and $a_2$ values that produce an ergosphere around both black holes for each $(b,q)$  indicated value.}
-  \label{ch:penrose_binaries/fig:ergo_joined}
-\end{figure}
-
-\begin{figure}
-  \centering
-  \subfloat[$a_1=1.0$, $q=0.5$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_2_a1_1.0_q_0.5.pdf}
-    \label{ch:penrose_binaries/fig:ergo_joined_2_a}
-  }
-  \subfloat[$a_1=1.0$, $q=1.0$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_2_a1_1.0_q_1.0.pdf}
-    \label{ch:penrose_binaries/fig:ergo_joined_2_b}
-  }
-  \newline
-  \subfloat[$a_1=1.5$, $q=0.5$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_2_a1_1.5_q_0.5.pdf}
-    \label{ch:penrose_binaries/fig:ergo_joined_2_c}
-  }
-  \subfloat[$a_1=1.5$, $q=1.0$]{
-    \includegraphics[scale = 0.22]{img/penrose_binaries/cmmr_joined_ergo/joined_ergo_2_a1_1.5_q_1.0.pdf}
-    \label{ch:penrose_binaries/fig:ergo_joined_2_d}
-  }
-  \caption{Parameter spaces that allow for a common ergosphere. The blue regions represent pairs of $b$ and $a_2$ values that produce an ergosphere around both black holes for each $(a_1,q)$ indicated value.}
-  \label{ch:penrose_binaries/fig:ergo_joined_2}
-\end{figure}
-
-\subsection{Geodesic motion in the $z=0$ plane}
-
-We will make use of the Lagrangian formalism to determine the form of the geodesic equations and the motion's conserved quantities. Letting a dot represent derivatives with respect to the proper time we can write the Lagrangian of the geodesic motion as~\cite{carroll}
-%
-\begin{equation}
-  2\mathcal{L} = -f(\dot{t} - \omega\dot{\varphi})^2 +f^{-1}\left[e^{2\gamma}\left( \dot{\rho}^2 + \dot{z}^2 \right) + \rho^2\dot{\varphi}^2 \right].
-  \label{ch:penrose_binaries/eq:lagrangian}
-\end{equation}
-
-From \myref{ch:penrose_binaries/eq:lagrangian} we can identify two constants of the motion, the energy per unit mass as measured by a static observer at infinity $E$, given by
-%
-\begin{equation}
-  E = f\dot{t} - \omega f\dot{\varphi}
-  \label{ch:penrose_binaries/eq:energy_t_phi}
-\end{equation}
-%
-and the angular momentum about the $z$ axis per unit mass as measured by a static observer at infinity $L$, given by
-%
-\begin{equation}
-  L = \omega f \dot{t} + \left( \frac{\rho^2}{f} - \omega^2 f \right)\dot{\varphi}.
-  \label{ch:penrose_binaries/eq:ang_mom_t_phi}
-\end{equation}
-
-We can use Eqs.~\eqref{ch:penrose_binaries/eq:energy_t_phi} and \eqref{ch:penrose_binaries/eq:ang_mom_t_phi} to find $\dot{t}$ and $\dot{\varphi}$, in terms of $E$ and $L$ which yield
-%
-\begin{equation}
-  \dot{t} = \frac{E}{f} + \frac{\omega f (L - E\omega)}{\rho^2}
-  \label{ch:penrose_binaries/eq:t_dot}
-\end{equation}
-%
-and
-%
-\begin{equation}
-  \dot{\varphi} = \frac{f (L - E\omega)}{\rho^2}
-  \label{ch:penrose_binaries/eq:phi_dot}
-\end{equation}
-
-A third conserved quantity is the normalization of the four velocity for a massive particle, that is, $\mtrtens{\mu}{\nu}\dot{x}^\mu\dot{x}^\nu = -1$ which can be combined with Eqs.~\eqref{ch:penrose_binaries/eq:t_dot} and \eqref{ch:penrose_binaries/eq:phi_dot} to produce an expression for the particle's energy in terms of its ``spatial'' four velocities ($\dot{\rho}$ and $\dot{z}$) and it's angular momentum $L$, yielding
-%
-\begin{multline}
-  E = \frac{-f^2\omega L}{\rho^2-\omega^2 f^2} + \left[ \frac{\rho^2e^{2\gamma}(\dot{\rho}^2 + \dot{z}^2)}{\rho^2 - \omega^2f^2} + \left( \frac{\rho fL}{\rho^2 - \omega^2f^2} \right)^2 \right. \\
-  \left. + \frac{\rho^2f}{\rho^2 - \omega^2f^2} \right]^{1/2}
-  \label{ch:penrose_binaries/eq:energy_rho_z}
-\end{multline}
-%
-where the positive sign is chosen for the square root to guarantee that a static particle at infinity has positive energy.
-
-By inverting Eq.~\eqref{ch:penrose_binaries/eq:energy_rho_z} to obtain $\dot{\rho}^2 + \dot{z}^2$ we are motivated to define the effective potential
+where the positive sign is once again chosen for the square root in order to guarantee that a static particle at infinity has positive energy. We rewrite the equation above as Eq.~\eqref{eq:effective1}, where the effective energy and the effective potential are now given by
 %
 \begin{equation}
   V_{\text{eff}} = \frac{\rho^2 - \omega^2 f^2}{\rho^2 e^{2\gamma}}\left[ \left( \frac{\rho fL}{\rho^2 - \omega^2f^2} \right)^2 + \frac{\rho^2f}{\rho^2 - \omega^2f^2}\right]
-  \label{ch:penrose_binaries/eq:effective_potential}
+  \label{eq:cmmr_effective_potential}
 \end{equation}
 %
-and the effective energy
+and
 %
 \begin{equation}
-  E_{\text{eff}} = \frac{\rho^2 - \omega^2 f^2}{\rho^2 e^{2\gamma}}\left(E + \frac{f^2\omega L}{\rho^2-\omega^2 f^2}\right)^2
-  \label{ch:penrose_binaries/eq:effective_energy}
+  E_{\text{eff}} = \frac{\rho^2 - \omega^2 f^2}{\rho^2 e^{2\gamma}}\left(E + \frac{f^2\omega L}{\rho^2-\omega^2 f^2}\right)^2.
+  \label{eq:cmmr_effective_energy}
 \end{equation}
 %
-and therefore we can write
+%
+Note that the constraints given in Eq.~\eqref{eq:effective_constraints} also apply to Eqs.~\eqref{eq:cmmr_effective_potential} and \eqref{eq:cmmr_effective_energy}.
+
+The geodesic equations, analogous to Eqs.~\eqref{eq:ode_for_rho_motion} and \eqref{eq:ode_for_z_motion}, can be derived from the Euler-Lagrange equations for the Lagrangian \eqref{eq:cmmr_lagrangian}. Their explicit forms, in terms of $E$, $L$ and the metric functions $f$, $\omega$ and $e^{2\gamma}$, are given in Eqs.~(16) and (17) of Ref.~\cite{Dubeibe2016}. Once $\rho(\lambda)$ and $z(\lambda)$ are known, $t(\lambda)$ and $\phi(\lambda)$ are determined by direct integration of Eqs.~\eqref{eq:cmmr_energy_t_phi} and \eqref{eq:cmmr_ang_mom_t_phi}.
+
+
+
+\subsection{Ergosphere}
+
+Since the CMMR metric is stationary and we are considering neutral particles in geodesic motion, we use the standard definition of an ergosphere to study the possibility of negative energy orbits and energy extraction. In other words, the ergosphere is the region where the time translation Killing vector field becomes spacelike, i.e.~$(\partial_t)^\mu (\partial_t)_\mu > 0$. Taking into account the line element \eqref{eq:cmmr_line_element}, it is straightforward to show that the ergosphere of the CMMR spacetime is the locus of points that satisfy
 %
 \begin{equation}
-  \dot{\rho}^2 + \dot{z}^2 = E_{\text{eff}} - V_{\text{eff}}.
-  \label{ch:penrose_binaries/eq:effective_potential_motion}
+  f(\rho,z) < 0.
+  \label{eq:cmmr_ergo_ineq}
 \end{equation}
 
-Finally, the geodesic equations can be derived using the Euler-Lagrange equations for the Lagrangian of Eq.~\eqref{ch:penrose_binaries/eq:lagrangian} and $\dot{t}$ and $\dot{\varphi}$ can be replaced with Eqs.~\eqref{ch:penrose_binaries/eq:t_dot} and \eqref{ch:penrose_binaries/eq:phi_dot}, respectively. While studying geodesic motion in binary system of two identical Kerr-Newman black holes held by a massless strut (a solution with the same general line element as Eq.~\eqref{ch:penrose_binaries/eq:line_element}) the authors of Ref.~\cite{Dubeibe2016} in Eqs.~(16) and (17) derive the explicit form of the geodesic equations for $\rho$ and $z$ in terms of $E$, $L$ and the metric functions $f$, $\omega$ and $e^{2\gamma}$ and thus we shall not repeat this information here. In our work, whenever was necessary to solve the geodesic equations numerically we implemented Eqs.~(16) and (17) of Ref.~\cite{Dubeibe2016} directly, changing only the metric functions to those described in  Sec.~IV of Ref.~\cite{MANKO2020}.
+We sketch this ergosphere in Fig.~\ref{fig:cmmr_ergospheres}, where each panel is labeled by a letter (\textbf{A}-\textbf{I}) and corresponds to a different set of parameters (which are specified in Table \ref{tab:cmmr_ergo_tab}). In each panel, the blue shaded region represents the $\phi = 0$ section of the ergosphere, while the red lines represent the event horizons of the black holes. The top row of the figure (panels \textbf{A}-\textbf{C}) exhibits the effect of changing the mass ratio of the system while keeping the total mass, both spins and the separation parameter fixed. It shows that, analogously to the MP case, initially disjoint ergospheres may merge into a single connected ergosphere when the mass ratio increases. The middle row of Fig.~\ref{fig:cmmr_ergospheres} (panels \textbf{D}-\textbf{E}), on the other hand, shows the effect of changing the spin parameter of the top black hole while keeping all other parameters fixed. We observe that when initially aligned spins become anti-aligned, the ergosphere becomes thinner and elongated along the symmetry axis. Finally, the bottom row (panels \textbf{G}-\textbf{H}) illustrates the effect of increasing the separation parameter when all other parameters are kept fixed. Similarly to what happens in the MP case, if the distance between the black holes is sufficiently large, there will be two disconnected ergospheres, one for each black hole.
 
-If the motion is constrained to the $z=0$ symmetry plane, we can easily determine the general characteristics of massive particle geodesics by plotting the effective potential, Eq.~\eqref{ch:penrose_binaries/eq:effective_potential}, as was done in Fig.~\ref{ch:penrose_binaries/fig:effective_potential}. The different curves represent different values of angular momenta, specifically $L = 18$ in the black curve, $L = 13$ in the red curve, $L=10$ in the blue curve and $L=4$ in the green curve. We can see that both stable and unstable circular orbits are possible, as well as escaping orbits and non-circular bounded orbits that become ``wider'' as the value of $L$ decreases.
-
-\begin{figure}
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[scale = 0.3]{img/penrose_binaries/cmmr_vEff.pdf}
-  \caption{Effective potential in the $z=0$ plane for $L=18,13,10$ and $4$ (black, red, blue and green curves respectively).}
-  \label{ch:penrose_binaries/fig:effective_potential}
+  \includegraphics[scale=0.70]{img/penrose_binaries/fig12.pdf}
+  \caption{The $\phi=0$ section of the ergosphere of the CMMR metric for different set of parameters labeled \textbf{A}-\textbf{I} (see Table  \ref{tab:cmmr_ergo_tab}). In each plot the horizontal and vertical axes are $\rho/M_T$ and $z/M_T$, respectively. The red lines indicate the location of the black hole's horizons.}
+  \label{fig:cmmr_ergospheres}
 \end{figure}
 
-\subsection{Negative energy orbits}
+\begin{table}[!htbp]
 
-Now we turn our attention to the conditions required for a orbit to have negative energy for a static observer at infinity, as this is a necessary condition for the occurrence of the Penrose process. By inspecting Eq.~\eqref{ch:penrose_binaries/eq:energy_rho_z} we can immediately conclude that since the term in the square root is always positive, a necessary (but not sufficient) condition for the particle's energy to be negative is that
-%
-\begin{equation}
-  \frac{-f^2\omega L}{\rho^2 - \omega^2 f^2} < 0.
-  \label{ch:penrose_binaries/eq:necessary_condition}
-\end{equation}
-%
-Multiplying both sides by the denominator we conclude that the numerator must be negative. Because $-f^2$ is always negative, the necessary condition for the existence of negative energy orbits is that
-%
-\begin{equation}
-  (\omega < 0 \land L > 0) \lor (\omega > 0 \land L < 0)
-\end{equation}
-%
-which simply means that the horizons must rotate in the opposite direction of the particles own rotation.
+  \begin{tabular}{ccccc}
+    Panel      & $M_1/M_2$ & $a_1/M_T$ & $a_2/M_T$ & $R/M_T$ \\
+    \textbf{A} & $0.16$    & $0.65$    & $0.65$    & $1.00$  \\
+    \textbf{B} & $0.58$    & $0.65$    & $0.65$    & $1.00$  \\
+    \textbf{C} & $1.00$    & $0.65$    & $0.65$    & $1.00$  \\
+    \textbf{D} & $1.00$    & $0.50$    & $0.65$    & $1.00$  \\
+    \textbf{E} & $1.00$    & $0.30$    & $0.65$    & $1.00$  \\
+    \textbf{F} & $1.00$    & $-0.10$   & $0.65$    & $1.00$  \\
+    \textbf{G} & $1.00$    & $0.65$    & $0.65$    & $1.11$  \\
+    \textbf{H} & $1.00$    & $0.65$    & $0.65$    & $1.30$  \\
+    \textbf{I} & $1.00$    & $0.65$    & $0.65$    & $2.00$  \\
+  \end{tabular}
 
-Despite $\omega(\rho,z)$ being know analytically, it's complexity does not allow us to easily reason about it's behaviour and thus we proceeded to visualize it numerically employing the same projection scheme in the Cartesian plane as was done in the visualisation of the ergosphere. With that we obtain Fig.~\ref{ch:penrose_binaries/fig:omega_value_regions}. The color indicates the value of $\omega$ at each point $(x,y)$ and the values that were graphed were deliberately chosen to lie in the range $-25 \leq \omega \leq 25$ in order to facilitate the visualization. In all panels we choose $b=0.98$ and $q=1.0$. The upper left panel shows a configuration with aligned spins $a_1=a_2=0.65$ and the upper right shows the equivalent configuration with anti-aligned spins $-a_1=a_2=0.65$. The lower row shows binaries with anti-aligned but very different spins with $a_1=0.65$ and $a_2=-0.1$ in the left panel and $a_1=-0.65$ and $a_2 = 0.1$ in the right panel. In all cases the green curve marks the boundary of the ergosphere and the black lines mark the event horizons.
+  \caption{Parameters that define the CMMR metrics associated with the ergospheres \textbf{A}-\textbf{I} shown in Fig.~\ref{fig:cmmr_ergospheres}.}
+  \label{tab:cmmr_ergo_tab}
+\end{table}
 
-From Fig.~\ref{ch:penrose_binaries/fig:omega_value_regions} it becomes clear that in the case of a system with aligned or anti aligned but very different spins one can extract energy from either of the two black holes by setting the sign of $L$ to be opposite to that of $\omega$ inside the ergosphere. The black hole that will ultimately loose part of it's energy can then only be determined uniquely from the other dynamical parameters of the particle's trajectory. In the case of anti-aligned but equal or similar spins the sign of $L$ determines uniquely which black hole can be used for energy extraction, which will be either the upper or lower black hole, depending on the sign configurations of $\omega$ and $L$ inside the ergosphere. This feature is completely compatible with the notion that energy can only be extracted inside the ergospehre. For spin configurations in which a single ergosphere exists around both black holes, energy can be extracted from either hole while in configurations in which the ergospheres are located around each hole but are disconnected, energy can be extracted from only one of the constituents.
 
-\begin{figure}
+\subsection{Bound negative energy orbits and the Penrose Process}
+
+
+To demonstrate the existence of bound negative energy orbits and the possibility of using them to extract energy from non-coalescing Kerr binaries, we shall restrict our attention to systems of equal mass and spin. This symmetry allows for the existence of stable orbits (in the sense already discussed for the MP metric) in the $z=0$ plane. To find a negative energy trajectory that is confined outside the black holes, we choose the energy $E$ and the angular momentum $L$ such that there are two orbital turning points of Eq.~\eqref{eq:effective1} that lie inside the ergosphere of the system. Similarly to what was done in the MP case, once the initial radius $\rho(0)$, the energy, and the angular momentum are fixed, we solve Eq.~\eqref{eq:cmmr_energy_rho_z} to determine $\dot{\rho}(0)$ and integrate the geodesic equations. Using the parameters that produce the ergosphere \textbf{C} of Fig.~\ref{fig:cmmr_ergospheres} and Table \ref{tab:cmmr_ergo_tab}, we show an example of such a negative energy orbit in Fig.~\ref{fig:cmmr_veff} (right panel). The corresponding effective potential and effective energy are also shown in Fig.~\ref{fig:cmmr_veff} (left panel).
+
+\begin{figure}[!htbp]
   \centering
-  \subfloat[$a_1 = a_2 = 0.65$]{
-    \includegraphics[scale = 0.25]{img/penrose_binaries/cmmr_omega/omega_b_0.98_q_1.0_a1_0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:omega_dens_a}
-  }
-  \subfloat[$a_1= -a_2 = -0.65$]{
-    \includegraphics[scale = 0.25]{img/penrose_binaries/cmmr_omega/omega_b_0.98_q_1.0_a1_-0.65_a2_0.65.pdf}
-    \label{ch:penrose_binaries/fig:omega_dens_b}
-  }
-  \newline
-  \subfloat[$a_1= 0.65$, $a_2 = -0.1$]{
-    \includegraphics[scale = 0.25]{img/penrose_binaries/cmmr_omega/omega_b_0.98_q_1.0_a1_0.65_a2_-0.1.pdf}
-    \label{ch:penrose_binaries/fig:omega_dens_c}
-  }
-  \subfloat[$a_1= -0.65$, $a_2 = 0.1$]{
-    \includegraphics[scale = 0.25]{img/penrose_binaries/cmmr_omega/omega_b_0.98_q_1.0_a1_-0.65_a2_0.1.pdf}
-    \label{ch:penrose_binaries/fig:omega_dens_d}
-  }
-  \caption{The value of $\omega(\rho,z)$ projected in Cartesian coordinates. In all plots $b=0.95$ and $q=1.0$. The green curve marks the limit of the ergospehre and the black lines mark the event horizons.}
-  \label{ch:penrose_binaries/fig:omega_value_regions}
+  \includegraphics[scale=0.70]{img/penrose_binaries/fig13.pdf}
+  \caption{Left panel: effective energy (black curve) and effective potential (purple dashed curve) for $L=-2.5$ and $E=-0.054$, when the CMMR metric is characterized by $a_1=a_2=0.65$, $M_1 = M_2 = 0.5$, and $R = 1$ (corresponding to the label \textbf{C} in Table \ref{tab:cmmr_ergo_tab}). The turning points are located at $\rho_{-}/M_T = 0.112531$ and at $\rho_{+}/M_T = 0.306081$. Right panel: the associated trajectory in the $z = 0$ plane when $\rho(0)/M_T=0.25$ and $\phi(0)=0$. The blue region is the $z=0$ section of the ergosphere of the spacetime.}
+  \label{fig:cmmr_veff}
 \end{figure}
 
-\subsection{Efficiency of energy extraction}
 
-We now turn our attention to the maximum energy that can be extracted from the system by means of the Penrose process. It widely know that no more energy can be extracted than the \textit{irreducible mass} of each black hole~\cite{RUFFINI1971,CHRISTODOULOU1970,carroll}. The irreducible mass $M_{\text{irr}}$ is related to the horizon area $A$ by the well know formula~\cite{carroll}
-%
-\begin{equation}
-  M_{\text{irr}} = \sqrt{\frac{A}{16\pi}}.
-  \label{ch:penrose_binaries/eq:irreducible_mass}
-\end{equation}
-%
-The entropies of each black hole in the CMMR metric are know and given in Eq.~(22) of Ref.~\cite{MANKO2020}. Given that the entropy $S$ and horizon area are related by $A=4S$ we have that the maximum energy that can be extracted from the system is the sum of the maximum energy that can be extracted from each hole individually, that is
-%
-\begin{equation}
-  E_{\text{max}} = \left(m_1 - \sqrt{\frac{S_1}{4\pi}}\right) + \left(m_2 - \sqrt{\frac{S_2}{4\pi}}\right).
-  \label{ch:penrose_binaries/eq:max_extract_energy}
-\end{equation}
 
-In the traditional Penrose process there is only one particle of negative energy and thus only one of the black holes will loose part of it's rotation. In practice this meas that only one of the terms inside the parenthesis of Eq.~\ref{ch:penrose_binaries/eq:max_extract_energy} will contribute to the energy extraction. A remarkable fact is that if one takes the limit of $R \rightarrow \infty$ of one of these terms (e.g. the first) in Eq.~\ref{ch:penrose_binaries/eq:max_extract_energy} one obtains
-%
-\begin{equation}
-  E_{\text{max}} = m_1 - \frac{1}{\sqrt{2}}\left(m_1^2 + \sqrt{m_1^4 - j_1^2}\right)^{1/2}
-  \label{ch:penrose_binaries/eq:energy_extraction_kerr_limit}
-\end{equation}
-%
-where we remind that $j_1=a_1m_1$. This expression is exactly the one obtained for the maximum extracted energy in the case of a single Kerr black hole of mass $m_1$ and angular momentum $j_1$~\cite{carroll} which reassures us to the fact that a Kerr binary behaves as a system of isolated Kerr black holes if their separation is large.
+Adopting the same notation introduced in Sec.~III for the trajectories in a Penrose process around the MP black hole, and taking advantage of the negative energy orbit depicted in Fig.~\ref{fig:cmmr_veff}, we now consider the possibility of energy extraction in the CMMR spacetime. By employing the conservation of 4-momentum (as in Sec.~III), we construct an explicit example of a Penrose process. The obtained trajectories are shown in Fig.~\ref{fig:cmmr_penrose} and the corresponding parameters are given in Table \ref{tab:cmmr_penrose_example}. The efficiency of the process, calculated through Eq.~\eqref{eq:penrose_efficiency_general}, is $\eta \approx 0.08 \%$.
 
-\section{Geodesic motion in arbitrary space-times}
 
-In this section we will discuss a method that we intend to implement which would allow us to investigate the Penrose process in arbitrary (even numerically evolved) spacetimes. As we've seen, the Penrose mechanism depends on the existence of orbits that have negative energy according to a static observer far away from the system. If such orbits exist, energy can be extracted from the system. We've also shown that such orbits must lie inside the ergosphere of the binary system, but the notion of ergosphere is not easily generalized to dynamic space-times and remains an open problem. Instead of attempting to define an ergosphere in a dynamical background, we will investigate geodesic motion in such background. The methods and tools for this are already well know in the branch of \emph{ray tracing} in NR for computing the shadows of binary black holes. It all hinges on the ADM (Arnowitt, Deser and Misner) of the geodesic equation.
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[scale=0.70]{img/penrose_binaries/fig14.pdf}
+  \caption{Penrose process in the $z=0$ plane of a CMMR spacetime with $M_1=M_2=0.5$, $a_1=a_2=0.65$, and $R=1$. The incoming trajectory $T_{(0)}$ (black curve) splits at the black point ($\rho/M_T=0.25$, $\phi=0$) into the negative energy orbit $T_{(1)}$ (red curve) and the trajectory of the escaping fragment $T_{(2)}$ (purple curve). The parameters that generate these trajectories are shown in Table \ref{tab:cmmr_penrose_example}. The blue region is the $z=0$ section of the ergosphere (for particle 1).}
+  \label{fig:cmmr_penrose}
+\end{figure}
 
-\subsection{ADM Decomposition of the geodesic equation}
 
-The ADM decomposition, also know as the $3+1$ decomposition is a formulation of GR that rewrite Einstein's field equations as a Cauchy (initial value) problem and is a very common representation of spacetimes used in NR. In this decomposition, the spacetime metric is written as~\cite{BAUMGARTE}
 
-\begin{equation}
-  \ud s^2 = -\alpha^2 \ud t^2 + \tens{\gamma}{}{ij} \left( \ud \tens{x}{i}{} + \tens{\beta}{i}{}\ud t\right) \left( \ud \tens{x}{j}{} + \tens{\beta}{j}{}\ud t\right)
-  \label{ch:penrose_binaries/eq:adm_metric}
-\end{equation}
-%
-where $\alpha$ is the lapse function, $\tens{\beta}{i}{}$ the shift vector and $\tens{\gamma}{}{ij}$ the spatial metric.
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[!htbp]
 
-The decomposition of the geodesic equation we will adopt follows Ref.~\cite{BOHN2015} closely. We note that a very similar approach was also develop in Ref.~\cite{VINCENT2012}, which we also refer for additional details. We start by defining the auxiliary variable
+  \begin{tabular}{lllllll}
+    $i$ & $m_{(i)}/m_0$ & $E_{(i)}$ & $L_{(i)}$         & $\dot{\rho}_{(i)}$ & $\dot{z}_{(i)}$ \\ \vspace{-0.3cm} \\
+    0   & 1.0000000     & 2.00000   & 0         .000000 & 4.343904           & 0               \\
+    1   & 0.0289697     & -0.05400  & -2.500000         & 0.313887           & 0               \\
+    2   & 0.3148980     & 6.35623   & 0.229993          & 13.765800          & 0               \\
+  \end{tabular}
 
-\begin{equation}
-  \tens{\Pi}{}{i} \equiv \frac{\tens{p}{}{i}}{\alpha \tens{p}{}{0}} = \frac{\tens{p}{}{i}}{\sqrt{\tens{\gamma}{jk}{} \tens{p}{}{j} \tens{p}{}{k}}}
-  \label{ch:penrose_binaries/eq:big_pi_def}
-\end{equation}
-%
-where $p^i \equiv \ud x^{i}/\ud \tau$ is the particle's 4-momentum, $x^i$ the spacetime coordinates and $\tau$ the particle's proper time.
-
-Using the ADM decomposition, the geodesic equation can be written as~\cite{BOHN2015}
-
-\begin{align}
-  \der{\tens{\Pi}{}{i}}{t} =          & -\indexdel{i}\alpha + \left[ \left( \indexdel{j}\alpha \right) \tens{\Pi}{j}{} - \alpha \tens{K}{}{jk} \tens{\Pi}{j}{} \tens{\Pi}{k}{}\right]\tens{\Pi}{}{i} + \left( \indexdel{i}\tens{\beta}{k}{} \right) \tens{\Pi}{}{k} - \frac{1}{2} \alpha \left( \indexdel{i} \tens{\gamma}{jk}{} \right) \tens{\Pi}{}{j} \tens{\Pi}{}{k} \\
-  \der{\tens{x}{i}{}}{t} =            & \alpha \tens{\Pi}{i}{} - \tens{\beta}{i}{}                                                                                                                                                                                                                                                                                       \\
-  \der{\ln(\alpha\tens{p}{0}{})}{t} = & -\left( \indexdel{i} \alpha \right) \tens{\Pi}{i}{} + \alpha \tens{K}{}{ij}\tens{\Pi}{i}{}\tens{\Pi}{j}{}
-  \label{ch:penrose_binaries/eq:adm_geodesic_eq}
-\end{align}
-%
-where $t$ is the coordinate time, $\tens{K}{}{ij}$ is the extrinsic curvature and $\tens{\Pi}{i}{} = \tens{\gamma}{ij}{}\tens{\Pi}{}{j}$.
-\subsection{Observed quantities}
-\subsection{Proposal for investigating the Penrose process in numeric space-times}
+  \caption{Parameters that generate the trajectories $T_{(0)}$, $T_{(1)}$, and $T_{(2)}$ of the Penrose process shown in Fig.~\ref{fig:cmmr_penrose}. The derivatives $\dot{\rho}_{(i)}$ and $\dot{z}_{(i)}$ are evaluated at the break-up point.}
+  \label{tab:cmmr_penrose_example}
+\end{table}
