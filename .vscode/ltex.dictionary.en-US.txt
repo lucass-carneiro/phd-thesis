@@ -21,3 +21,5 @@ Eqs
 ergospheres
 spacetimes
 radicand
+stationarity
+axisymmetry
