@@ -60,6 +60,9 @@ colorlinks=false
 
 \usepackage{svg}
 
+\usepackage[none]{hyphenat}
+\sloppy
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATH MACROS
 
@@ -302,7 +305,7 @@ RESUMO AQUI.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% KEYWORDS 2
 
-\textbf{Palavras chave: palavra1, palavra2, ...}
+\textbf{Palavras-chave: palavra1, palavra2, ...}
 
 \begin{center}
   {\large{}\thispagestyle{empty}}{\large\par}
@@ -344,9 +347,16 @@ RESUMO AQUI.
 \myclearpage
 \par
 
+\chapter{Quasinormal Modes and the Asymptotic Iteration Method}
+\label{ch:qnm_aim}
+\input{src/chapters/qnm_aim/qnm_aim.tex}
+
+\myclearpage
+\par
+
 \chapter{Numerical Scalar Wave Scattering in GW150914}
 \label{ch:wave_scattering}
-\input{src/chapters/wave_scattering.tex}
+\input{src/chapters/wave_scattering/wave_scattering.tex}
 
 \myclearpage
 \par

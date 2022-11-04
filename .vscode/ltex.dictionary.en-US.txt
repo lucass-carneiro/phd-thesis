@@ -23,3 +23,6 @@ spacetimes
 radicand
 stationarity
 axisymmetry
+hypersurfaces
+worldlines
+Eulerian

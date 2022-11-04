@@ -24,3 +24,7 @@
 {"rule":"EN_A_VS_AN","sentence":"^\\QConsequently, the efficiency of the Penrose process in a MP spacetime is bound from above according to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"EN_A_VS_AN","sentence":"^\\QWe now give concrete examples of energy extraction in a MP binary black hole spacetime whose efficiency approaches the theoretical maximum given by Eq.\\E$"}
 {"rule":"EN_A_VS_AN","sentence":"^\\QExamples of Penrose processes that approach the maximum theoretical efficiency in a MP spacetime.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTeX Gyre Pagella Math\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLucas Timotheo Sanches\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAdvisor: Prof. Dr. Maurício Richartz\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTIMOTHEO SANCHES, Lucas\\E$"}
