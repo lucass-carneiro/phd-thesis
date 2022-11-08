@@ -59,4 +59,88 @@ Parametrizing the particle's position vector $X^i$ by the coordinate time (that 
 %
 that can be solved once initial positions, velocities and energy are supplied.
 
+\subsection{Global energy}
+
+Eq.~\eqref{eq:arbitrary_penrose_geodesic_eq_E} gives us the energy as measured by the Eulerian Observer. From here on, we will refer to this quantity as the \emph{local energy}, since it is measured locally by the observer that is orthogonal to the foliation. Up until now, we've been dealing with what we shall now call the \emph{global energy}, that is, the energy as measured by a static observer at infinity. To study the Penrose process in this context, we must bridge the gap between these two energy quantities. Let us proceed by writing down the Lagrangian of a particle moving about a 3+1 decomposed spacetime. By virtue of Eq.~\eqref{eq:arbitrary_penrose_decomposed_metric} we get
+%
+\begin{equation}
+  \mathcal{L} = \frac{1}{2} \left\{ \left[ -N^2 + \gamma_{ij}\beta^i\beta^j \right]\dot{t}^2 + 2 \gamma_{ij}\beta^i\dot{x}^j \dot{t} + \gamma_{ij}\dot{x}^i\dot{x}^j\right\}.
+  \label{eq:arbitrary_penrose_lagrangian}
+\end{equation}
+%
+where dots denote derivatives with respect to the proper time. If we define the global energy $\epsilon$ as
+%
+\begin{equation}
+  \epsilon \equiv -\frac{\partial \mathcal{L}}{\partial \dot{t}}
+  \label{eq:arbitrary_penrose_global_energy_def}
+\end{equation}
+%
+we get from Eq.~\eqref{eq:arbitrary_penrose_lagrangian} that
+%
+\begin{equation}
+  \epsilon = \left[ N^2 - \gamma_{ij}\beta^i\beta^j \right]\dot{t} - \gamma_{ij}\beta^i\dot{x}^j.
+  \label{eq:arbitrary_penrose_global_energy_def_2}
+\end{equation}
+%
+By noting that~\cite{Vincent_2012}
+%
+\begin{equation}
+  \dot{t} \equiv \der{t}{\lambda} = \frac{E}{N},
+  \label{eq:arbitrary_penrose_t_dot_relation}
+\end{equation}
+%
+we can rewrite Eq.~\eqref{eq:arbitrary_penrose_global_energy_def_2} as
+%
+\begin{equation}
+  \epsilon = \left[ N^2 - \gamma_{ij}\beta^i\beta^j \right]\frac{E}{N} - \gamma_{ij}\beta^i\dot{x}^j.
+  \label{eq:arbitrary_penrose_global_energy_def_3}
+\end{equation}
+%
+If we remember, from Ref.~\cite{Vincent_2012} that
+%
+\begin{equation}
+  V^i = \frac{1}{N}\left( \der{x^i}{t} + \beta^i \right) \Rightarrow \der{x^i}{t} = N V^i - \beta^i,
+  \label{eq:arbitrary_penrose_vi_def}
+\end{equation}
+%
+we can write
+%
+\begin{equation}
+  \dot{x}^i \equiv \der{x^i}{\lambda} = \der{x^i}{t} \der{t}{\lambda} = (N V^i - \beta^i ) \frac{E}{N}.
+  \label{eq:arbitrary_penrose_dx_dlambda_def}
+\end{equation}
+%
+Substituting these results back into Eq.~\eqref{eq:arbitrary_penrose_global_energy_def_3} and after some algebra, we finally get
+%
+\begin{equation}
+  \epsilon = \left( N - \gamma_{ij}\beta^i V^j \right) E.
+  \label{eq:arbitrary_penrose_global_energy_def_final}
+\end{equation}
+
 \subsection{Penrose process}
+
+Previously, we were able to determine if energy was extracted by comparing energies the energy observed by a static observer at infinity. Since this quantity was conserved, it did not matter the exact place in which this comparison took place. In a more general scenario, the global energy may no longer be conserved, and local energy must be always positive. How can we then determine if energy extraction took place? There is an important consequence of Eq.~\eqref{eq:arbitrary_penrose_global_energy_def_final} to be observed if the spacetime metric is asymptotically flat, that is, if infinitely far away from the black hole (or holes) the spacetime becomes the Minkowski solution. In this case we get that $\gamma_{ij} \rightarrow \eta_{ij}$, $\beta^i \rightarrow 0$ and $N \rightarrow 1$ which implies that $\epsilon = E$.
+
+Let us now suppose that a particle moves about a spacetime containing a coalescing BBH. Let us suppose that such particle comes from infinity and falls towards the BHs. Before setting the particle free, we record it's global and local energies, and assert that they are the same since the spacetime in question is asymptotically flat. As the particle falls, it's local energy increases as it gets closer to the event horizons. At a certain point outside either event horizon, let the particle break up into two other particles, like in the traditional Penrose mechanism. This time, however, we cannot assume that one of the fragments has negative energy, since we can only measure its local energy (which must always be positive). Nevertheless, let us assume that one of the fragments is absorbed by the BHs and the other escapes back to infinity. Once the returning particle reaches infinity we record it's global and local energies and assert that they are the same. If we compare the global energies at infinity of both the ingoing and outgoing particle, we must be able to ascertain weather or not energy was extracted via the Penrose mechanism.
+
+In practice, what one does is to choose a background spacetime metric and solve Eqs.~\eqref{eq:arbitrary_penrose_geodesic_eq_X}-\eqref{eq:arbitrary_penrose_geodesic_eq_E} numerically with a set of initial conditions $X^i(0), V^i(0), E(0)$. We evolve the system until the particle gets absorbed by one of the black holes or reaches a sphere of predetermined radius that we denominate the \emph{background sphere}. Since it is not possible to integrate the trajectory to spatial infinity, the radius of this background sphere must be large enough that the difference becomes smaller than a certain threshold $T_E$, that is, $|E(t_f)- \epsilon(t_f)| < T_E$, where $t_f$ represents the final integration coordinate time. Furthermore, we consider a particle to be absorbed by the system at a given time of swallowing $t_S$, if $|E(t_S) - E(0)|/E(0) = T_S$ where $T_S$ is an arbitrary swallowing threshold. These criteria are consistent with the ones introduced in Ref.~\cite{Bohn:2014xxa}.
+
+The scheme described above was implemented in a public \texttt{C++} code available in Ref.~\cite{GRLensingRepo}. Compilation and usage instructions are provided within the repository. The code was originally created with the intent of producing Gravitational Lensing images (hence the name) but was later adapted to investigate the Penrose process. The code consists of a \emph{kernel} using the ARKODE~\cite{ARKODE} infrastructure responsible for integrating the geodesic equation and verifying stop criteria for an arbitrary spacetime metric. The kernel expects only to receive a set of functions that compute the ADM quantities of the spacetime metric (lapse, shift, extrinsic curvature and a few derivatives of these objects). Each spacetime metric is then a \emph{plugin} (a dynamic library) provides such functions at runtime. This allows the integration problem be separated of the problem of determining the ADM quantities of a given spacetime metric. Users can focus on the latter, since the kernel solves the former for an arbitrary input metric. In addition to spacetime metrics being plugins, file writers are also plugins in the same way. This allows the user to implement different output data formats for the trajectories according to their needs. Currently, only a simple \texttt{ASCII} file writer is available, but that is enough for our  in this section. The behavior of the program is driven at runtime by command line arguments, \texttt{YAML} configuration files and the available dynamic libraries implementing spacetime metrics and writers. A basic configuration file named \texttt{grlensing\_config.yaml} is expected to be present, detailing various ARKODE internal settings, such as error tolerances, max. number of iterations, etc. It also details the metric and file writer plugins to be loaded and made available and settings of the \texttt{dump-metric} command. Additional configuration files are required in certain modes (for instance, describing a certain spacetime parameters and initial conditions of a particle). Through the command line, the user selects the operation mode of the code. Currently, the available modes of operation are (these can be viewed by invoking the program with \texttt{--help})
+%
+\begin{itemize}
+  \item \texttt{list-plugins}: Lists all the plugins that are set to be loaded (and were found)
+  \item \texttt{dump-metric}: Writes a spacetime metric in a cube of arbitrary size and arbitrary number of internal points. This option is used mostly for debugging the implementation of a spacetime metric plugin.
+  \item \texttt{integrate-trajectory}: Integrates a single particle trajectory with the specified configurations.
+  \item \texttt{penrose-breakupu}: Integrates a particle breakup process by using two particle configurations and obtaining a third from conservation of 4-momentum.
+\end{itemize}
+%
+The general usage pipeline, involves finding interesting single particle trajectories and feeding them into the \texttt{penrose-breakup} mode. Several utility scripts are provided in the program repository under the \texttt{resources} folder. These scripts serve multiple purposes, from plotting trajectories, energies, the ADM quantities of dumped spacetime metrics or even generating a skeleton of a metric plugin that can be filled by users according to their interests. It also includes an assortment of papers and notes required in the development of the code.
+
+\subsubsection{Kerr spacetime (calibration)}
+
+To illustrate the ideas discussed thus far, we shall analyze a particle breakup and Penrose mechanism in the Kerr spacetime. This shall serve as a test for the code and is also useful to illustrate the main physical points made.
+
+%\begin{equation}
+%  \label{eq:arbitrary_penrose_}
+%\end{equation}
+%

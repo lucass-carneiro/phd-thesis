@@ -28,3 +28,6 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLucas Timotheo Sanches\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAdvisor: Prof. Dr. Maurício Richartz\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTIMOTHEO SANCHES, Lucas\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code consists of a “kernel” integrator using the ARKODE explicit Runge-Kutta integrator \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q with several plugins.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code consists of a “kernel” integrator using the ARKODE explicit Runge-Kutta integrator with several plugins.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code consists of a “kernel” integrator using the ARKODE \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q explicit Runge-Kutta integrator with several plugins.\\E$"}
