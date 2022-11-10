@@ -28,3 +28,4 @@ worldlines
 Eulerian
 Lensing
 ARKODE
+Schwarzschild
