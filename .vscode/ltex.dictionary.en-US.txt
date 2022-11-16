@@ -29,3 +29,7 @@ Eulerian
 Lensing
 ARKODE
 Schwarzschild
+QNMs
+eigenstates
+QuasinormalModes
+Mathematica

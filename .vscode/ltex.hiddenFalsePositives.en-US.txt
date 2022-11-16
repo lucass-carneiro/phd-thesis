@@ -31,3 +31,8 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code consists of a “kernel” integrator using the ARKODE explicit Runge-Kutta integrator \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q with several plugins.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code consists of a “kernel” integrator using the ARKODE explicit Runge-Kutta integrator with several plugins.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code consists of a “kernel” integrator using the ARKODE \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q explicit Runge-Kutta integrator with several plugins.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QMotivated by these developments, we have implemented QuasinormalModes.jl (see the acompanying paper in Ref.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q`QuasinormalModes.jl` \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a `Julia` package for computing the quasinormal modes of any General Relativity model whose perturbation equation can be expressed as second order homogeneous ODE.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, which are both excellent packages that aim to perform the same task as QuasinormalModes.jl and can be obtained and modified freely but, unfortunately, require the user to own a license of the proprietary Wolfram Mathematica CAS.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QQuasinormalModes.jl fills the existing gap for free, open source tools that are able to compute discrete eigenvalues (and in particular, quasinormal modes) efficiently for a broad class of models and problems.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QQuasinormalModes.jl.\\E$"}

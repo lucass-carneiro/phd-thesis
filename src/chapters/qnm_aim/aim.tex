@@ -1,0 +1,118 @@
+
+Here we shall briefly review the mathematical foundations of the AIM following closely Ref.~\cite{aim_original}. Let us suppose that exists a variable $x \in [a,b]$ where $a,b \in \mathbb{R}$ and functions $\lambda_i = \lambda_i(x) \in \mathbb{R}$ and $s_j = s_i(x) \in \mathbb{R}$ with integer indexes $i$ and $j$ that are $C_\infty(a,b)$. Let us also suppose that there is a function $y=y(x)\in\mathbb{R}$ that satisfies
+%
+\begin{equation}
+  y^{(2)}(x) - \lambda_0(x) y^{(1)}(x) - s_0(x)y(x) = 0
+  \label{eq:aim_general_ode}
+\end{equation}
+%
+where the parenthesized superscript denotes $n$ derivatives with respect to the variable $x$. These equations can be found in many areas of physics, such as the time-independent Schr\"odinger equation in Quantum Mechanics, or the differential equations governing the perturbations of a Schwarzschild black hole. The AIM is based upon the following theorem:
+
+\begin{theorem}
+  The differential equation~\eqref{eq:aim_general_ode} has a general solution of the form
+  %
+  \begin{equation}
+    y(x) = \exp\left( -\int^x\alpha\ud t \right) \left\{ C_2 + C_1 \int^{x} \exp \left[ \int^{t} ( \lambda_0(\tau) + 2\alpha(\tau) )\ud \tau \right] \ud t \right\}
+    \label{eq:aim_general_solution}
+  \end{equation}
+  %
+  if for some $n>0$ the condition
+  %
+  \begin{equation}
+    \alpha(x) \equiv \frac{s_n(x)}{\lambda_n(x)} = \frac{s_{n-1}(x)}{\lambda_{n-1}(x)}
+    \label{eq:aim_alpha_definition}
+  \end{equation}
+  %
+  or equivalently
+  %
+  \begin{equation}
+    \delta(x) \equiv s_n(x)\lambda_{n-1}(x) - \lambda_{n}(x)s_{n-1}(x) = 0
+    \label{eq:aim_delta_definition}
+  \end{equation}
+  %
+  is satisfied, where
+  %
+  \begin{align}
+    \lambda_k(x) & \equiv \lambda^{(1)}_{k-1}(x) + s_{k-1}(x) + \lambda_0(x)\lambda_{k-1}(x) \label{eq:aim_lambda_k} \\
+    s_k(x)       & \equiv       s^{(1)}_{k-1}(x) + s_0(x)\lambda_{k-1}(x) \label{eq:aim_sk}
+  \end{align}
+  %
+  with $k \in [1, n]$
+  \label{theo:aim_theorem}
+\end{theorem}
+%
+From now on, we shall refer to the condition expressed by Eq.~\eqref{eq:aim_delta_definition} as the \emph{AIM quantization condition}. Provided that Theo.~\ref{theo:aim_theorem} is satisfied we can find both the eigenvalues and eigenvectors of Eq.~\eqref{eq:aim_general_ode} using, respectively, Eq.~\eqref{eq:aim_delta_definition} and Eq.~\eqref{eq:aim_general_solution}. More specifically, the quasinormal modes of a perturbed black hole will be the complex frequency values $\omega$ that satisfy Eq.~\eqref{eq:aim_delta_definition} for any value of $x$. Recently, it was shown in Ref.~\cite{Ismail2020} that for the method to converge, one must have
+%
+\begin{equation}
+  \lim_{n \rightarrow \infty} \frac{\delta_n(x)}{\lambda_{n-1}^2(x)} = 0
+  \label{eq:aim_convergence_criteria}
+\end{equation}
+
+Despite being quite general, the method presents a computational difficulty hidden in Eq.\eqref{eq:aim_lambda_k} and Eq.~\eqref{eq:aim_sk}. The definitions of the $n$-th coefficients are coupled, recursive and involve the derivatives of previous entries. This means that to compute the quantization condition, Eq.~\eqref{eq:aim_delta_definition}, using $n$ iterations we end up computing the $n$-th derivatives of $\lambda_0$ and $s_0$ multiple times. Depending on the size of the original functions, the size and complexity of each coefficient can quickly spiral out of control as $n$ is increased. To address these issues, Cho et. al. have proposed in Ref.~\cite{aim_improved} to instead of computing these coefficients directly, use a Taylor expansion of both $\lambda_n(x)$ and $s_n(x)$ around an arbitrary point $\xi$ where the AIM is to be performed, thus introducing a new free parameter to the method. We, however, remind the reader that the results must be independent of the choice of $\xi$. Mathematically, we have
+%
+\begin{align}
+  \lambda_n(\xi) = & \sum_{i=0}^{\infty}c^{i}_n(x - \xi)^i, \label{eq:taylor_lambda0} \\
+  s_n(\xi) =       & \sum_{i=0}^{\infty}d^{i}_n(x - \xi)^i, \label{eq:taylor_s0}
+\end{align}
+%
+where $c^i_n$ and $d^i_n$ are the Taylor coefficients of the expansions of $\lambda_n$ and $s_n$ around $\xi$, respectively. By plugging Eqs.~\eqref{eq:taylor_lambda0} and \eqref{eq:taylor_s0} into Eqs.~\eqref{eq:aim_lambda_k} and Eq.~\eqref{eq:aim_sk} one gets
+
+\begin{align}
+  c^i_n = & (i+1)c^{i+1}_{n-1} + d^i_{n-1} + \sum_{k=0}^{i}c^k_0c^{i-k}_{n-1}, \label{eq:cin_def} \\
+  d^i_n = & (i+1)d^{i+1}_{n-1} + \sum_{k=0}^{i}d^k_0c^{i-k}_{n-1}. \label{eq:din_def}
+\end{align}
+%
+Finally, using Eqs.~\eqref{eq:cin_def} and \eqref{eq:din_def} the quantization condition, Eq.~\eqref{eq:aim_delta_definition}, becomes
+%
+\begin{equation}
+  \delta \equiv d^0_n c^0_{n-1} - d^0_{n-1}c^0_n = 0.
+  \label{eq:improved_delta}
+\end{equation}
+
+In order to better visualize and understand the improved algorithm, it is useful to arrange the $c^i_n$ (or $d^i_n$) coefficients as elements $c_{i,n}$ (or $d_{i,n}$) of a matrix $C$ (or $D$), where the index $i$ indicates the matrix row and the index $n$ represents the matrix column, i.e.,
+\begin{equation*}
+  C =
+  \begin{pmatrix}
+    c_{0,0} & c_{0,1} & \cdots & c_{0,n-1} & c_{0,n} \\
+    c_{1,0} & c_{1,1} & \cdots & c_{1,n-1} & c_{1,n} \\
+    \vdots  & \vdots  & \ddots & \vdots    & \vdots  \\
+    c_{i,0} & c_{i,1} & \cdots & c_{i,n-1} & c_{i,n}
+  \end{pmatrix}
+  .
+  \label{eq:matrix_model_of_coeffs}
+\end{equation*}
+%
+Notice that, when using Eq.~\eqref{eq:improved_delta}, only the last and the before last top elements of the matrix (from left to right) are actually required, i.e., only the elements $c_{0,n-1}$ and $c_{0,n}$ are necessary. Note also that, by using Eqs.~\eqref{eq:cin_def} and \eqref{eq:din_def},  to compute an element in row $i$ and column $n$, one needs to have previously computed the column $n-1$ up to at least row $i+1$. In practice this means that the matrix $C$ ``grows diagonally'' and in order to compute $n$ columns, one needs at least $i=n$ rows.  This formulation motivates us to view Eqs.~\eqref{eq:cin_def} and \eqref{eq:din_def} not as recursion relations, but as recipes for iteration, i.e., given the first column of the matrix $C$, one can use Eqs.~\eqref{eq:cin_def} and \eqref{eq:din_def} rewritten as
+%
+\begin{align}
+  c^i_{n+1} = & (i+1)c^{i+1}_n + d^i_n + \sum_{k=0}^{i}c^k_0c^{i-k}_n, \label{eq:cin_iterative} \\
+  d^i_{n+1} = & (i+1)d^{i+1}_n + \sum_{k=0}^{i}d^k_0c^{i-k}_n, \label{eq:din_iterative}
+\end{align}
+%
+to compute the next column of the matrix.
+
+With this insight, we can now devise an algorithm that performs $n$ iterations of the AIM. Remember that if $n$ iterations are to be performed, one needs at least $i=n$ rows of coefficients and thus we shall truncate the Taylor expansions at $i=n$. The algorithm steps are the following:
+
+\begin{enumerate}
+  \item Construct two arrays of size $n$ where the $i$-th element is $c^i_0$ (or $d^i_0$) where $i$ ranges from zero to $n$. We shall call these \texttt{icda} (initial $c$ data array) and \texttt{idda} (initial $d$ data array).
+
+  \item Construct two arrays of size $n$ to contain the current column of $c$ (or $d$) indexes. We shall call these \texttt{ccda} (current $c$ data array) and \texttt{cdda} (current $d$ data array)
+
+  \item Construct two arrays of size $n$ to contain the previous column of $c$ (or $d$) indexes. We shall call these \texttt{pcda} (previous $c$ data array) and \texttt{pdda} (previous $d$ data array).
+
+  \item Initialize \texttt{ccda} with data from \texttt{icda} and \texttt{cdda} with data from \texttt{idda}.
+
+  \item Perform $n$ AIM steps using the evolution Eqs.~\eqref{eq:cin_iterative} and \eqref{eq:din_iterative}. That is, repeat the following $n$ times:
+
+        \begin{enumerate}
+          \item Copy the content from \texttt{ccda} into \texttt{pcda}
+          \item Copy the content from \texttt{cdda} into \texttt{pdda}
+          \item Rewrite each element of \texttt{ccda} and \texttt{cdda} using Eqs. \eqref{eq:cin_iterative} and \eqref{eq:din_iterative}, respectively.
+        \end{enumerate}
+
+  \item After $n$ iterations, the current and previous data array contain the sought coefficients. Apply the quantization condition, Eq.~\eqref{eq:improved_delta}, using the first indexes of each array (as they represent the $i=0$ coefficients). Explicitly, perform \texttt{cdda[1]*pcda[1] - pdda[1]*ccda[1]}\footnote{Given that Julia uses 1 based array indexes, we are also using 1 based arrays for the algorithmic description. This means \texttt{cdda[1]} refers to the first element of the \texttt{cdda} array and so on so forth.}.
+
+  \item Finding the roots of the resulting expression from the last step yields the eigenvalues of the ODE (in the context of this work, the quasinormal modes).
+\end{enumerate}
+
+This implementation is realized in the Julia~\cite{BEZANSON:2017} package called \texttt{QuasinormalModes.jl}~\cite{SANCHES:2021}. The implementation makes use of an additional buffer array for each coefficient family in order to allow for thread-based parallelization to take place during the main AIM loop. All AIM numerical results from this work were obtained with the aforementioned package.
