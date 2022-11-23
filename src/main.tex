@@ -1,4 +1,4 @@
-\documentclass[12pt, twoside, american, brazil]{report}
+\documentclass[12pt, twoside]{report}
 
 \usepackage{fontspec}
 \usepackage{unicode-math}
@@ -14,7 +14,9 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
-\usepackage{babel}
+\usepackage{polyglossia}
+\setmainlanguage{english}
+
 \usepackage{calc}
 
 \usepackage{setspace}
@@ -62,6 +64,9 @@ colorlinks=false
 
 \usepackage[none]{hyphenat}
 \sloppy
+
+% https://github.com/wg030/jlcode
+\usepackage{jlcode}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATH MACROS
@@ -260,7 +265,6 @@ colorlinks=false
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% ABSTRACT 1
 
-\selectlanguage{american}%
 \begin{center}
   \textbf{\Large{}Abstract}{\Large\par}
   \par\end{center}
@@ -291,7 +295,7 @@ ABSTRACT HERE.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% ABSTRACT 2
 
-\selectlanguage{brazil}%
+%\selectlanguage{brazil}
 \begin{center}
   \textbf{\Large{}Resumo}{\Large\par}
   \par\end{center}

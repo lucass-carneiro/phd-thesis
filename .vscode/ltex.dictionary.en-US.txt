@@ -33,3 +33,8 @@ QNMs
 eigenstates
 QuasinormalModes
 Mathematica
+Cho
+jl
+computeEigenvalues
+compactified
+pseudospectral
