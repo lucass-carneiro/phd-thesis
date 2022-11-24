@@ -117,6 +117,9 @@ colorlinks=false
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{definition}{Definition}[section]
 
+% "Fat" table cells
+\newcommand{\tlt}[2]{\begin{tabular}[c]{@{}c@{}}#1\\ #2\end{tabular}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SPACING MACROS
 
@@ -381,6 +384,6 @@ RESUMO AQUI.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BIBLIOGRAPHY
 \bibliographystyle{apsrev4-2}
-\bibliography{src/ref.bib}
+\bibliography{src/ref_aim.bib,src/ref_books.bib,src/ref_owned.bib,src/ref_penrose.bib}
 
 \end{document}
