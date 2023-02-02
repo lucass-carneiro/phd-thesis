@@ -38,3 +38,6 @@ jl
 computeEigenvalues
 compactified
 pseudospectral
+
+Christoffel
+compactifyied
