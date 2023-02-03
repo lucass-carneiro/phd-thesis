@@ -93,3 +93,11 @@ The scheme described above was implemented in a public \texttt{C++} code availab
 The general usage pipeline, involves finding interesting single particle trajectories and feeding them into the \texttt{penrose-breakup} mode. Several utility scripts are provided in the program repository under the \texttt{resources} folder. These scripts serve multiple purposes, from plotting trajectories, energies, the ADM quantities of dumped spacetime metrics or even generating a skeleton of a metric plugin that can be filled by users. It also includes an assortment of papers and notes required in the development of the code.
 
 \subsubsection{Parametrizing initial velocities}
+
+As was previously mentioned, we must choose 7 parameters in order to solve the 3+1 split geodesic equation. Once initial positions $X^i(0)$ and local energy $E(0)$ values are chosen one is still free to choose 3 initial velocity $V^i(0)$ values. We have chosen to consider only orbits in the $z=0$ plane, which implies $V^3=0$. We do not believe that this choice represents a loss of generality since it is valid for all cases of interest, including astrophysical black hole binaries. By comparing Eq.~\eqref{eq:arbitrary_penrose_V_norm} to a general bi-variate quadratic form
+%
+\begin{equation}
+  A X^2 + B X Y + C Y^2 + D X + E Y + F = 0
+  \label{eq:arbitrary_penrose_}
+\end{equation}
+%

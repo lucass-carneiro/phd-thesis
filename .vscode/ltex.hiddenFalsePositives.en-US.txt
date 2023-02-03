@@ -128,3 +128,8 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q9 10 [scale = 1.0]img/aim_qnm/arrays.svg Representation of AIM steps for an \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q sized example.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q9 10 [scale = 0.50]img/aim_qnm/hierarchy.svg QuasinormalModes.jl type hierarchy.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIf we have a QuadraticEigenvalueProblem, we will have a list of several eigenvalue candidates that are roots of the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q polynomial but are not necessarily eigenvalues of the ODE.\\E$"}
+
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qintegrate-trajectory: Integrates a single particle trajectory with the specified configurations.\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qpenrose-breakup: Integrates a particle breakup process by using two particle configurations and obtaining a third from conservation of 4-momentum.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe general usage pipeline, involves finding interesting single particle trajectories and feeding them into the penrose-breakup mode.\\E$"}
+{"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QSeveral utility scripts are provided in the program repository under the resources folder.\\E$"}
