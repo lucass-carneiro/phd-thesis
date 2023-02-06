@@ -42,7 +42,7 @@ The normalization of $p^\mu$ and $n_\mu$, together with the orthogonality relati
 Finally, parametrizing the particle's position vector $X^i$ by the coordinate time (that is $x^i = X^i(t)$) the geodesic equation of $\mathcal{P}$ is decomposed in a set of 7 equations, namely
 %
 \begin{align}
-  \der{X^i}{t} & = N V^i - \beta^i \label{eq:arbitrary_penrose_geodesic_eq_X}                                                                                                                                                  \\
+  \der{X^i}{t} & = N V^i - \beta^i \label{eq:arbitrary_penrose_geodesic_eq_X} \\
   \der{V^i}{t} & = N V^j\left[ V^i \left( \partial_j \ln N - K_{jk} V^k \right) + 2 \tens{K}{i}{j} - {}^3\Gamma^{i}_{jk}V^k\right] - \gamma^{ij}\partial_j N - V^j\partial_j\beta^i \label{eq:arbitrary_penrose_geodesic_eq_V} \\
   \der{E}{t}   & = E (N K_{jk} V^j V^k - V^j \partial_j N) \label{eq:arbitrary_penrose_geodesic_eq_E}
 \end{align}
@@ -92,12 +92,52 @@ The scheme described above was implemented in a public \texttt{C++} code availab
 %
 The general usage pipeline, involves finding interesting single particle trajectories and feeding them into the \texttt{penrose-breakup} mode. Several utility scripts are provided in the program repository under the \texttt{resources} folder. These scripts serve multiple purposes, from plotting trajectories, energies, the ADM quantities of dumped spacetime metrics or even generating a skeleton of a metric plugin that can be filled by users. It also includes an assortment of papers and notes required in the development of the code.
 
-\subsubsection{Parametrizing initial velocities}
+\subsection{Parametrizing initial velocities}
 
-As was previously mentioned, we must choose 7 parameters in order to solve the 3+1 split geodesic equation. Once initial positions $X^i(0)$ and local energy $E(0)$ values are chosen one is still free to choose 3 initial velocity $V^i(0)$ values. We have chosen to consider only orbits in the $z=0$ plane, which implies $V^3=0$. We do not believe that this choice represents a loss of generality since it is valid for all cases of interest, including astrophysical black hole binaries. By comparing Eq.~\eqref{eq:arbitrary_penrose_V_norm} to a general bi-variate quadratic form
+As was previously mentioned, we must choose 7 parameters in order to solve the 3+1 split geodesic equation. Once initial positions $X^i(0)$ and local energy $E(0)$ values are chosen one is still free to choose 3 initial velocity $V^i(0)$ values. We have chosen to consider only orbits in the $z=0$ plane, which implies $V^3(0)=0$. We do not believe that this choice represents a loss of generality since it is valid for all cases of interest, including astrophysical black hole binaries. By comparing Eq.~\eqref{eq:arbitrary_penrose_V_norm} to a general bi-variate quadratic form
 %
 \begin{equation}
-  A X^2 + B X Y + C Y^2 + D X + E Y + F = 0
-  \label{eq:arbitrary_penrose_}
+  A X^2 + 2 B X Y + C Y^2 + 2 D X + 2 F Y + G = 0,
+  \label{eq:arbitrary_penrose_general_quadratic_form}
 \end{equation}
 %
+it is possible to identify
+%
+\begin{equation}
+  A = \gamma_{22},\, B = \gamma_{23},\, C = \gamma_{33},\, G = -\left[ 1 - \left( \frac{m}{E} \right)^2 \right],\, D = F = 0,
+\end{equation}
+%
+and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic describes a non-degenerate real ellipse in the $V^1$-$V^2$ plane if after defining
+%
+\begin{equation}
+  \Delta = 
+  \begin{vmatrix}
+    A & B & D \\
+    B & C & F \\
+    D & F & G
+  \end{vmatrix},
+  \label{eq:arbitrary_penrose_quadratic_determinant}
+\end{equation}
+%
+\begin{equation}
+  J = 
+  \begin{vmatrix}
+    A & B \\
+    B & C \\
+  \end{vmatrix}
+  \label{eq:arbitrary_penrose_quadratic_J}
+\end{equation}
+%
+and
+%
+\begin{equation}
+  I = A + C,
+  \label{eq:arbitrary_penrose_quadratic_I}
+\end{equation}
+%
+one has $\Delta \neq 0$, $J > 0$, $\Delta/I < 0$ and $A \neq C$~\cite{Hart2002}. This ellipse is centered around the points $V^1_\circ$ and $V^2_\circ$, given by~\cite{Larson2006, Young2010, Lawrence2014}
+%
+\begin{align}
+  V^1_\circ & = \frac{C D - B F}{B^2 - A C} \label{eq:arbitrary_penrose_ellipse_center_x} \\
+  V^2_\circ & = \frac{A F - B D}{B^2 - A C} \label{eq:arbitrary_penrose_ellipse_center_y}
+\end{align}
