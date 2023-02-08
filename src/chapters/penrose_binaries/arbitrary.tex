@@ -42,7 +42,7 @@ The normalization of $p^\mu$ and $n_\mu$, together with the orthogonality relati
 Finally, parametrizing the particle's position vector $X^i$ by the coordinate time (that is $x^i = X^i(t)$) the geodesic equation of $\mathcal{P}$ is decomposed in a set of 7 equations, namely
 %
 \begin{align}
-  \der{X^i}{t} & = N V^i - \beta^i \label{eq:arbitrary_penrose_geodesic_eq_X} \\
+  \der{X^i}{t} & = N V^i - \beta^i \label{eq:arbitrary_penrose_geodesic_eq_X}                                                                                                                                                  \\
   \der{V^i}{t} & = N V^j\left[ V^i \left( \partial_j \ln N - K_{jk} V^k \right) + 2 \tens{K}{i}{j} - {}^3\Gamma^{i}_{jk}V^k\right] - \gamma^{ij}\partial_j N - V^j\partial_j\beta^i \label{eq:arbitrary_penrose_geodesic_eq_V} \\
   \der{E}{t}   & = E (N K_{jk} V^j V^k - V^j \partial_j N) \label{eq:arbitrary_penrose_geodesic_eq_E}
 \end{align}
@@ -107,16 +107,18 @@ it is possible to identify
   A = \gamma_{22},\, B = \gamma_{23},\, C = \gamma_{33},\, G = -\left[ 1 - \left( \frac{m}{E} \right)^2 \right],\, D = F = 0,
 \end{equation}
 %
-and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic describes a non-degenerate real ellipse in the $V^1$-$V^2$ plane if after defining
+and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic describes a non-degenerate real ellipse in the $V^1$-$V^2$ plane centered around $V^1_\circ$ and $V^2_\circ$ with semi-axis lengths $\alpha_\pm$ and counterclockwise angle $\phi$ of rotation from the $V^1$ axis to it's semi-major axis if after defining~\cite{Hart2002}
 %
 \begin{equation}
   \Delta = 
   \begin{vmatrix}
-    A & B & D \\
-    B & C & F \\
+    A & B & D  \\
+    B & C & F  \\
     D & F & G
-  \end{vmatrix},
+  \end{vmatrix}
+  = \left( 1 - \left( \frac{m}{E} \right)^2 \right) \left(\gamma_{23}^2-\gamma_{22} \gamma_{33}\right)
   \label{eq:arbitrary_penrose_quadratic_determinant}
+  ,
 \end{equation}
 %
 \begin{equation}
@@ -125,19 +127,47 @@ and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic
     A & B \\
     B & C \\
   \end{vmatrix}
+  = \gamma_{22} + \gamma_{33} - \gamma_{23}^2
   \label{eq:arbitrary_penrose_quadratic_J}
 \end{equation}
 %
 and
 %
 \begin{equation}
-  I = A + C,
+  I = A + C = \gamma_{22} + \gamma_{33},
   \label{eq:arbitrary_penrose_quadratic_I}
 \end{equation}
 %
-one has $\Delta \neq 0$, $J > 0$, $\Delta/I < 0$ and $A \neq C$~\cite{Hart2002}. This ellipse is centered around the points $V^1_\circ$ and $V^2_\circ$, given by~\cite{Larson2006, Young2010, Lawrence2014}
+one has $\Delta \neq 0$, $J > 0$, $\Delta/I < 0$ and $\gamma_{22} \neq \gamma_{33}$. Explicitly, we have~\cite{Larson2006, Young2010, Lawrence2014}
+%
+\begin{equation}
+  V^1_\circ = V^2_\circ = 0,
+  \label{eq:arbitrary_penrose_ellipse_centers}
+\end{equation}
+%
+\begin{equation}
+  \alpha_\pm = \sqrt{ \frac{2 \left( 1 - \left(m/E\right)^2 \right)}{\gamma_{22} \mp \sqrt{4 \gamma_{23}^2 + \left( \gamma_{22} - \gamma_{33} \right)^2} +\gamma_{33}} }
+  \label{eq:arbitrary_penrose_ellipse_axis}
+\end{equation}
+%
+and
+\begin{equation}
+  \phi =
+  \begin{cases}
+    0                                                                                                 & \text{if } \gamma_{23} = 0 \text{ and } \gamma_{22} < \gamma_{33}    \\
+    \frac{\pi}{2}                                                                                     & \text{if } \gamma_{23} = 0 \text{ and } \gamma_{22} > \gamma_{33}    \\
+    \frac{1}{2} \cot^{-1} \left( \frac{\gamma_{22}-\gamma_{33}}{2\gamma_{23}} \right)                 & \text{if } \gamma_{23} \neq 0 \text{ and } \gamma_{22} < \gamma_{33} \\
+    \frac{\pi}{2} + \frac{1}{2} \cot^{-1} \left( \frac{\gamma_{22}-\gamma_{33}}{2\gamma_{23}} \right) & \text{if } \gamma_{23} \neq 0 \text{ and } \gamma_{22} > \gamma_{33}
+  \end{cases}
+  .
+  \label{eq:arbitrary_penrose_ellipse_angle}
+\end{equation}
+%
+With these quantities, it is possible to describe the ellipse in terms of an arbitrary parameter $\Theta \in \left[0,2\pi\right]$, that is,
 %
 \begin{align}
-  V^1_\circ & = \frac{C D - B F}{B^2 - A C} \label{eq:arbitrary_penrose_ellipse_center_x} \\
-  V^2_\circ & = \frac{A F - B D}{B^2 - A C} \label{eq:arbitrary_penrose_ellipse_center_y}
+  V^{1}\left(\Theta\right) & =  V^{1}_\circ + \alpha_{+} \cos\Theta\cos\phi - \alpha_{-}\sin\Theta\sin\phi                                                  \label{eq:arbitrary_penrose_ellipse_parametric_1} \\
+  V^{2}\left(\Theta\right) & = V^{2}_\circ + \alpha_{-} \sin\Theta\cos\phi + \alpha_{+}\cos\Theta\sin\phi, \label{eq:arbitrary_penrose_ellipse_parametric_2}
 \end{align}
+%
+and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:arbitrary_penrose_V_norm} is reduced to that of evaluating the right-hand side of Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1} - \eqref{eq:arbitrary_penrose_ellipse_parametric_2} for some value of $\Theta$, effectively reducing the ``degrees of freedom'' of the problem.
