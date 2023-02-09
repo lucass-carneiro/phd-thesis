@@ -41,3 +41,4 @@ pseudospectral
 
 Christoffel
 compactifyied
+Kerr-Schild

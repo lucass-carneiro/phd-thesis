@@ -133,3 +133,4 @@
 {"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qpenrose-breakup: Integrates a particle breakup process by using two particle configurations and obtaining a third from conservation of 4-momentum.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe general usage pipeline, involves finding interesting single particle trajectories and feeding them into the penrose-breakup mode.\\E$"}
 {"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QSeveral utility scripts are provided in the program repository under the resources folder.\\E$"}
+{"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QSeveral utility scripts are also provided in the program repository under the resources folder.\\E$"}
