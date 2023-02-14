@@ -42,3 +42,5 @@ pseudospectral
 Christoffel
 compactifyied
 Kerr-Schild
+Keplerian
+GRLensing

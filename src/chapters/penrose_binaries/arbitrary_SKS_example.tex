@@ -1,0 +1,80 @@
+In this section we will further illustrate our framework by considering a different spacetime metric approximating an astrophysical binary black hole system referred to as the Superimposed Kerr-Schild solution, or SKS solution. The idea behind its construction is rather simple: One simply adds two Kerr solutions in Kerr-Schild coordinates and subtracts from this a Minkowski metric. After that, the black hole terms are further boosted and transformed in order to add motion to the individual black holes. This, of course, does not constitute in an exact solution of Einstein's field equations, nevertheless it can still be a valuable model for describing astrophysical binaries under certain conditions. The construction and motivation for using this approximation is extensively discussed in Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, where it was  used in numerical simulations of accretion disks around BH binaries. Ref~\cite{Armengol:2021shd}, in particular, discusses the success of using superimposed solutions for computing initial data for numerical simulations of black hole mergers and shows that the expansion of the superimposed metric agrees with the lowest Post-Newtonian expansion of the metric of spinning binaries. Furthermore, Ref.~\cite{PhysRevD.104.044041} compares the superimposed metric with other approximate solutions to binary black holes constructed with a much more mathematically involved technique called ``asymptotic matching'', that combines Post-Newtonian and other types of solutions in different regions of the spacetime and matches them together into a single solution. It shows that the violations of the Einstein field equations for the models constructed by matching and superposition are very similar in their order of magnitude and profile, with the matching solutions being more well-behaved and smooth at larger distances from the binary black holes. This leads them to conclude that given the mathematical simplicity of constructing a superimposed solution, they are more advantageous to matching solutions from a computational perspective.
+
+Our construction of the SKS metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter$a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) \mu}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
+%
+\begin{equation}
+  s^{(i) \mu} = \left( (-1)^{i + 1}\frac{b}{2}\cos\Omega t,\, (-1)^{i + 1}\frac{b}{2}\sin\Omega t,\, 0 \right),
+  \label{eq:arbitrary_penrose_sks_keplerian_trajectories}
+\end{equation}
+%
+where
+%
+\begin{equation}
+  \Omega = \sqrt{\frac{M^{(1)} + M^{(2)}}{b^3}}
+  \label{eq:arbitrary_penrose_sks_angular_velocity}
+\end{equation}
+%
+is the orbital angular velocity of the system and $b$ is the coordinate distance (in global coordinates) between the two black hole origins. From Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories}, we can compute the black hole velocity vector $v^(i) \mu = \ud s^{(i) \mu} / \ud t$ and obtain
+%
+\begin{equation}
+  v^{(i) \mu} = \left( (-1)^i \frac{b\Omega}{2} \sin \Omega t,\, (-1)^{i+1} \frac{b\Omega}{2} \cos\Omega t,\, 0 \right),
+  \label{eq:arbitrary_penrose_sks_keplerian_velocities}
+\end{equation}
+%
+which can be normalized to yield
+%
+\begin{equation}
+  n^{(i) \mu} = \left( (-1)^i \sin\Omega t,\, (-1)^{i+1}\cos\Omega t,\, 0 \right)
+  \label{eq:arbitrary_penrose_sks_keplerian_velocities_norms}
+\end{equation}
+%
+with norm
+%
+\begin{equation}
+  v^2 \equiv \sum_{\mu = 0}^{2} v^{(i) \mu} = \frac{b^2 \Omega^2}{4}.
+  \label{eq:arbitrary_penrose_sks_keplerian_velocities_norm}
+\end{equation}
+%
+With these quantities, we can see that the Lorentz factor, $\gamma$, is given by
+%
+\begin{equation}
+  \gamma \equiv \frac{1}{\sqrt{1 - v^2}} = \frac{2}{\sqrt{4 - b^2\Omega^2}}.
+  \label{eq:arbitrary_penrose_sks_keplerian_orbit_lorentz_factor}
+\end{equation}
+%
+It's then trivial to compute the generalized Lorentz boost of the trajectories
+%
+\begin{equation}
+  \tens{\Lambda}{(i) \mu}{\nu} =
+  \begin{pmatrix}
+    \gamma            & -\gamma v^{(i) 0}              & -\gamma v^{(i) 1}              & 0 \\
+    -\gamma v^{(i) 0} & 1+(\gamma-1) n^{(i)0} n^{(i)0} & (\gamma-1) n^{(i)0} n^{(i)1}   & 0 \\
+    -\gamma v^{(i) 1} & (\gamma-1)n^{(i)1} n^{(i)0}    & 1+(\gamma-1) n^{(i)1} n^{(i)1} & 0 \\
+    0                 & 0                              & 0                              & 1
+  \end{pmatrix}
+  \label{eq:arbitrary_penrose_sks_lorentz_boost}
+\end{equation}
+%
+by virtue of Eqs.~\eqref{eq:arbitrary_penrose_sks_keplerian_velocities}-\eqref{eq:arbitrary_penrose_sks_keplerian_orbit_lorentz_factor}. The next step of the construction, is therefore, to boost each individual Kerr metric using Eq.~\eqref{eq:arbitrary_penrose_sks_lorentz_boost}. We remind the reader that the Kerr-Schild form of the metric is maintained after a Lorentz boost. Finally, we must transform each local coordinate of each individual black hole to global coordinates. This is done via a non-linear coordinate transformation (or a ``circular boost'', as Ref.~\cite{Armengol:2021shd} puts it) that reads
+%
+\begin{align}
+  t & = \gamma \left( T - v^{(i) 0} X - v^{(i) 1} Y \right) \label{eq:arbitrary_penrose_sks_nonlinear_transformation_1}                                                                                          \\
+  x & = s^{(i) 0} + X \left[ 1 + \left( \gamma - 1 \right) n^{(i) 0} n^{(i) 0}\right] + Y \left[\left( \gamma - 1 \right) n^{(i) 0} n^{(i) 1}\right] \label{eq:arbitrary_penrose_sks_nonlinear_transformation_2} \\
+  y & = s^{(i) 1} + X \left[\left( \gamma - 1 \right) n^{(i) 0} n^{(i) 1}\right] + Y \left[1 + \left( \gamma - 1 \right) n^{(i) 1} n^{(i) 1}\right]  \label{eq:arbitrary_penrose_sks_nonlinear_transformation_3} \\
+  z & = Z \label{eq:arbitrary_penrose_sks_nonlinear_transformation_4}
+\end{align}
+
+To summarize, the algorithm one must employ in order to construct the SKS metric in global coordinates $(t,x,y,z)$ with black holes that are following the Keplerian trajectories given by Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories} and possess mass and spin parameters $M^{(1,2)}$ and $a^{(1,2)}$, respectively, and coordinate separation $b$ is as follows:
+%
+\begin{enumerate}
+  \item Compute the value of $\Omega$ from the metric parameters (masses and separation) via Eq.~\eqref{eq:arbitrary_penrose_sks_angular_velocity}.
+  \item Using the previous step, compute $\gamma$ via Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_orbit_lorentz_factor}.
+  \item Compute each component of the trajectory velocity vector $v^{(i) \mu}$ and normal vector $n^{(i) \mu}$ via Eqs.~\eqref{eq:arbitrary_penrose_sks_keplerian_velocities} and \eqref{eq:arbitrary_penrose_sks_keplerian_velocities_norms}, respectively.
+  \item Construct the Lorentz boost matrix via Eq.~\eqref{eq:arbitrary_penrose_sks_lorentz_boost}.
+  \item Boost the ``black hole part'' of the Kerr-Schild metric, that is, replace  $\mathcal{M}_{\mu\nu} = H l_\mu l_\nu$ by $\overline{\mathcal{M}}^{(i)}_{\mu\nu} = H^{(i)} \tens{\Lambda}{(i) \alpha}{\mu} \tens{\Lambda}{(i) \beta}{\nu} l^{(i)}_\alpha l^{(i)}_\beta$ for each black hole.
+  \item Find the coordinate values $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ for each black hole by inverting the system formed by Eqs.~\eqref{eq:arbitrary_penrose_sks_nonlinear_transformation_1}-\eqref{eq:arbitrary_penrose_sks_nonlinear_transformation_4}.
+  \item Substitute $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ into $\overline{\mathcal{M}}^{(i)}_{\mu\nu}$, producing $\overline{\mathcal{H}}^{(i)}_{\mu\nu}(t,x,y,z)$.
+  \item The final metric components are given by $\mtrtens{\mu}{\nu}(t,x,y,z) = \eta_{\mu\nu} + \overline{\mathcal{H}}^{(1)}_{\mu\nu} + \overline{\mathcal{H}}^{(2)}_{\mu\nu}$.
+\end{enumerate}
+
+We have implemented the SKS solution as a plugin in \texttt{GRLensing} and validated the implementation by comparing plots of the metric components against the results of Ref.~\cite{PhysRevD.104.044041}. We have also constructed the metric analytically using a \texttt{Mathematica} notebook that was also used in order to independently check the components as implemented in the \texttt{C++} code and cross-check those results against Ref.~\cite{PhysRevD.104.044041}. Furthermore, we have also used this notebook to identify the region where the $\mtrtens{t}{t}$ component changes its sign. This region can be understood as the ``ergosphere'' viewed by an observer living in the global reference frame labeled by $(t,x,y,z)$. Note however, that strictly speaking the use of the word ``ergosphere'' in this context is an abuse, since it refers to a region that is globally defined via the existence of the time-like killing vector field. Nevertheless, we can observe this region as the spacetime metric parameters change, similarly to our work in Sections \ref{ch:penrose_binaries:sec:mp_penrose} and \ref{ch:penrose_binaries:sec:cmmr_penrose}. The general features of the local ergosphere in the SKS metric resemble that of the CMMR metric, presented in Sec.~\ref{ch:penrose_binaries:sec:cmmr_penrose}, with the remarkable difference that the Lorentz boosts required for the construction of the SKS spacetime make the ergospheres ``flattened'' the direction of the motion of the holes. This is a well-known effect that can be observed even in the Schwarzschild spacetime, as demonstrated in Ref.~\cite{PhysRevD.91.084044}.
