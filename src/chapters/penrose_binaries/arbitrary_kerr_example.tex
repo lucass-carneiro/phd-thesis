@@ -78,7 +78,7 @@ Table~\ref{tab:arbitrary_penrose_kerr_example_velocities} summarize the initial 
     $V^x(0)$              & $V^y(0)$              & $\Theta$       \\
     $0.6769503786998466$  & $0.6740022058848380$  & $-25/200 \pi$  \\
     $0.5948571400034293$  & $-0.3343724878526367$ & $-100/200 \pi$ \\
-    $0.67761242094739838$ & $0.8213425986659171$  & ---            \\ \hline\hline
+    $0.67761242094739838$ & $0.68213425986659171$ & ---            \\ \hline\hline
   \end{tabular}
   \caption{Initial velocities for the particles participating in the Penrose process example. The first two rows are computed using the ellipse parametrization described in the previous section with data provided in Tab.~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} together with the parameter provided in the third column and represent the ingoing and Penrose trajectories, respectively. The third row represents the exit trajectory and is computes via conservation of 4-momentum.}
   \label{tab:arbitrary_penrose_kerr_example_velocities}
@@ -88,12 +88,14 @@ Table~\ref{tab:arbitrary_penrose_kerr_example_results} summarizes the two energy
 
 \begin{table}[]
   \centering
-  \begin{tabular}{ccc}
-    \hline\hline
-    $E(t_f)$                            & $\varepsilon(t_f)$                  & $|E(t_f) - \varepsilon(t_f)|$       \\
-    $3.8435595988010596 \times 10^{-1}$ & $3.8435613882134312 \times 10^{-1}$ & $1.7894123710560095 \times 10^{-7}$ \\
-    $3.8515962539170862 \times 10^{-1}$ & $3.8515904777176790 \times 10^{-1}$ & $5.776199407114824 \times 10^{-7}$  \\ \hline\hline
-  \end{tabular}
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{ccc}
+      \hline\hline
+      $E(t_f)$                            & $\varepsilon(t_f)$                  & $|E(t_f) - \varepsilon(t_f)|$       \\
+      $3.8435595988010596 \times 10^{-1}$ & $3.8435613882134312 \times 10^{-1}$ & $1.7894123710560095 \times 10^{-7}$ \\
+      $3.8515962539170862 \times 10^{-1}$ & $3.8515904777176790 \times 10^{-1}$ & $5.776199407114824 \times 10^{-7}$  \\ \hline\hline
+    \end{tabular}
+  }
   \caption{Energy measures at the time of collision with the background sphere. The first and second row represent the ingoing and the outgoing orbits, respectively. The third column shows the absolute difference between energy measures at the background sphere radius. Note that $t_f$ is not necessarily the same for both trajectories.}
   \label{tab:arbitrary_penrose_kerr_example_results}
 \end{table}
