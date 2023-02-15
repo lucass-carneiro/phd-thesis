@@ -134,3 +134,4 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe general usage pipeline, involves finding interesting single particle trajectories and feeding them into the penrose-breakup mode.\\E$"}
 {"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QSeveral utility scripts are provided in the program repository under the resources folder.\\E$"}
 {"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QSeveral utility scripts are also provided in the program repository under the resources folder.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIt turns out that such generalization exists and were discovered by W. Israel, G. A. Wilson \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and A. Perjés \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and became know as the Israel-Wilson-Perjés (IWP) class.\\E$"}

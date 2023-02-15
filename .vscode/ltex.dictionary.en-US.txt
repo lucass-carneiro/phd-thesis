@@ -44,3 +44,10 @@ compactifyied
 Kerr-Schild
 Keplerian
 GRLensing
+Hulse
+ringdown
+Majumdar
+Papapetrou
+Perjés
+Israel-Wilson-Perjés
+Cunha
