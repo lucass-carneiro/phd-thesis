@@ -88,23 +88,18 @@ To set up the gravitational initial data, we used \texttt{TwoPunctures}~\cite{An
 
 In the gravitational evolution code, spatial derivatives were provided by \texttt{SummationByParts}~\cite{Diener:2005tn}, which provides finite difference stencils satisfying the summation-by-parts property with embedded Kreiss-Oliger type artificial dissipation. In \texttt{KleinGordon}, we utilized handcrafted central finite difference stencils and added artificial Kreiss-Oliger dissipation to the evolved Klein-Gordon fields via \texttt{Dissipation}. The gravitational evolution code projected its derivative operators into the global coordinate system utilized by \texttt{Llama} via \texttt{GlobalDerivative}, but in \texttt{KleinGordon}, this projection was also handcrafted via the Jacobian and Jacobian derivative components provided by \texttt{Llama}. Code generation for these projections can be found in the \texttt{Notebooks/equations.nb} notebook. Both evolutions utilized 8th order finite difference stencils, and radiating boundary conditions were employed in the outer boundaries via \texttt{NewRad}.
 
-The time integration method utilized in this study was \texttt{MoL}. A 4th order Runge-Kutta method with fixed time step was employed for the time integration process. It is important to note that \texttt{Carpet} employs different time steps for various refinement levels, thus the time step specified in the parameter files pertains to the coarsest level. The final integration time was selected in conjunction with the outer boundary radius to minimize interference from reflections at the outer boundaries, inter-patch boundaries, and inter-refinement level boundaries on the scalar field signal being measured.
+The time integration scheme utilized in this study was method of lines, provided by the \texttt{MoL Thorn}. A 4th order Runge-Kutta method with fixed time step was employed for the time integration process. It is important to note that \texttt{Carpet} employs different time steps for various refinement levels, thus the time step specified in the parameter files pertains to the coarsest level. The final integration time was selected in conjunction with the outer boundary radius to minimize interference from reflections at the outer boundaries, inter-patch boundaries, and inter-refinement level boundaries on the scalar field signal being measured.
 
 At regular time intervals, data was extracted at $7$ different radii using \texttt{Multipole}, as well as 2D and 3D field data evolved by \texttt{KleinGordon}. Additionally, statistics such as puncture locations were recorded, which enabled the construction of visualizations of the simulated data. These results will be presented shortly. The parameter file used for this evolution can be located in the specified GitHub repository under \texttt{KleinGordon/par/GW150914/GW150914\_Scalar\_field.par}.
 
 \subsection{Results}
 
-% Caution: slow
-%\begin{figure}
-%  \centering
-%  \animategraphics[autoplay, loop, width=\linewidth]{12}{img/wave_scattering/movie/Phi_xy_00}{00}{75}
-%  \caption{Example .gif animation}
-%\end{figure}
+The results depicted in Figure~\ref{fig:wave_scattering_results} illustrate the scattering of the scalar field $\Phi$ by the GW150914 binary black hole merger system at three distinct moments in time. Panel \textbf{A} corresponds to $t = 0$, panel \textbf{B} represents $t = 8.811$, and panel \textbf{C} corresponds to $t = 55.068$. Following the initial interaction, the black holes generate a wavefront in a pattern resembling a cardioid, where the cusp coincides with the hole location and propagates in alternating directions. This shape is identical to that observed in wave scattering by a single black hole, however, in the case of a merging binary, we can observe clear effects arising from the rotation of the holes and interference from the waves produced by each. An animation of the scattering process can be viewed \href{https://github.com/lucass-carneiro/phd-thesis/tree/main/img/wave_scattering/scattering.gif}{here}.
 
 %Frames used: 0 7 19
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{img/wave_scattering/scattering_frames}
-  \caption{TODO.}
-  \label{fig:mean and std of nets}
+  \caption{Scalar field $\Phi$ scattering of the GW150914 binary merger in three moments in time. Panel \textbf{A} corresponds to $t = 0$, panel \textbf{B} represents $t = 8.811$, and panel \textbf{C} corresponds to $t = 55.068$.}
+  \label{fig:wave_scattering_results}
 \end{figure}
