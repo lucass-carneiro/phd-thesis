@@ -54,3 +54,5 @@ Cunha
 EinsteinToolkit
 multipatch
 interpatch
+periodogram
+Periodogram

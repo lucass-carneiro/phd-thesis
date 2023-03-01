@@ -156,3 +156,6 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAt regular time intervals, data was extracted at \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q different radii using Multipole, as well as 2D and 3D field data evolved by KleinGordon.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe parameter file used for this evolution can be located in the specified GitHub repository under KleinGordon/par/GW150914/GW150914Scalarfield.par.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[autoplay, loop, width=]12 img/wave_scattering/movie/Phi_xy_00 00 75 Example .gif animation\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe time integration scheme utilized in this study was method of lines, provided by the MoL Thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, where the non-linearities of the oscillation become apparent.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn Chapter \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, we look at computing quasinormal modes of black holes via the asymptotic iteration method, a recently proposed technique for computing the eigenvalues of second order ODEs.\\E$"}
