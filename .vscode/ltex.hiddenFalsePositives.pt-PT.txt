@@ -1,0 +1,19 @@
+{"rule":"HUNSPELL_RULE","sentence":"^\\QI. TIMOTHEO SANCHES, Lucas.\\E$"}
+{"rule":"T-V_DISTINCTION","sentence":"^\\QEste é um momento importante para mim e você contribuiu enormemente para eu chegar até aqui.\\E$"}
+{"rule":"AVOID_GERUND","sentence":"^\\QEspero que possamos continuar apoiando um ao outro em nossos futuros desafios e conquistas, e que nosso amor se fortaleça cada vez mais com os muitos anos que teremos pela frente.\\E$"}
+{"rule":"UPPERCASE_AFTER_COMMA","sentence":"^\\QSão eles: Bruna, Caio, Gabriel, Rafaela, Thiago e por fim, mas não menos importante, Iara, a quem além dos anos de amizade devo agradecimentos pela troca de discussões, ajuda, opiniões, apoio e suporte, tanto em assuntos acadêmicos quanto em assuntos pessoais que foram essenciais à elaboração desse trabalho e durante minha carreira.\\E$"}
+{"rule":"PT_PT_SIMPLE_REPLACE","sentence":"^\\QSão eles: Bruna, Caio, Gabriel, Rafaela, Thiago e por fim, mas não menos importante, Iara, a quem além dos anos de amizade devo agradecimentos pela troca de discussões, ajuda, opiniões, apoio e suporte, tanto em assuntos acadêmicos quanto em assuntos pessoais que foram essenciais à elaboração desse trabalho e durante minha carreira.\\E$"}
+{"rule":"UPPERCASE_AFTER_COMMA","sentence":"^\\QSão eles: Bruna, Caio, Gabriel, Rafaela, Thiago e por fim, mas não menos importante, Iara, a quem além dos anos de amizade devo agradecimentos pela troca de discussões, ajuda, opiniões, apoio e suporte, tanto em assuntos acadêmicos quanto em assuntos pessoais que foram essenciais à elaboração desse trabalho e durante a minha carreira.\\E$"}
+{"rule":"PT_PT_SIMPLE_REPLACE","sentence":"^\\QSão eles: Bruna, Caio, Gabriel, Rafaela, Thiago e por fim, mas não menos importante, Iara, a quem além dos anos de amizade devo agradecimentos pela troca de discussões, ajuda, opiniões, apoio e suporte, tanto em assuntos acadêmicos quanto em assuntos pessoais que foram essenciais à elaboração desse trabalho e durante a minha carreira.\\E$"}
+{"rule":"PT_AGREEMENT_REPLACE","sentence":"^\\QQue possamos continuar sempre nos apoiando em todos os aspectos de nossas vidas.\\E$"}
+{"rule":"PT_AGREEMENT_REPLACE","sentence":"^\\QQue possamos continuar sempre nos apoiando em todos os aspectos das nossas vidas.\\E$"}
+{"rule":"INTERJECTIONS_PUNTUATION","sentence":"^\\QQue possamos continuar sempre nos apoiando em todos os aspectos das nossas vidas.\\E$"}
+{"rule":"PT_AGREEMENT_REPLACE","sentence":"^\\QAs suas orientações foram além do aspecto profissional, sempre se mostrando preocupado com meu bem-estar e com minha jornada acadêmica.\\E$"}
+{"rule":"PT_AGREEMENT_REPLACE","sentence":"^\\QAs suas orientações foram além do aspecto profissional, sempre se mostrando preocupado com o meu bem-estar e com minha jornada acadêmica.\\E$"}
+{"rule":"PT_AGREEMENT_REPLACE","sentence":"^\\QAs suas orientações foram além do aspecto profissional, sempre se mostrando preocupado com o meu bem-estar e com a minha jornada acadêmica.\\E$"}
+{"rule":"T-V_DISTINCTION","sentence":"^\\QFinalmente, gostaria de agradecer a CAPES e a UFABC pelo apoio financeiro.\\E$"}
+{"rule":"HUNSPELL_RULE","sentence":"^\\QFinalmente, gostaria de agradecer a CAPES e a UFABC pelo apoio financeiro.\\E$"}
+{"rule":"T-V_DISTINCTION","sentence":"^\\QAgradeço a CAPES e a UFABC pelo apoio financeiro.\\E$"}
+{"rule":"HUNSPELL_RULE","sentence":"^\\QAgradeço a CAPES e a UFABC pelo apoio financeiro.\\E$"}
+{"rule":"CRASE_CONFUSION","sentence":"^\\QAgradeço à CAPES e à UFABC pelo apoio financeiro.\\E$"}
+{"rule":"HUNSPELL_RULE","sentence":"^\\QAgradeço à CAPES e à UFABC pelo apoio financeiro.\\E$"}

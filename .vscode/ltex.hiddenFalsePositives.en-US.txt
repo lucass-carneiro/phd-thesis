@@ -159,3 +159,8 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe time integration scheme utilized in this study was method of lines, provided by the MoL Thorn.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, where the non-linearities of the oscillation become apparent.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn Chapter \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, we look at computing quasinormal modes of black holes via the asymptotic iteration method, a recently proposed technique for computing the eigenvalues of second order ODEs.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[variant=us]english [variant=brazilian]portuguese\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QEnergy Extraction and Quasinormal Modes of Black Hole Binaries: An analytical and numerical study / Lucas Timotheo Sanches - Santo André, Universidade Federal do ABC, 2023.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QXX fls.\\E$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q1  \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"}
+{"rule":"WHITESPACE_RULE","sentence":"^\\Q1\\E$"}

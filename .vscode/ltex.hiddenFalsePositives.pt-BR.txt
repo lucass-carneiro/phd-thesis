@@ -1,0 +1,2 @@
+{"rule":"UPPERCASE_AFTER_COMMA","sentence":"^\\QSão eles: Bruna, Caio, Gabriel, Rafaela, Thiago e por fim, mas não menos importante, Iara, a quem além dos anos de amizade devo agradecimentos pela troca de discussões, ajuda, opiniões, apoio e suporte, tanto em assuntos acadêmicos quanto em assuntos pessoais que foram essenciais à elaboração desse trabalho e durante minha carreira.\\E$"}
+{"rule":"INTERJECTIONS_PUNTUATION","sentence":"^\\QQue possamos continuar sempre nos apoiando em todos os aspectos de nossas vidas.\\E$"}

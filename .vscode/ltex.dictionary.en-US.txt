@@ -56,3 +56,7 @@ multipatch
 interpatch
 periodogram
 Periodogram
+Timotheo
+Sanches
+EinsteinTookit
+Schnetter
