@@ -1,4 +1,3 @@
-
 Here we shall briefly review the mathematical foundations of the AIM following closely Ref.~\cite{aim_original}. Let us suppose that exists a variable $x \in [a,b]$ where $a,b \in \mathbb{R}$ and functions $\lambda_i = \lambda_i(x) \in \mathbb{R}$ and $s_j = s_i(x) \in \mathbb{R}$ with integer indexes $i$ and $j$ that are $C_\infty(a,b)$. Let us also suppose that there is a function $y=y(x)\in\mathbb{R}$ that satisfies
 %
 \begin{equation}
@@ -126,4 +125,22 @@ The algorithm steps are depicted in Fig.~\ref{fig:arrays_steps} for the $n=2$ ex
   \includesvg[scale = 0.70]{img/aim_qnm/arrays.svg}
   \caption{Representation of AIM steps for an $n=2$ sized example. Arrays are represented by a sequence of blue (for storing $c^i_n$ coefficient) and red (for storing $d^i_n$ coefficients) squares, wherein each square is an array element. Each column represents, respectively, initial, current and previous data. Colored arrows indicate index dependencies. Hatches indicate ignored data.}
   \label{fig:arrays_steps}
+\end{figure}
+
+The implementation in \texttt{QuasinormalModes.jl} closely follows the description provided thus far, using additional coefficient arrays to enable multi-threading in the AIM core loop in a thread-safe manner. The online documentation for the package includes extensive tutorials, usage examples, and package documentation, which are available at \href{https://lucass-carneiro.github.io/QuasinormalModes.jl/stable/}{this link}. The code for the package is hosted on GitHub and can be found in Ref.~\cite{QuasinormalModesRepo}. The package is registered on the \texttt{Julia} package index and can be easily installed by following the instructions provided in the \texttt{README} of the GitHub repository.
+
+We have developed a script to evaluate the performance and convergence characteristics of the QuasinormalModes.jl package. The script conducts a fundamental $s=l=0$ mode computation of a Schwarzschild black hole while sweeping the number of AIM iterations from $n=1$ to $n=100$. The error of the computation, the time taken to compute the result, and the number of iterations performed are measured 20 times and stored in distinct text files to enhance the statistical significance of the time measurements. The error is defined as the discrepancy between the AIM-computed value and values acquired in Ref.\cite{BertiQNMData}, which were obtained via via Leaver's continued fraction method. We present the error convergence outcomes in Fig.\ref{fig:package_error} using a logarithmic scale in the $y$ axis for both the real (black dots) and imaginary (red crosses) components of the mode as a function of the number of AIM iterations performed. Despite oscillations, an overall trend of convergence towards the reference values can be observed. We depict the average time taken for 20 repetitions as a function of the number of iterations in Fig.~\ref{fig:package_perf} using a log-log plot. It is possible to observe that the time taken increases with a power law trend as the number of AIM iterations increases.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{img/aim_qnm/err.pdf}
+  \caption{Error of the fundamental $s=l=0$ Schwarzschild QNM vs. the number of AIM iterations. Reference values obtained in Ref.~\cite{BertiQNMData}. The y-axis of the plot is in logarithmic scale.}
+  \label{fig:package_error}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=\linewidth]{img/aim_qnm/perf.pdf}
+  \caption{Time taken (average of 20 repetitions) vs. the number of AIM iterations taken to compute the fundamental Schwarzschild QNM. The plot is in a log-log scale.}
+  \label{fig:package_perf}
 \end{figure}

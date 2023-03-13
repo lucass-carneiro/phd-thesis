@@ -1,0 +1,475 @@
+Utilizing \texttt{QuasinormalModes.jl}, we have investigated in Ref.~\cite{Mamani2022} the quasinormal frequencies of asymptotically flat Schwarzschild black holes with spin values of $2$, $1$, $3/2$, $2$, and $5/2$, using both the AIM and the pseudo-spectral method. Our goal was to compare and contrast the numerical results obtained with available literature data (when possible). We computed higher overtones quasinormal frequencies for all perturbation fields considered, and found purely imaginary frequencies for the spin $1/2$ and $3/2$ fields, which agree with previous analytical results in the literature. Moreover, we observed that the purely imaginary frequencies for the spin $1/2$ perturbation field are identical to those for the spin $3/2$ perturbation field. In addition, we determined the quasinormal frequencies for the spin $5/2$ perturbation field for the first time, and similarly found purely imaginary frequencies in this case.
+
+\subsection{Perturbation equations}
+
+The spacetime metric for a spherically symmetric Schwarzschild black hole, is given by \cite{Schwarzschild:1916uq}
+%
+\begin{equation}\label{eq:Metric}
+  ds^2=-f(r)\,dt^2+\frac{1}{f(r)}dr^2+r^2d\theta^2+
+  r^2\sin^2{\theta}\,d\varphi^2,
+\end{equation}
+%
+where the horizon function is given by
+%
+\begin{equation}\label{EqHoriFuncHayward}
+  f(r)=1-\frac{2M}{r},
+\end{equation}
+%
+where $M$ is the mass of the black hole, and $r$ is the radial coordinate which, in principle, belongs to the interval $r\in [0,\, \infty)$.
+
+The coordinates employed in the metric described by Eq.~\eqref{eq:Metric} are commonly known as Schwarzschild coordinates. This metric features an event horizon located at $r=2M$ and a physical singularity at $r=0$, both of which are well-established characteristics. In the asymptotic region, namely as $r$ approaches infinity, the metric reduces to a flat metric. For the purposes of examining quasinormal modes in this black hole spacetime, the relevant region of the spacetime is the range of the radial coordinate $r$ between $2M$ and infinity.
+
+Our analysis of linear perturbations in the Schwarzschild black hole spacetime described by \eqref{eq:Metric} followed the standard procedure. After selecting a specific perturbation field, we reduced the corresponding partial differential equations to a unique Schrödinger-like ordinary differential equation using a series of transformations. In this approach, the perturbation functions were decomposed into Fourier modes of the form $e^{i\omega,t}=e^{i(\omega_{Re}-i,\omega_{Im})}=e^{\omega_{Im},t}\cos{\left(\omega_{Re},t\right)}$. This eliminated the time derivatives from the differential equations, while the angular dependence was handled through expansion in spherical harmonics, as is customary
+
+It is important to be reminded at this point that ordinary QNMs are characterized by frequencies with both non-zero real and imaginary components and represent oscillatory solutions that are exponentially suppressed by the imaginary component of the frequency. In contrast, modes with purely imaginary frequencies, where the real part of the frequency is zero, correspond to purely damping solutions since the respective perturbation functions decay as $ e^{i\omega,t}=e^{,\omega_{Im},t}$.
+
+\subsubsection{Spin $0$, $1$ and $2$ perturbations}
+
+The computation of perturbations of integer spin, including scalar, vector, and gravitational perturbations in the Schwarzschild black hole spacetime, has been a long-standing problem with a significant body of literature dedicated to it. This literature is of great interest for our purposes, which involve comparisons and calibrations. In fact, it has been shown that the equations of motion can be expressed in a concise form known as Schrödinger-like differential equations (see, for instance, \cite{review3}). Thus, for massless scalar ($s=0$), electromagnetic ($s=1$), and vector-type gravitational perturbations ($s=2$), the Schrödinger-like equations take the following form:
+%
+\begin{equation}\label{Eq:IntegerSpin}
+  \frac{d^2 \psi_{{s}}(r)}{d r_*^2}
+  +\left[\omega^2-V_{{s}}(r)\right]\psi_{{s}}(r)=0,
+\end{equation}
+%
+where the potential function $V_{s}(r)$ is given by
+%
+\begin{equation}\label{Eq:IntegerSpinPot}
+  V_{s}(r)=f(r)\left[\frac{\ell\left(\ell+1\right)}{r^2}
+    +\left(1-s^2\right)\frac{2M}{r^3}\right],
+\end{equation}
+%
+and the tortoise coordinate $r_*$ is defined in terms of the areal coordinate $r$ by $dr_*=dr/f(r)$. Thus far, the problem of calculating quasinormal frequencies was reduced to solving an eigenvalue problem, which can be solved by either expanding the function $\psi$ in a base composed of special functions or solving the second-order differential equation directly.
+
+It is important to note, that the potential function in Eq.~\eqref{Eq:IntegerSpinPot} is zero at the horizon because $f(r_h)=0$. Thus, the Schr\"odinger-like equation reduces to a single harmonic oscillator problem, whose solutions are given by
+%
+\begin{equation} \label{eq:sol1}
+  \psi_{s}(r)=c_1\, e^{-i\omega r_*}+c_2\, e^{i\omega r_*}, \quad r\to r_h.
+\end{equation}
+%
+The first of these solutions is interpreted as an ingoing wave, i.e., a wave that travels inward and eventually falls into the black hole event horizon. The second solution is interpreted as an outgoing wave, i.e., a wave that travels outward with respect to the black hole and can escape to spatial infinity. Considering that perturbation theory is implemented using classical assumptions, nothing is expected to come out from the black hole interior, thus, in the following analysis we impose ingoing solutions as boundary conditions at the horizon and discarding outgoing solutions altogether. This is accomplished by setting  $c_2=0$.
+
+At spatial infinity, however, one has $f(r)\to 1$ and the effective potential of Eq.~\eqref{Eq:IntegerSpinPot} also vanishes. Thus, in such a limit the general solutions to the wave equation \eqref{Eq:IntegerSpin} have the same form as the function given in Eq.~\ref{eq:sol1}, i.e.,
+%
+\begin{equation}
+  \psi_{s}(r_*)=c_3\, e^{-i\omega r_*}+c_4\, e^{i\omega r_*}, \quad r\to \infty.
+\end{equation}
+%
+The first solution can be interpreted as waves that originate from outside the universe and can be avoided by setting $c_3=0$. Conversely, the second solution can be interpreted as waves that leave the universe, serving as the boundary condition at spatial infinity. It is important to note that neither the angular momentum $\ell$ nor the spin have an explicit influence on the boundary conditions.
+
+It is interesting to note that close to the event horizon, the tortoise coordinate becomes
+%
+\begin{equation}
+  r_*=\int \frac{dr}{f'(r_h)(r-r_h)}\approx \frac{\ln{(r-r_h)}}{ f'(r_h)},\quad r\to r_h
+\end{equation}
+where $r_h=2M$.
+Thus, when written in terms of the radial coordinate, the boundary condition at the horizon becomes ($f'(r_h)=1/r_h$)
+%
+\begin{equation}
+  \psi_s(r)\sim e^{-i\omega \frac{\ln{(r-r_h)}}{f'(r_h)}}\sim \left(r-r_h\right)^{-i\frac{\omega}{f'(r_h)}}.
+\end{equation}
+%
+In turn, the tortoise coordinate at the spatial infinity becomes
+%
+\begin{equation}
+  r_*=\int \frac{dr}{f(r)}\approx r+r_h\,\ln{r},\quad r\to \infty
+\end{equation}
+%
+while the asymptotic solution at spatial infinity becomes
+%
+\begin{equation}
+  \psi_s(r)\sim e^{i\omega(r+ r_h \ln{r})}\sim r^{i\, r_h\omega}e^{i\omega r}.
+\end{equation}
+
+We shall now work in terms of new coordinates defined by $u\equiv2M/r$. This is equivalent to choosing $u=1/r$ and then normalizing the mass $M$ to $2M=1$. The relation between the tortoise coordinate $r_*$ and the new coordinate $u$  becomes $du/dr_*=-u^2f(u)$. We shall also constrain our analysis to the outer region of the black hole, such that $r_h\leq r<\infty$. Hence, in terms of the new coordinate, this region is bounded to the interval $u\in [0,\, 1]$, and the potential becomes
+%
+\begin{equation}
+  V_{s}(u)=f(u)\,u^2\left[\ell\left(1+\ell\right)+\left(1-s^2\right)\,u\right],
+\end{equation}
+%
+where $f(u) = 1- \,u$.
+
+To apply the pseudo-spectral method, it is necessary to express quantities defined on the background using horizon-penetrating Eddington-Finkelstein coordinates (as discussed in Ref.~\cite{qnmspectral}). However, we have developed a shortcut for writing the equations directly from the Schrödinger-like equation by implementing certain transformations. These transformations result in a differential equation that is equivalent to the one obtained from the Eddington-Finkelstein metric coordinates. In order to express the perturbation equations in terms of Eddington-Finkelstein coordinates, we utilize the transformation $\psi_{s}\to \Phi_s$, which is given by
+%
+\begin{equation}\label{Eq:TransN1}
+  \psi_{s}= \frac{\Phi_{s}(u)}{u}e^{-i\omega\,r_*(u)}.
+\end{equation}
+%
+Thus, Eq.~\eqref{Eq:IntegerSpin} becomes
+%
+%\begin{widetext}
+\begin{equation}\label{Eq:IntegerSpin2}
+  \begin{split}
+    &\left[s^2u^2-\ell\left(\ell+1\right)u-2\,i\,\omega\right]\Phi_{s}(u)\\
+    &-u\left(u^2-2\,i\,\omega\right)\Phi_{s}'(u)+\left(1-u\right)\,u^3\,\Phi_{s}''(u)=0,\end{split}
+\end{equation}
+%\end{widetext}
+%
+where we have set $M=1/2$ so that $r_h=1$. The asymptotic solutions close to the horizon may be calculated using the ansatz $\Phi_{s}(u)=(1-u)^{\alpha}$. By substituting this ansatz into Eq.~\eqref{Eq:IntegerSpin2} we get two solutions,
+%
+\begin{equation}\label{Eq:AsympHorion}
+  \alpha=0,\qquad\qquad \alpha=2\,i\,\omega.
+\end{equation}
+%
+The solution for $\alpha =0$ is interpreted physically as the ingoing waves at the horizon, while the other is interpreted as a wave coming out from the black hole interior, and thus, is neglected in the following analysis. In the same way, we consider the ansatz $\Phi_{s}=u^{\beta}$ to get the asymptotic solution close to the spatial infinity. Plugging this ansatz in Eq.~\eqref{Eq:IntegerSpin2} we get
+%
+\begin{equation}\label{Eq:AsymInfinite}
+  \Phi_{s}(u)=c_5\,e^{2\,i\,\omega/u}u^{-2\,i\,\omega}+c_6\,u.
+\end{equation}
+%
+We are interested in the divergent solution thus setting $c_6=0$. We then implement the final transformation, which takes into consideration the boundary conditions,
+%
+\begin{equation}\label{Eq:FinalTrans}
+  \Phi_{s}(u)=e^{2\,i\,\omega/u}u^{-2\,i\,\omega}\phi_{s}(u),
+\end{equation}
+%
+where $\phi_{s}(u)$ is a regular function in the interval $u\in[0,\,1]$ by definition. Finally, the equation of motion describing spin $0$, $1$, and $2$ perturbations is given by
+%
+\begin{equation}\label{Eq:IntegerSpin3}
+  \begin{split}
+    &\!\!\Big[\ell\left(\ell+1\right) u -s^2u^2-4\,i\lambda-16\,u\left(1+u\right)\lambda^2\Big]\phi_{s}(u)+\\
+    & \!\!\Big[u^3+4i\,u\left(1-2u^2\right)\lambda\Big]\phi_{s}'(u)-(1-u)u^3\phi_{s}''(u)=0,
+  \end{split}
+\end{equation}
+%
+where we have used $\lambda=\omega M=\omega/2$. The final differential equation is then a quadratic eigenvalue problem in $\lambda$. It is also worth mentioning that in the limit of zero spin $s\to 0$, Eq.~\eqref{Eq:IntegerSpin3} reduces to Eq.~(4.8) of Ref.~\cite{qnmspectral}. These results just prove that the alternative way for getting the equations for the integer spin perturbations presented here is consistent with other approaches in the literature.
+
+\subsection{Spin $1/2$ perturbations}
+
+The differential equations for half-integer spin perturbations are quite distinct from Eq.~\eqref{Eq:IntegerSpin3}. The equation for the spin $1/2$ Dirac field as a perturbation on the Schwarzschild background was derived in Ref.~\cite{Cho:2003qe} by using the Newman-Penrose formalism. The analysis was generalized for arbitrary half-integer spin in Ref.~\cite{Shu:2005fw}. The resulting equation of motion for the perturbations may be written in the Schr\"odinger-like form of Eq.~\eqref{Eq:IntegerSpin}, where the potential for the massless spin 1/2 field is given by
+%
+\begin{equation}\label{eq:pot-s12}
+  V_{\scriptscriptstyle{1/2}}= \frac{\left(1+\ell\right)\sqrt{f(r)}}{r^{2}} \left[\left(1+\ell\right)\sqrt{f(r)}+\frac{3M}{r}-1\right].
+\end{equation}
+
+It is worth mentioning that we have found a typo in the definition of $\Delta$ in \cite{Cho:2003qe}, which must read $\Delta=r(r-2M)$.
+
+We then implement the same transformations applied in the integer spin cases. First, we change the radial coordinate to $u=2M/r$, which is defined in the interval $u\in[0,1]$. Then by setting $2M=1$ the effective potential in Eq.~\eqref{eq:pot-s12} becomes
+%
+\begin{equation}
+  \!\!V_{\scriptscriptstyle{1/2}}=\left(1+\ell\right)u^2\sqrt{f(u)} \left[\left(1+\ell\right)\sqrt{f(u)}+\frac{3u}{2} -1\right].
+\end{equation}
+
+It is interesting pointing out that the asymptotic solutions do not depend on the spin of the field, and therefore the asymptotic solutions for this problem are the same as those obtained in Eqs.~\eqref{Eq:AsympHorion} and \eqref{Eq:AsymInfinite}. Similar transformations as those given in Eqs.~\eqref{Eq:TransN1} and~\eqref{Eq:FinalTrans} can then also be applied. Thus, the differential equation to be solved is given by
+%
+\begin{equation}\label{eq:onda-s12}
+  \begin{split}
+    &R(u)\phi_{\scriptscriptstyle{1/2}}(u) + Q(u)\phi_{\scriptscriptstyle{1/2}}'(u) + P(u) \,\phi_{\scriptscriptstyle{1/2}}''(u)=0,
+  \end{split}
+\end{equation}
+%
+in which the coefficients $R(u)$, $Q(u)$, and $P(u)$ are given by
+%
+\begin{eqnarray}
+  R(u)=\,&& u^3+u(1+\ell)\left(1+\ell-\sqrt{1-u}\, \right) \nonumber \\
+  && +\frac{u^2}{2}\left[(1+\ell)\left(3\sqrt{1-u}-4\right)-2\ell^2\right]\nonumber \\
+  &&-4\,i\,(1-u)\lambda-16u(1-u^2)\lambda^2,\\
+  Q(u) = && u^3(1-u)+4\,i\,u\, \lambda\left(1-u-2u^2+2u^3\right), \\
+  P(u)  =&& -u^3(1-u)^2,
+\end{eqnarray}
+%
+respectively, and with $\lambda$ standing for $\lambda=M\omega=\omega/2$.
+
+The square root terms present in Eq.~\eqref{eq:onda-s12} may difficult the convergence of the numerical methods. To avoid them, we perform an additional change of variables given by $\chi^2=1-u$. Note that the new coordinate also belongs to the interval $\chi \in [0,\,1]$. The differential equation of Eq.~\eqref{eq:onda-s12} thus becomes
+%
+\begin{equation}\label{eq:onda-s12a}
+  \begin{split}
+    &R(\chi)\phi_{\scriptscriptstyle{1/2}}(\chi) + Q(\chi)\phi_{\scriptscriptstyle{1/2}}'(\chi) + P(\chi) \,\phi_{\scriptscriptstyle{1/2}}''(\chi)=0,
+  \end{split}
+\end{equation}
+%
+in which the coefficients $R(\chi)$, $Q(\chi)$, and $P(\chi)$ are given by
+%
+\begin{eqnarray}
+  R(\chi)=
+  \,&&2(1-\chi^2)\left[\left(\ell+1\right) \left(1+ 2\ell\,\chi-3\chi^2\right) + 2\ell\, \chi +2\chi^3\right] \nonumber \\
+  && - 8\,i\,\chi \,\lambda-32\,\chi\left(2-3\chi^2+\chi^4\right)\lambda^2,\\
+  Q(\chi) = && (\chi^2-1\big)\left[\big(1-\chi^2\big)^2-8\,i\big(1-4\chi^2+2\chi^4\big)\lambda\right],\\
+  P(\chi)  =&& -\chi\big(1-\chi^2\big)^3.
+\end{eqnarray}
+
+\subsubsection{Spin $3/2$ perturbations}
+
+As is the case for spin $1/2$ perturbations, the perturbation equation for spin the $3/2$ field is quite different from that of integer spin fields. The relevant equation is obtained by making use of Ref.~\cite{Shu:2005fw}, specifically Eq.~(37) of that reference, and by setting $s=3/2$ on such an equation we then get the effective potential of the Schr\"odinger-like equation Eq.~\eqref{Eq:IntegerSpin},
+%
+\begin{equation} \begin{split}
+    V_{\scriptscriptstyle{3/2}} &=\frac{(1+\ell)(2+\ell)(3+\ell)\sqrt{f(r)}}{\left[2M+r(1+\ell)(3+\ell)\right]^2} \bigg(\frac{2M^2}{r^2}\\ &+(1+\ell)(3+\ell)\left[(2+\ell)\sqrt{f(r)}+\frac{3M}{r}-1\right]\bigg).
+  \end{split}
+\end{equation}
+%
+As before, we change the radial coordinate to $u=1/r$ and rescale the mass as $2M=1$. Thus, the potential becomes
+%
+\begin{equation}\begin{split}
+    V_{\scriptscriptstyle{3/2}}&=\frac{u^2(1+\ell)(2+\ell)(3+\ell)\sqrt{1-u}}{2\big[u+(1+\ell)(3+\ell)\big]^2} \bigg(\frac{u^2}{2}\\ &+(1+\ell)(3+\ell)\left[(2+\ell)\sqrt{1-u}+\frac{3u}{2}-1\right]\bigg).
+  \end{split}
+\end{equation}
+
+Following the procedure implemented in the transition of Eq.~\eqref{Eq:TransN1} to Eq.~\eqref{Eq:AsymInfinite}, the differential equation Eq.~\eqref{eq:onda-s12} becomes
+%
+\begin{equation}\label{eq:onda-s32a}
+  \begin{split}
+    &R(\chi)\phi_{\scriptscriptstyle{3/2}}(\chi) + Q(\chi)\phi_{\scriptscriptstyle{3/2}}'(\chi) + P(\chi) \,\phi_{\scriptscriptstyle{3/2}}''(\chi)=0,
+  \end{split}
+\end{equation}
+%
+where the coefficients $R(\chi)$, $Q(\chi)$, and $P(\chi)$ are given by
+%
+\begin{eqnarray}
+  R(\chi)=
+  \,&& 2\big(1-\chi^2\big)\Big[6+11\ell+6\ell^2+\ell^3 +2\chi^5+  \nonumber\\
+    &&4\chi^4(2+\ell) +2\chi^3\left(3+4\ell+\ell^2\right)- \nonumber\\
+    &&\!\!\chi^2\left(2-7\ell-6\ell^2-\ell^3\right)  + 2\chi(2+\ell)^2\left(2+4\ell+\ell^2\right)\Big] \nonumber \\
+  &&\! -16\chi(2+\chi+\ell)^2\lambda\Big[i + 4 \left(2-\chi^2\right)\left(1-\chi^2\right)\lambda\Big],\nonumber\\
+  Q(\chi) = && -\left(1-\chi^2\right)\left(2+\chi+\ell\right)^2\nonumber\\
+  && \times \left[\left(1-\chi^2\right)^2-8\,i\,(1-4\chi^2+2\chi^4)\lambda\right],\nonumber\\
+  P(\chi)  =&&
+  -\chi\left(1-\chi^2\right)^3\left(2+\chi+\ell\right)^2,\nonumber
+\end{eqnarray}
+%
+where we have used the new coordinate $\chi^2=1-u$ to avoid square roots. Once again, we obtain a quadratic eigenvalue problem, and the function $\phi_{\scriptscriptstyle{3/2}}(\chi)$ is regular in the interval $\chi\in [0,\,1]$.
+
+\subsection{Spin $5/2$ perturbations}
+
+The investigation of higher spin fields is believed to be a promising avenue for gaining insight into fundamental physics, including the development of new unifying theories for fundamental interactions or new phenomenology that goes beyond the standard model. The primary motivation for exploring perturbations of the spin $5/2$ field is the Rarita-Schwinger theory. Drawing inspiration from this theory, the authors of Ref.\cite{Shklyar:2009cx} computed physical observables for the spin $5/2$ field. In our work, we utilize the generic equation derived in Ref.\cite{Shu:2005fw}, specifically Eq.~(37), to determine the quasinormal frequencies of this perturbation field on the Schwarzschild black hole. However, due to the size of the resulting differential equation for this perturbation field, we refer the reader to Appendix A of Ref.\cite{Mamani2022} for details.
+
+\subsection{Results}
+
+This section presents our numerical findings for the quasinormal frequencies of various spin perturbation fields, as shown in Tables \ref{Tab:Spin0}-\ref{Tab:Spin5/2}. Each table includes four columns: the first two display data acquired through the pseudo-spectral method using different numbers of interpolating polynomials, the third column shows results obtained from the AIM method using \texttt{QuasinormalModes.jl}, and the fourth and fifth columns are reproductions of literature results, when available. As observed in all data tables, pseudo-spectral method I (computed with $60$ polynomials) and pseudo-spectral method II (computed with $40$ polynomials) produce practically identical results to those generated by \texttt{QuasinormalModes.jl}, with a precision of six decimal places. The numerical methods utilized in this study yield more precise outcomes than those attained previously using the WKB approximation and enable us to compute additional frequencies that have not been reported in previous literature.
+
+We also found purely imaginary frequencies for the spin $1/2$, $3/2$ and $5/2$ fields, reported in Tables \ref{Tab:PurelyImSpin1/2}-\ref{Tab:PurelyImSpin5/2}, respectively. Such frequencies arise when investigating the quasinormal modes in the limit of large $\ell$. Notice that these results are also in agreement with the analytic solutions obtained in the literature but for spin $5/2$ fields, the discrepancy between both methods increases as the imaginary frequency gets more negative. We do not have a concrete explanation for this fact.
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l|c|c|c|c|c|c}
+      \hline
+      $l$ & $n$ & \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations}  & Ref.~\cite{Shu:2005fw} & Ref.~\cite{Konoplya:2004ip} \\ \hline\hline
+      0   & $0$ & $\pm 0.110455 -0.104896 i$                & $\pm 0.110455 -0.104896 i$                 & $\pm 0.110455 -0.104896 i$ & $0.1046-0.1152 i$      & $\pm 0.1105-0.1008i$        \\ \hline
+      1   & $0$ & $\pm 0.292936 -0.097660 i$                & $\pm 0.292936 -0.097660 i$                 & $\pm 0.292936 -0.097660 i$ & $0.2911-0.0980 i$      & $\pm 0.2929-0.0978i$        \\
+          & $1$ & $\pm 0.264449 -0.306257 i$                & $\pm 0.264449 -0.306257 i$                 & $\pm 0.264449 -0.306257 i$ & ---                    & $\pm 0.2645-0.3065i$        \\ \hline
+      2   & $0$ & $\pm 0.483644 -0.096759 i$                & $\pm 0.483644 -0.096759 i$                 & $\pm 0.483644 -0.096759 i$ & $0.4832-0.0968 i$      & $\pm 0.4836-0.0968i$        \\
+          & $1$ & $\pm 0.463851 -0.295604 i$                & $\pm 0.463851 -0.295604 i$                 & $\pm 0.463851 -0.295604 i$ & $0.4632-0.2958 i$      & $\pm 0.4638-0.2956i$        \\
+          & $2$ & $\pm 0.430544 -0.508558 i$                & $\pm 0.430544 -0.508558 i$                 & $\pm 0.430544 -0.508558 i$ & ---                    & $\pm 0.4304-0.5087i$        \\ \hline
+      3   & $0$ & $\pm 0.675366 -0.096500 i$                & $\pm 0.675366 -0.096500 i$                 & $\pm 0.675366 -0.096500 i$ & $0.6752-0.0965 i$      & ---                         \\
+          & $1$ & $\pm 0.660671 -0.292285 i$                & $\pm 0.660671 -0.292285 i$                 & $\pm 0.660671 -0.292285 i$ & $0.6604-0.2923 i$      & ---                         \\
+          & $2$ & $\pm 0.633626 -0.496008 i$                & $\pm 0.633626 -0.496008 i$                 & $\pm 0.633626 -0.496008 i$ & $0.6348-0.4941 i$      & ---                         \\
+          & $3$ & $\pm 0.598773 -0.711221 i$                & $\pm 0.598773 -0.711221 i$                 & $\pm 0.598773 -0.711221 i$ & ---                    & ---                         \\ \hline
+      4   & $0$ & $\pm 0.867416 -0.096392 i$                & $\pm 0.867416 -0.096392 i$                 & $\pm 0.867416 -0.096392 i$ & $0.8673-0.0964 i$      & ---                         \\
+          & $1$ & $\pm 0.855808 -0.290876 i$                & $\pm 0.855808 -0.290876 i$                 & $\pm 0.855808 -0.290876 i$ & $0.8557-0.2909 i$      & ---                         \\
+          & $2$ & $\pm 0.833692 -0.490325 i$                & $\pm 0.833692 -0.490325 i$                 & $\pm 0.833692 -0.490325 i$ & $0.8345-0.4895 i$      & ---                         \\
+          & $3$ & $\pm 0.803288 -0.697482 i$                & $\pm 0.803288 -0.697482 i$                 & $\pm 0.803288 -0.697482 i$ & $0.8064-0.6926 i$      & ---                         \\
+          & $4$ & $\pm 0.767733 -0.914019 i$                & $\pm 0.767733 -0.914019 i$                 & $\pm 0.767733 -0.914019 i$ & ---                    & ---                         \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Quasinormal frequencies of the spin $0$ perturbations normalized by the mass $(M\omega)$ compared against the results of Refs.~\cite{Shu:2005fw, Konoplya:2004ip}.
+  }
+  \label{Tab:Spin0}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l |c|c|c|c|c|c}
+      \hline
+      $l$ & $n$ & \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations}  & Ref.~\cite{Shu:2005fw} & Ref.~\cite{Konoplya:2004ip} \\ \hline\hline
+      1   & $0$ & $\pm 0.248263-0.092488 i$                 & $\pm 0.248263 -0.092488 i$                 & $\pm 0.248263 -0.092488 i$ & $0.2459-0.0931i$       & $\pm 0.2482-0.0926i$        \\
+          & $1$ & $\pm 0.214515-0.293668 i$                 & $\pm 0.214515 -0.293667 i$                 & $\pm 0.214515 -0.293668 i$ & ---                    & $\pm 0.2143-0.2941i$        \\ \hline
+      2   & $0$ & $\pm 0.457596-0.095004 i$                 & $\pm 0.457595 -0.095004 i$                 & $\pm 0.457596 -0.095004 i$ & $0.4571-0.0951i$       & $\pm 0.4576-0.0950i$        \\
+          & $1$ & $\pm 0.436542-0.290710 i$                 & $\pm 0.436542 -0.290710 i$                 & $\pm 0.436542 -0.290710 i$ & $0.4358-0.2910i$       & $\pm 0.4365-0.2907i$        \\
+          & $2$ & $\pm 0.401187-0.501587 i$                 & $\pm 0.401187 -0.501587 i$                 & $\pm 0.401187 -0.501587 i$ & ---                    & $\pm 0.4009-0.5017i$        \\ \hline
+      3   & $0$ & $\pm 0.656899-0.095616 i$                 & $\pm 0.656899 -0.095616 i$                 & $\pm 0.656899 -0.095616 i$ & $0.6567-0.0956i$       & $\pm 0.6569-0.0956i$        \\
+          & $1$ & $\pm 0.641737-0.289728 i$                 & $\pm 0.641737 -0.289728 i$                 & $\pm 0.641737 -0.289728 i$ & $0.6415-0.2898i$       & $\pm 0.6417-0.2897i$        \\
+          & $2$ & $\pm 0.613832-0.492066 i$                 & $\pm 0.613832 -0.492066 i$                 & $\pm 0.613832 -0.492066 i$ & $0.6151-0.4901i$       & $\pm 0.6138-0.4921i$        \\
+          & $3$ & $\pm 0.577919-0.706331 i$                 & $\pm 0.577919 -0.706331 i$                 & $\pm 0.577919 -0.706330 i$ & ---                    & $\pm 0.5775-0.7065i$        \\ \hline
+      4   & $0$ & $\pm 0.853095-0.095860 i$                 & $\pm 0.853095 -0.095860 i$                 & $\pm 0.853095 -0.095810 i$ & $0.8530-0.0959i$       & ---                         \\
+          & $1$ & $\pm 0.841267-0.289315 i$                 & $\pm 0.841267 -0.289315 i$                 & $\pm 0.841267 -0.289315 i$ & $0.8411-0.2893i$       & ---                         \\
+          & $2$ & $\pm 0.818728-0.487838 i$                 & $\pm 0.818728 -0.487838 i$                 & $\pm 0.818728 -0.487838 i$ & $0.8196-0.4870i$       & ---                         \\
+          & $3$ & $\pm 0.787748-0.694242 i$                 & $\pm 0.787748 -0.694242 i$                 & $\pm 0.787748 -0.694242 i$ & $0.7909-0.6892i$       & ---                         \\
+          & $4$ & $\pm 0.751549-0.910242 i$                 & $\pm 0.751549 -0.910242 i$                 & $\pm 0.751549 -0.910242 i$ & ---                    & ---                         \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Quasinormal frequencies of the spin $1$ perturbations normalized by the mass $(M\omega)$ compared against the results of Refs.~\cite{Shu:2005fw, Konoplya:2004ip}.
+  }
+  \label{Tab:Spin1}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l |c|c|c|c|c|c}
+      \hline
+      $l$ & $n$ & \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations}  & Ref.~\cite{Shu:2005fw} & Ref.~\cite{Konoplya:2004ip} \\ \hline\hline
+      2   & $0$ & $\pm 0.373672-0.088962i$                  & $\pm 0.373672 -0.088962 i$                 & $\pm 0.373672 -0.088962 i$ & $0.3730-0.0891i$       & $\pm 0.3736-0.0890i$        \\
+          & $1$ & $\pm 0.346711-0.273915i$                  & $\pm 0.346711 -0.273915 i$                 & $\pm 0.346711 -0.273915 i$ & $0.3452-0.2746i$       & $\pm 0.3463-0.2735i$        \\
+          & $2$ & $\pm 0.301053-0.478277i$                  & $\pm 0.301053 -0.478277 i$                 & $\pm 0.301053 -0.478277 i$ & ---                    & $\pm 0.2985-0.4776i$        \\ \hline
+      3   & $0$ & $\pm 0.599443-0.092703i$                  & $\pm 0.599443 -0.092703 i$                 & $\pm 0.599443 -0.092703 i$ & $0.5993-0.0927i$       & $\pm 0.5994-0.0927i$        \\
+          & $1$ & $\pm 0.582644-0.281298i$                  & $\pm 0.582644 -0.281298 i$                 & $\pm 0.582644 -0.281298 i$ & $0.5824-0.2814i$       & $\pm 0.5826-0.2813i$        \\
+          & $2$ & $\pm 0.551685-0.479093i$                  & $\pm 0.551685 -0.479093 i$                 & $\pm 0.551685 -0.479027 i$ & $0.5532-0.4767i$       & $\pm 0.5516-0.4790i$        \\
+          & $3$ & $\pm 0.511962-0.690337i$                  & $\pm 0.511962 -0.690337 i$                 & $\pm 0.511962 -0.690337 i$ & ---                    & $\pm 0.5111-0.6905i$        \\ \hline
+      4   & $0$ & $\pm 0.809178-0.094164i$                  & $\pm 0.809178 -0.094164 i$                 & $\pm 0.809178 -0.094164 i$ & $0.8091-0.0942i$       & $\pm 0.8092-0.0942i$        \\
+          & $1$ & $\pm 0.796632-0.284334i$                  & $\pm 0.796632 -0.284334 i$                 & $\pm 0.796632 -0.284334 i$ & $0.7965-0.2844i$       & $\pm 0.7966-0.2843i$        \\
+          & $2$ & $\pm 0.772710-0.479908i$                  & $\pm 0.772710 -0.479908 i$                 & $\pm 0.772710 -0.479908 i$ & $0.7736-0.4790i$       & $\pm 0.7727-0.4799i$        \\
+          & $3$ & $\pm 0.739837-0.683924i$                  & $\pm 0.739837 -0.683924 i$                 & $\pm 0.739837 -0.683924 i$ & $0.7433-0.6783i$       & $\pm 0.7397-0.6839i$        \\
+          & $4$ & $\pm 0.701516-0.898239i$                  & $\pm 0.701516 -0.898239 i$                 & $\pm 0.701516 -0.898239 i$ & ---                    & $\pm 0.7006-0.8985i$        \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Quasinormal frequencies of spin $2$ perturbations normalized by the mass $(M\omega)$ compared against the results of Refs.~\cite{Shu:2005fw, Konoplya:2004ip}.
+  }
+  \label{Tab:Spin2}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l |c|c|c|c|c|c}
+      \hline
+      $l$ & $n$ & \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations}  & Ref.~\cite{Shu:2005fw} & Ref.~\cite{Cho:2003qe} \\ \hline\hline
+      0   & $0$ & $\pm 0.182963 -0.096982 i$                & $\pm 0.182963 -0.096982 i$                 & $\pm 0.182963 -0.096824 i$ & ---                    & ---                    \\ \hline
+      1   & $0$ & $\pm 0.380037 -0.096405 i$                & $\pm 0.380037 -0.096405 i$                 & $\pm 0.380037 -0.096405 i$ & $0.3786-0.0965 i$      & $0.379 -0.097i$        \\
+          & $1$ & $\pm 0.355833 -0.297497 i$                & $\pm 0.355833 -0.297497 i$                 & $\pm 0.355833 -0.297497 i$ & ---                    & ---                    \\ \hline
+      2   & $0$ & $\pm 0.574094 -0.096305 i$                & $\pm 0.574094 -0.096305 i$                 & $\pm 0.574094 -0.096305 i$ & $0.5737-0.0963 i$      & $0.574 -0.096i$        \\
+          & $1$ & $\pm 0.557015 -0.292715 i$                & $\pm 0.557015 -0.292715 i$                 & $\pm 0.557015 -0.292715 i$ & $0.5562-0.2930 i$      & $0.556 -0.293i$        \\
+          & $2$ & $\pm 0.526607 -0.499695 i$                & $\pm 0.526607 -0.499695 i$                 & $\pm 0.526607 -0.499695 i$ & ---                    & ---                    \\ \hline
+      3   & $0$ & $\pm 0.767355 -0.096270 i$                & $\pm 0.767355 -0.096270 i$                 & $\pm 0.767355 -0.096270 i$ & $0.7672-0.0963 i$      & $0.767 -0.096i$        \\
+          & $1$ & $\pm 0.754300 -0.290968 i$                & $\pm 0.754300 -0.290968 i$                 & $\pm 0.754300 -0.290968 i$ & $0.7540-0.2910 i$      & $0.754 -0.291i$        \\
+          & $2$ & $\pm 0.729770 -0.491910 i$                & $\pm 0.729770 -0.491910 i$                 & $\pm 0.729770 -0.491910 i$ & $0.7304-0.4909 i$      & $0.730 -0.491i$        \\
+          & $3$ & $\pm 0.696913 -0.702293 i$                & $\pm 0.696913 -0.702293 i$                 & $\pm 0.696913 -0.702293 i$ & ---                    & ---                    \\ \hline
+      4   & $0$ & $\pm 0.960293 -0.096254 i$                & $\pm 0.960293 -0.096254 i$                 & $\pm 0.960293 -0.096254 i$ & $0.9602-0.0963 i$      & $0.960 -0.096i$        \\
+          & $1$ & $\pm 0.949759 -0.290148 i$                & $\pm 0.949759 -0.290148 i$                 & $\pm 0.949759 -0.290148 i$ & $0.9496-0.2902 i$      & $0.950 -0.290i$        \\
+          & $2$ & $\pm 0.929494 -0.488116 i$                & $\pm 0.929494 -0.488116 i$                 & $\pm 0.929494 -0.488116 i$ & $0.9300-0.4876 i$      & $0.930 -0.488i$        \\
+          & $3$ & $\pm 0.901129 -0.692520 i$                & $\pm 0.901129 -0.692520 i$                 & $\pm 0.901129 -0.692520 i$ & $0.9036-0.6892 i$      & $0.904 -0.689i$        \\
+          & $4$ & $\pm 0.867043 -0.905047 i$                & $\pm 0.867008 -0.905066 i$                 & $\pm 0.867043 -0.905047 i$ & ---                    & ---                    \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Quasinormal frequencies of the spin $1/2$ perturbations normalized by the mass $(M\omega)$ compared against the results of Refs.~\cite{Cho:2003qe, Shu:2005fw}.
+  }
+  \label{Tab:Spin1/2}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l |c|c|c|c|c|c}
+      \hline
+      $l$ & $n$ & \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations}  & Ref.~\cite{Shu:2005fw} & Ref.~\cite{Chen:2016qii} \\ \hline\hline
+      0   & $0$ & $\pm 0.311292 -0.090087 i$                & $\pm 0.311292 -0.090087 i$                 & $\pm 0.311292 -0.090087 i$ & ---                    & $0.3112 -0.0902 i$       \\ \hline
+      1   & $0$ & $\pm 0.530048 -0.093751 i$                & $\pm 0.530048 -0.093751 i$                 & $\pm 0.530048 -0.093751 i$ & ---                    & $0.5300 -0.0937 i$       \\
+          & $1$ & $\pm 0.511392 -0.285423 i$                & $\pm 0.511392 -0.285423 i$                 & $\pm 0.511392 -0.285423 i$ & ---                    & $0.5113 -0.2854 i$       \\ \hline
+      2   & $0$ & $\pm 0.734750 -0.094878 i$                & $\pm 0.734750 -0.094878 i$                 & $\pm 0.734750 -0.094878 i$ & $\pm 0.7346 -0.0949 i$ & $0.7347 -0.0948 i$       \\
+          & $1$ & $\pm 0.721047 -0.286906 i$                & $\pm 0.721047 -0.286906 i$                 & $\pm 0.721047 -0.286906 i$ & $\pm 0.7206 -0.2870 i$ & $0.7210 -0.2869 i$       \\
+          & $2$ & $\pm 0.695287 -0.485524 i$                & $\pm 0.695287 -0.485524 i$                 & $\pm 0.695287 -0.485524 i$ & ---                    & $0.6952 -0.4855 i$       \\ \hline
+      3   & $0$ & $\pm 0.934364 -0.095376 i$                & $\pm 0.934364 -0.095376 i$                 & $\pm 0.934364 -0.095376 i$ & $\pm 0.9343 -0.0954 i$ & $0.9343 -0.0953 i$       \\
+          & $1$ & $\pm 0.923502 -0.287560 i$                & $\pm 0.923502 -0.287560 i$                 & $\pm 0.923502 -0.287560 i$ & $\pm 0.9233 -0.2876 i$ & $0.9235 -0.2875 i$       \\
+          & $2$ & $\pm 0.902599 -0.483957 i$                & $\pm 0.902599 -0.483957 i$                 & $\pm 0.902599 -0.483957 i$ & $\pm 0.9031 -0.4835 i$ & $0.9025 -0.4839 i$       \\
+          & $3$ & $\pm 0.873342 -0.687024 i$                & $\pm 0.873343 -0.687024 i$                 & $\pm 0.873342 -0.687024 i$ & ---                    & $0.8732 -0.6870 i$       \\ \hline
+      4   & $0$ & $\pm 1.131530 -0.095640 i$                & $\pm 1.131530 -0.095640 i$                 & $\pm 1.131530 -0.095640 i$ & $\pm 1.1315 -0.0956 i$ & $1.1315 -0.0956 i$       \\
+          & $1$ & $\pm 1.122523 -0.287908 i$                & $\pm 1.122523 -0.287908 i$                 & $\pm 1.122523 -0.287908 i$ & $\pm 1.1224 -0.2879 i$ & $1.1225 -0.2879 i$       \\
+          & $2$ & $\pm 1.104976 -0.483096 i$                & $\pm 1.104976 -0.483096 i$                 & $\pm 1.104976 -0.483096 i$ & $\pm 1.1053 -0.4828 i$ & $1.1049 -0.4830 i$       \\
+          & $3$ & $\pm 1.079852 -0.683000 i$                & $\pm 1.079852 -0.683000 i$                 & $\pm 1.079852 -0.683000 i$ & $\pm 1.0817 -0.6812 i$ & $1.0798 -0.6829 i$       \\
+          & $4$ & $\pm 1.048599 -0.889113 i$                & $\pm 1.048596 -0.889115 i$                 & $\pm 1.048599 -0.889113 i$ & ---                    & $1.0484 -0.8890 i$       \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Quasinormal frequencies of spin $3/2$ perturbations normalized by the mass $(M\omega)$ compared against the results of Refs.~\cite{Chen:2016qii, Shu:2005fw}.
+  }
+  \label{Tab:Spin3/2}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{l |c|c|c|c}
+      \hline
+      $l$ & $n$ & \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations} \\ \hline\hline
+      0   & $0$ & $\pm 0.462727-0.092578i$                  & $\pm 0.462727-0.092578i$                   & $0.462727 - 0.092577 i$   \\ \hline
+      1   & $0$ & $\pm 0.687103-0.094566i$                  & $\pm 0.687103-0.094566i$                   & $0.687103 - 0.094566 i$   \\
+          & $1$ & $\pm 0.670542-0.285767i$                  & $\pm 0.670542-0.285767i$                   & $0.670542 - 0.285767 i$   \\ \hline
+      2   & $0$ & $\pm 0.897345-0.095309i$                  & $\pm 0.897345-0.095309i$                   & $0.897345 - 0.095309 i$   \\
+          & $1$ & $\pm 0.884980-0.287266i$                  & $\pm 0.884980-0.287266i$                   & $0.884980 - 0.287266 i$   \\
+          & $2$ & $\pm 0.861109-0.483113i$                  & $\pm 0.861109-0.483113i$                   & $0.861109 - 0.483113 i$   \\ \hline
+      3   & $0$ & $\pm 1.101190-0.095648i$                  & $\pm 1.101190-0.095648i$                   & $1.101190 - 0.095648 i$   \\
+          & $1$ & $\pm 1.091300-0.287886i$                  & $\pm 1.091300-0.287886i$                   & $1.091300 - 0.287886 i$   \\
+          & $2$ & $\pm 1.071999-0.482895i$                  & $\pm 1.071999-0.482895i$                   & $1.071999 - 0.482895 i$   \\
+          & $3$ & $\pm 1.044272-0.682307i$                  & $\pm 1.044272-0.682307i$                   & $1.044272 - 0.682307 i$   \\ \hline
+      4   & $0$ & $\pm 1.301587-0.095829i$                  & $\pm 1.301587-0.095829i$                   & $1.301587 - 0.095829 i$   \\
+          & $1$ & $\pm 1.293328-0.288184i$                  & $\pm 1.293328-0.288184i$                   & $1.293328 - 0.288184 i$   \\
+          & $2$ & $\pm 1.277107-0.482604i$                  & $\pm 1.277107-0.482604i$                   & $1.277107 - 0.482604 i$   \\
+          & $3$ & $\pm 1.253526-0.680366i$                  & $\pm 1.253526-0.680366i$                   & $1.253526 - 0.680366 i$   \\
+          & $4$ & $\pm 1.223513-0.882554i$                  & $\pm 1.223512-0.882553i$                   & $1.223513 - 0.882554 i$   \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Quasinormal frequencies of spin $5/2$ perturbations normalized by the mass $(M\omega)$.
+  }
+  \label{Tab:Spin5/2}
+\end{table}
+
+
+\begin{table}[t]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{c|c|c}
+      \hline
+      \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations} \\ \hline\hline
+      $-0.250000i$                              & $-0.250000i$                               & $-0.250000i$              \\ \hline
+      $-0.500000i$                              & $-0.500000i$                               & $-0.500000i$              \\ \hline
+      $-0.750000i$                              & $-0.750000i$                               & $-0.750000i$              \\ \hline
+      $-1.000000i$                              & $-1.000000i$                               & $-1.000031i$              \\ \hline
+      $-1.2499998i$                             & $-1.250000i$                               & $-1.246550i$              \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Purely imaginary frequencies for spin $1/2$ perturbations normalized by the mass $(M\omega)$. The numerical values of such frequencies are exactly the same as for the purely imaginary frequencies arising in the QNM of spin $3/2$ perturbations.
+  }
+  \label{Tab:PurelyImSpin1/2}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{c|c|c}
+      \hline
+      \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations} \\ \hline\hline
+      $-0.250000i$                              & $-0.250000i$                               & $-0.250000i$              \\ \hline
+      $-0.500000i$                              & $-0.500000i$                               & $-0.500000i$              \\ \hline
+      $-0.750000i$                              & $-0.750000i$                               & $-0.750000i$              \\ \hline
+      $-1.000000i$                              & $-1.000000i$                               & $-1.000031i$              \\ \hline
+      $-1.2499998i$                             & $-1.250000i$                               & $-1.246550i$              \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Purely imaginary frequencies for spin $3/2$ perturbations normalized by the mass $(M\omega)$. The numerical values of such frequencies are exactly the same as for the purely imaginary frequencies arising in the QNM of spin $1/2$ perturbations.
+  }
+  \label{Tab:PurelyImSpin3/2}
+\end{table}
+
+\begin{table}[ht]
+  \centering
+  \resizebox{\linewidth}{!}{%
+    \begin{tabular}{c|c|c}
+      \hline
+      \tlt{Pseudo-spectral}{I (60 Polynomials)} & \tlt{Pseudo-spectral}{II (40 polynomials)} & \tlt{AIM}{100 Iterations} \\ \hline\hline
+      $-0.125000i$                              & $-0.125000i$                               & $-0.125000i$              \\ \hline
+      $-0.375602i$                              & $-0.375602i$                               & $-0.378659i$              \\ \hline
+      $-0.626877i$                              & $-0.626877i$                               & $-0.623931i$              \\ \hline
+      $-0.878946i$                              & $-0.878948i$                               & $-0.907374i$              \\
+      \hline\hline
+    \end{tabular}%
+  }
+  \caption{
+    Purely imaginary frequencies of spin $5/2$ perturbations normalized by the mass $(M\omega)$.
+  }
+  \label{Tab:PurelyImSpin5/2}
+\end{table}

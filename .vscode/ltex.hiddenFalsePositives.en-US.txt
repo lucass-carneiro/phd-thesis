@@ -170,3 +170,5 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThis would allow one to obtain as system of coupled ODEs that could, in principle be solved via the AIM or other methods and yield arbitrarylly acurrate approximations of quasinormal frequencies in these contextes.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSecondly, we believe that it is possible separate the perturbation PDEs arising from analytical models of binary spacetimes by employing series approximations to the solutions.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QSecondly, we contend that it may be possible to separate the perturbation partial differential equations (PDEs) that arise from analytical models of binary spacetimes by employing series approximations to the solutions.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe main motivation for investigating the spin \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q field perturbation is the Rarita-Schwinger theory.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe primary motivation for exploring perturbations of the spin \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q field is the Rarita-Schwinger theory.\\E$"}
