@@ -72,7 +72,7 @@ In order to better visualize and understand the improved algorithm, it is useful
 
 \begin{figure}[!ht]
   \centering
-  \includesvg[scale = 0.75]{img/aim_qnm/aim_coeffs.svg}
+  \includesvg[width=\linewidth]{img/aim_qnm/aim_coeffs.svg}
   \caption{Schematic representation of the AIM for computing the $c^i_n$ matrix. Each row of matrices represent an AIM step. Coefficients circled in red are currently being computed, while coefficients marked in blue withe arrows are the coefficients required for that computation. Notice how the lower-right triangle of coefficients is never used.}
   \label{fig:aim_coeffs_c}
 \end{figure}
@@ -81,7 +81,7 @@ In  Fig.~\ref{fig:aim_coeffs_d}, we see a similar representation, but now for th
 
 \begin{figure}[!ht]
   \centering
-  \includesvg[scale = 0.75]{img/aim_qnm/aim_coeffs_d.svg}
+  \includesvg[width=\linewidth]{img/aim_qnm/aim_coeffs_d.svg}
   \caption{Schematic representation of the AIM for computing the $d^i_n$ matrix. The first two row of matrices represent AIM steps and the third row represents the computation of $d^o_1$, which is required in computing $c^0_2$. Coefficients circled in red are currently being computed, while coefficients marked in blue withe arrows are the coefficients required for that computation. Notice how the lower-right triangle of coefficients is never used.}
   \label{fig:aim_coeffs_d}
 \end{figure}
@@ -122,7 +122,7 @@ The algorithm steps are depicted in Fig.~\ref{fig:arrays_steps} for the $n=2$ ex
 \begin{figure}[!ht]
   \centering
   \fontsize{9}{10}\selectfont
-  \includesvg[scale = 0.70]{img/aim_qnm/arrays.svg}
+  \includesvg[width=\linewidth]{img/aim_qnm/arrays.svg}
   \caption{Representation of AIM steps for an $n=2$ sized example. Arrays are represented by a sequence of blue (for storing $c^i_n$ coefficient) and red (for storing $d^i_n$ coefficients) squares, wherein each square is an array element. Each column represents, respectively, initial, current and previous data. Colored arrows indicate index dependencies. Hatches indicate ignored data.}
   \label{fig:arrays_steps}
 \end{figure}
