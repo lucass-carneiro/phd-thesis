@@ -60,3 +60,7 @@ Timotheo
 Sanches
 EinsteinTookit
 Schnetter
+quasinmoral
+superradiant
+backreaction
+ODEs
