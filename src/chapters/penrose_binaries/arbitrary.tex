@@ -184,6 +184,16 @@ With these quantities, it is possible to describe the ellipse in terms of an arb
 %
 and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:arbitrary_penrose_V_norm} is reduced to that of evaluating the right-hand side of Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1} - \eqref{eq:arbitrary_penrose_ellipse_parametric_2} for some value of $\Theta$, effectively reducing the ``degrees of freedom'' of the problem.
 
+The general workflow for finding explicit examples of the PP is as follows:
+%
+% \begin{enumerate}
+%   \item Chose a break-up point. This will be the initial position of all three particle participating in the process. We know that in order to extract energy this break-up must occur inside the ergosphere. In general, when the spacetime under study does not possess a global time-like killing vector field, we consider the ergosphere to be the now observer dependent region where the metric component $\mtrtens{t}{t}$ changes sign.
+%   \item Chose initial velocities and energy for the ingoing particle in such a way that it is an escaping orbit when integrated forward and backward in time. Requiring that the orbit is escaping in both ``temporal directions'' makes it more likely that one of the particles produced after the break-up will escape to infinity.
+%   \item Choose initial velocities and energy for the particle that is absorbed by the black whole and will be the equivalent of the negative energy orbit. These parameters are chosen so that the particle is counter-rotating with the black whole that will absorb it, so that its angular momentum can actually be decreased upon absorption.
+%   \item The escape orbit parameters are computed automatically by the code via 4-momentum conservation at the break-up point.
+% \end{enumerate}
+%
+
 \subsection{Kerr Metric}
 \label{ch:kerr_example}
 \input{src/chapters/penrose_binaries/arbitrary_kerr_example.tex}
