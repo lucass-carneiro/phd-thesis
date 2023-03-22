@@ -81,7 +81,6 @@ It is noteworthy that in the event that $\xi^\mu$ denotes a global time-like kil
 
 If we, however, relax the assumption that the $\xi^\mu$ is a global time-like killing vector field, the quantity given by Eq.~\eqref{eq:arbitrary_penrose_global_energy_def} is no longer physically meaningful as an energy measure, thus restricting all physical arguments to be made in terms of local energy $E$ measurements. Furthermore, local energy, as can be explicitly seen in Eq.~\eqref{eq:arbitrary_penrose_geodesic_eq_E}, is not in general conserved along the particle's trajectory and must always be positive in order to be physically meaningful.
 
-
 Given the aforementioned constraints, how can the local energies of particles engaged in a collision or a breakup process be compared in a physically significant manner to determine whether the system has lost or gained energy? To resolve this issue, it is essential to consider a crucial implication of Eq.~\eqref{eq:arbitrary_penrose_local_global_energy_relation}, which is that if the spacetime metric is asymptotically flat, meaning it becomes the Minkowski solution at an infinitely remote distance from the black hole (or holes), a significant inference can be derived.
 
 In the limit where spatial coordinates approach infinity, the components of the spatial metric $\gamma_{ij}$ approach those of the Minkowski metric $\eta_{ij}$, the shift vector $\beta^i$ approaches zero, and the lapse function $N$ approaches one. Therefore, according to Eq.~\eqref{eq:arbitrary_penrose_local_global_energy_relation}, the global energy $\varepsilon$ and the local energy $E$ coincide at infinity. This means that if the spacetime is asymptotically flat, the global energy is still physically meaningful at infinity. Moreover, Eq.~\eqref{eq:arbitrary_penrose_geodesic_eq_E} implies that $K_{ij}$ approaches zero and $N$ approaches one as the Minkowski solution is approached, so both global and local energies are conserved at infinity.
@@ -184,15 +183,14 @@ With these quantities, it is possible to describe the ellipse in terms of an arb
 %
 and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:arbitrary_penrose_V_norm} is reduced to that of evaluating the right-hand side of Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1} - \eqref{eq:arbitrary_penrose_ellipse_parametric_2} for some value of $\Theta$, effectively reducing the ``degrees of freedom'' of the problem.
 
-The general workflow for finding explicit examples of the PP is as follows:
-%
-% \begin{enumerate}
-%   \item Chose a break-up point. This will be the initial position of all three particle participating in the process. We know that in order to extract energy this break-up must occur inside the ergosphere. In general, when the spacetime under study does not possess a global time-like killing vector field, we consider the ergosphere to be the now observer dependent region where the metric component $\mtrtens{t}{t}$ changes sign.
-%   \item Chose initial velocities and energy for the ingoing particle in such a way that it is an escaping orbit when integrated forward and backward in time. Requiring that the orbit is escaping in both ``temporal directions'' makes it more likely that one of the particles produced after the break-up will escape to infinity.
-%   \item Choose initial velocities and energy for the particle that is absorbed by the black whole and will be the equivalent of the negative energy orbit. These parameters are chosen so that the particle is counter-rotating with the black whole that will absorb it, so that its angular momentum can actually be decreased upon absorption.
-%   \item The escape orbit parameters are computed automatically by the code via 4-momentum conservation at the break-up point.
-% \end{enumerate}
-%
+Utilizing this parametrization of velocities, the general workflow for finding explicit examples of the PP with our code is as follows:
+
+\begin{enumerate}
+  \item Chose a break-up point. This will be the initial position of all three particle participating in the process. We know that in order to extract energy this break-up must occur inside the ergosphere. In general, when the spacetime under study does not possess a global time-like killing vector field, we consider the ergosphere to be the now observer dependent region where the metric component $\mtrtens{t}{t}$ changes sign.
+  \item Chose initial velocities and energy for the ingoing particle in such a way that it is an escaping orbit when integrated forward and backward in time. Requiring that the orbit is escaping in both ``temporal directions'' makes it more likely that one of the particles produced after the break-up will escape to infinity.
+  \item Choose initial velocities and energy for the particle that is absorbed by the black whole and will be the equivalent of the negative energy orbit. These parameters are chosen so that the particle is counter-rotating with the black whole that will absorb it, so that its angular momentum can actually be decreased upon absorption.
+  \item The escape orbit parameters are computed automatically by the code via 4-momentum conservation at the break-up point.
+\end{enumerate}
 
 \subsection{Kerr Metric}
 \label{ch:kerr_example}
