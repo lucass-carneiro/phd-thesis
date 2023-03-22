@@ -83,7 +83,13 @@ To summarize, the algorithm one must employ in order to construct the SKS metric
   \item The final metric components are given by $\mtrtens{\mu}{\nu}(t,x,y,z) = \eta_{\mu\nu} + \overline{\mathcal{H}}^{(1)}_{\mu\nu} + \overline{\mathcal{H}}^{(2)}_{\mu\nu}$.
 \end{enumerate}
 
-We have implemented the SKS solution as a plugin in \texttt{GRLensing} and validated the implementation by comparing plots of the metric components against the results of Ref.~\cite{PhysRevD.104.044041}. We have also constructed the metric analytically using a \texttt{Mathematica} notebook that was also used in order to independently check the components as implemented in the \texttt{C++} code and cross-check those results against Ref.~\cite{PhysRevD.104.044041}. Furthermore, we have also used this notebook to identify the region where the $\mtrtens{t}{t}$ component changes its sign. This region can be understood as the ``ergosphere'' viewed by an observer living in the global reference frame labeled by $(t,x,y,z)$. Note however, that strictly speaking the use of the word ``ergosphere'' in this context is an abuse, since it refers to a region that is globally defined via the existence of the time-like killing vector field. Nevertheless, we can observe this region as the spacetime metric parameters change, similarly to our work in Sections \ref{ch:penrose_binaries:sec:mp_penrose} and \ref{ch:penrose_binaries:sec:cmmr_penrose}. The general features of the local ergosphere in the SKS metric resemble that of the CMMR metric, presented in Sec.~\ref{ch:penrose_binaries:sec:cmmr_penrose}, with the remarkable difference that the Lorentz boosts required for the construction of the SKS spacetime make the ergospheres ``flattened'' the direction of the motion of the holes. This is a well-known effect that can be observed even in the Schwarzschild spacetime, as demonstrated in Ref.~\cite{PhysRevD.91.084044}. Fig.~\ref{fig:sks_ergo_plot} illustrates relevant regions in the SKS spacetime with black holes masses $M^{(1)} = M^{(2)} = 1/2$, spin parameters $a^{(1)} = a^{(2)} = 1/4$ and separation parameter $b = 3$. The boundary of the local ergosphere is marked in red, the approximate location of the event horizons in gray, the singular region in black and the black hole centers are indicated by black crosshairs. As was previously mentioned, the boundary of the ergosphere is marked as the surface where the $\mtrtens{t}{t}$ component changes its sign. The event horizons and singular regions are given by~\cite{Armengol:2021shd}
+We have implemented the SKS solution as a plugin in \texttt{GRLensing} and validated the implementation by comparing plots of the metric components against the results of Ref.~\cite{PhysRevD.104.044041}. We have also constructed the metric analytically using a \texttt{Mathematica} notebook that was also used in order to independently check the components as implemented in the \texttt{C++} code and cross-check those results against Ref.~\cite{PhysRevD.104.044041}.
+
+Furthermore, we have also used this notebook to identify the region where the $\mtrtens{t}{t}$ component changes its sign. This region can be understood as the ``ergosphere'' viewed by an observer living in the global reference frame labeled by $(t,x,y,z)$. Note however, that strictly speaking the use of the word ``ergosphere'' in this context is an abuse of nomenclature, since it does not refer to a region that is globally defined via the existence of the time-like killing vector field. Nevertheless, we can observe this region as the spacetime metric parameters change, similarly to our work in Sections \ref{ch:penrose_binaries:sec:mp_penrose} and \ref{ch:penrose_binaries:sec:cmmr_penrose}.
+
+The general features of the local ergosphere in the SKS metric resemble that of the CMMR metric, presented in Sec.~\ref{ch:penrose_binaries:sec:cmmr_penrose}, with the remarkable difference that the Lorentz boosts required for the construction of the SKS spacetime make the ergospheres ``flattened'' in the direction of the motion of the holes. This is a well-known effect that can be observed even in the Lorentz boosted Schwarzschild spacetime, as demonstrated in Ref.~\cite{PhysRevD.91.084044}.
+
+Fig.~\ref{fig:sks_ergo_plot} illustrates relevant regions in the SKS spacetime with black holes masses $M^{(1)} = M^{(2)} = 1/2$, spin parameters $a^{(1)} = a^{(2)} = 1/4$ and separation parameter $b = 3$. The boundary of the local ergosphere is marked in red, the approximate location of the event horizons in gray, the singular region in black and the black hole centers are indicated by black crosshairs. As was previously mentioned, the boundary of the ergosphere is marked as the surface where the $\mtrtens{t}{t}$ component changes its sign. The event horizons and singular regions are given by~\cite{Armengol:2021shd}
 %
 \begin{equation}
   r^{(1,2)} = 2 M^{(1,2)} \left( M^{(1,2)} + \sqrt{M^{(1,2)} - \left(a^{(1,2)}\right)^2} \right)
@@ -102,14 +108,16 @@ respectively, where $r^{(1,2)}$ is the coordinate distance measured from one of 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\linewidth]{img/penrose_binaries/sks_regions.pdf}
-  \caption{Regions of interest in the SKS metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$}
+  \caption{Regions of interest in the $t=0$ SKS metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$}
   \label{fig:sks_ergo_plot}
 \end{figure}
 
 \subsubsection{Example 1}
 \label{ch:sks_example_1}
 
-For our first example, we have chosen the system parameters as $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 0.49$ and $b = 10$. The break-up point was chosen at coordinates $X^i = (6.3, 0, 0)$ and the background sphere radius was chosen to be $1.0 \times 10^6$. Following the same template of Table~\ref{tab:arbitrary_penrose_kerr_example_energy_mass}, Table~\ref{tab:arbitrary_penrose_sks_example_energy_mass} summarizes the initial energy and mass of the participating particles. Once again, the first, second and third rows contain data relative to the entry, Penrose and exit orbits, respectively. The parameters for the entry and Penrose orbits are chosen explicitly via configuration file fed to the code, while the parameters of the exit orbit are computed via the conservation of 4-momentum at the break-point. The masses are explicitly chosen in order to satisfy Eq.~\eqref{eq:mass_constraint} and to provide a way of computing initial velocities via Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1}-\eqref{eq:arbitrary_penrose_ellipse_parametric_2}
+For our first example, we have chosen the system parameters as $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 0.49$ and $b = 10$. The break-up point was chosen at coordinates $X^i = (6.3, 0, 0)$ and the background sphere radius was chosen to be $1.0 \times 10^6$. Following the same template of Table~\ref{tab:arbitrary_penrose_kerr_example_energy_mass}, Table~\ref{tab:arbitrary_penrose_sks_example_energy_mass} summarizes the initial energy and mass of the participating particles.
+
+Once again, the first, second and third rows contain data relative to the entry, Penrose and exit orbits, respectively. The parameters for the entry and Penrose orbits are chosen explicitly, while the parameters of the exit orbit are computed via the conservation of 4-momentum at the break-point. The masses are explicitly chosen in order to satisfy Eq.~\eqref{eq:mass_constraint} and to provide a way of computing initial velocities via Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1}-\eqref{eq:arbitrary_penrose_ellipse_parametric_2}
 %
 \begin{table}[]
   \centering
@@ -120,7 +128,7 @@ For our first example, we have chosen the system parameters as $M^{(1)} = M^{(2)
     $8.0 \times 10^{-3}$                & $1.0 \times 10^{-4}$                \\
     $9.9199999999999999 \times 10^{-1}$ & $9.5800493929022838 \times 10^{-3}$ \\ \hline\hline
   \end{tabular}
-  \caption{Initial energy and masses for the particles participating in the PP example. The first two rows are given explicitly via configuration value and represent the ingoing and Penrose trajectories, respectively. The third row represents the exit trajectory and is computes via conservation of 4-momentum.}
+  \caption{Initial energy and masses for the particles participating in the PP example in the SKS background.}
   \label{tab:arbitrary_penrose_sks_example_energy_mass}
 \end{table}
 
@@ -135,7 +143,7 @@ Once more, following Table~\ref{tab:arbitrary_penrose_kerr_example_velocities}, 
     $0.5948571400034293$  & $-0.3343724878526367$ & $-100/200 \pi$ \\
     $0.66011565390809868$ & $0.68380243736284951$ & ---            \\ \hline\hline
   \end{tabular}
-  \caption{Initial velocities for the particles participating in the PP example. The first two rows are computed using the ellipse parametrization described in the previous section with data provided in Tab.~\ref{tab:arbitrary_penrose_sks_example_energy_mass} together with the parameter provided in the third column and represent the ingoing and Penrose trajectories, respectively. The third row represents the exit trajectory and is computes via conservation of 4-momentum.}
+  \caption{Initial velocities for the particles participating in the PP example in the SKS background.}
   \label{tab:arbitrary_penrose_sks_example_velocities}
 \end{table}
 
@@ -151,7 +159,7 @@ As Table~\ref{tab:arbitrary_penrose_kerr_example_results}, Table~\ref{tab:arbitr
       $3.4638508542318119 \times 10^{-1}$ & $3.4638400572434974 \times 10^{-1}$ & $1.0796988314520917 \times 10^{-6}$ \\ \hline\hline
     \end{tabular}
   }
-  \caption{Energy measures at the time of collision with the background sphere. The first and second row represent the ingoing and the outgoing orbits, respectively. The third column shows the absolute difference between energy measures at the background sphere radius. Note that $t_f$ is not necessarily the same for both trajectories.}
+  \caption{Energy measures at the time of collision with the background sphere in the SKS background}
   \label{tab:arbitrary_penrose_sks_example_results}
 \end{table}
 
@@ -165,7 +173,7 @@ Finally, following Table~\ref{tab:arbitrary_penrose_kerr_example_efficiency}, Ta
     $\eta_E$                                                 & $0.41653495863897544$ \\
     $\eta_\varepsilon$                                       & $0.41652966700464295$ \\ \hline\hline
   \end{tabular}
-  \caption{Energy difference and extraction efficiency of the process given different energy measures.}
+  \caption{Energy difference and extraction efficiency of the process given different energy measures in the SKS background.}
   \label{tab:arbitrary_penrose_sks_example_efficiency}
 \end{table}
 
@@ -190,7 +198,7 @@ In this example, we repeat the run detailed in Sec.~\ref{ch:sks_example_1} while
     7.52 & $0.3205512719659607$ & $0.3205458837844264$ \\
     7.21 & $0.1207168410527975$ & $0.1207122709189437$ \\ \hline\hline
   \end{tabular}
-  \caption{Energy extraction efficiency for the configuration detailed in Sec~\ref{ch:sks_example_1} while varying the distance parameter $b$ and keeping the break-up point at $1.3$ coordinate distance unites to the right of the rightmost black hole.}
+  \caption{Energy extraction efficiency for the configuration detailed in Sec~\ref{ch:sks_example_1} while varying the distance parameter $b$ and keeping the break-up point at $1.3$ coordinate distance unites to the right of the rightmost black hole in the SKS backround.}
   \label{tab:arbitrary_penrose_sks_example_results_d_variation}
 \end{table}
 
