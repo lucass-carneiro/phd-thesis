@@ -105,20 +105,39 @@ The scheme described above was implemented in a public \texttt{C++} code availab
 
 \subsection{Parametrizing initial velocities}
 
-As was previously mentioned, we must choose 7 parameters in order to solve the 3+1 split geodesic equation. Once initial positions $X^i(0)$ and local energy $E(0)$ values are chosen one is still free to choose 3 initial velocity $V^i(0)$ values. We have chosen to consider only orbits in the $z=0$ plane, which implies $V^3(0)=0$. We do not believe that this choice represents a loss of generality since it is valid for all cases of interest, including astrophysical black hole binaries. By comparing Eq.~\eqref{eq:arbitrary_penrose_V_norm} to a general bi-variate quadratic form
+As previously stated, the initial configuration of particles is determined by seven parameters: the initial positions $X^i(0)$, velocities $V^i(0)$, and local energy $E(0)$. Upon selecting a breakup point and initial energy, the task of determining the remaining three initial velocities persists. It is important to recall that the initial data must fulfill Eq.~\eqref{eq:arbitrary_penrose_V_norm}. Therefore, for generic $V^i(0)$ and $E(0)$ values and considering massive particles, we can write
+%
+\begin{multline}
+  \gamma_{ij} V^{i}(0)V^{j}(0) = \gamma_{11}\left(V^1(0)\right)^2 + \gamma_{22}\left(V^2(0)\right)^2 + \gamma_{33}\left(V^3(0)\right)^2 \\
+  + 2\left[ \gamma_{12}V^1(0)V^2(0) + \gamma_{13}V^1(0)V^3(0) + \gamma_{23}V^2(0)V^3(0) \right] = 1-\left(\frac{m}{E(0)}\right)^2.
+  \label{eq:arbitrary_penrose_initial_v_explicit_expansion}
+\end{multline}
+
+Equation \eqref{eq:arbitrary_penrose_initial_v_explicit_expansion} can be identified as a quadratic form with three variables, $V^i(0)$. For the purpose of our study, we will only consider particles that are initially confined to the $z=0$ plane of the system, which means selecting $V^z(0) = 0$. This choice significantly simplifies the mathematical analysis of the initial conditions, enabling us to associate Eq.~\eqref{eq:arbitrary_penrose_initial_v_explicit_expansion} with the general bi-variate quadratic form
 %
 \begin{equation}
   A X^2 + 2 B X Y + C Y^2 + 2 D X + 2 F Y + G = 0,
   \label{eq:arbitrary_penrose_general_quadratic_form}
 \end{equation}
 %
-it is possible to identify
+where
 %
-\begin{equation}
-  A = \gamma_{22},\, B = \gamma_{23},\, C = \gamma_{33},\, G = -\left[ 1 - \left( \frac{m}{E} \right)^2 \right],\, D = F = 0,
-\end{equation}
+\begin{align}
+  A & = \gamma_{11},                                      \\
+  B & = \gamma_{12},                                      \\
+  C & = \gamma_{22},                                      \\
+  G & = -\left[ 1 - \left( \frac{m}{E} \right)^2 \right], \\
+  D & = F = 0,
+\end{align}
 %
-and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic describes a non-degenerate real ellipse in the $V^1$-$V^2$ plane centered around $V^1_\circ$ and $V^2_\circ$ with semi-axis lengths $\alpha_\pm$ and counterclockwise angle $\phi$ of rotation from the $V^1$ axis to its semi-major axis if after defining~\cite{Hart2002}
+and
+%
+\begin{align}
+  X & = V^1(0),  \\
+  Y & = V^2(0).
+\end{align}
+
+Let us define the determinants $\Delta$, $J$ and $I$ as
 %
 \begin{equation}
   \Delta = 
@@ -127,7 +146,7 @@ and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic
     B & C & F  \\
     D & F & G
   \end{vmatrix}
-  = \left( 1 - \left( \frac{m}{E} \right)^2 \right) \left(\gamma_{23}^2-\gamma_{22} \gamma_{33}\right)
+  = \left( 1 - \left( \frac{m}{E} \right)^2 \right) \left(\gamma_{12}^2-\gamma_{11} \gamma_{22}\right)
   \label{eq:arbitrary_penrose_quadratic_determinant}
   ,
 \end{equation}
@@ -138,18 +157,26 @@ and the variables $X$ and $Y$ with $V^1$ and $V^2$, respectively. This quadratic
     A & B \\
     B & C \\
   \end{vmatrix}
-  = \gamma_{22} + \gamma_{33} - \gamma_{23}^2
+  = -gamma_{12}^2 + \gamma_{11}\gamma{22}
   \label{eq:arbitrary_penrose_quadratic_J}
 \end{equation}
 %
 and
 %
 \begin{equation}
-  I = A + C = \gamma_{22} + \gamma_{33},
+  I = A + C = \gamma_{11} + \gamma_{22}.
   \label{eq:arbitrary_penrose_quadratic_I}
 \end{equation}
+
+If one has
 %
-one has $\Delta \neq 0$, $J > 0$, $\Delta/I < 0$ and $\gamma_{22} \neq \gamma_{33}$. Explicitly, we have~\cite{Larson2006, Young2010, Lawrence2014}
+\begin{align}
+  \Delta \neq 0, \\
+  J > 0,         \\
+  \Delta / I < 0,
+\end{align}
+%
+the quadratic of Eq.~\eqref{eq:arbitrary_penrose_general_quadratic_form} describes a non-degenerate real ellipse in the $V^1(0)$-$V^2(0)$ plane~\cite{Hart2002}. The center coordinates of this ellipse will be denoted as $V^1(0)_\circ$ and $V^2(0)_\circ$, while the lengths of its semi-major and semi-minor axes will be represented as $\alpha_+$ and $\alpha_-$, respectively. Additionally, the angle of rotation, which is measured counterclockwise from the $V^1$ axis to the semi-major axis $\alpha_+$, will be designated as $\phi$. From the coefficients of the quadratic, we can then explicitly write~\cite{Larson2006, Young2010, Lawrence2014}
 %
 \begin{equation}
   V^1_\circ = V^2_\circ = 0,
@@ -157,7 +184,7 @@ one has $\Delta \neq 0$, $J > 0$, $\Delta/I < 0$ and $\gamma_{22} \neq \gamma_{3
 \end{equation}
 %
 \begin{equation}
-  \alpha_\pm = \sqrt{ \frac{2 \left( 1 - \left(m/E\right)^2 \right)}{\gamma_{22} \mp \sqrt{4 \gamma_{23}^2 + \left( \gamma_{22} - \gamma_{33} \right)^2} +\gamma_{33}} }
+  \alpha_\pm = \sqrt{ \frac{2 \left( 1 - \left(m/E\right)^2 \right)}{\gamma_{11} \mp \sqrt{4 \gamma_{12}^2 + \left( \gamma_{11} - \gamma_{22} \right)^2} +\gamma_{22}} }
   \label{eq:arbitrary_penrose_ellipse_axis}
 \end{equation}
 %
@@ -165,23 +192,23 @@ and
 \begin{equation}
   \phi =
   \begin{cases}
-    0                                                                                                 & \text{if } \gamma_{23} = 0 \text{ and } \gamma_{22} < \gamma_{33}    \\
-    \frac{\pi}{2}                                                                                     & \text{if } \gamma_{23} = 0 \text{ and } \gamma_{22} > \gamma_{33}    \\
-    \frac{1}{2} \cot^{-1} \left( \frac{\gamma_{22}-\gamma_{33}}{2\gamma_{23}} \right)                 & \text{if } \gamma_{23} \neq 0 \text{ and } \gamma_{22} < \gamma_{33} \\
-    \frac{\pi}{2} + \frac{1}{2} \cot^{-1} \left( \frac{\gamma_{22}-\gamma_{33}}{2\gamma_{23}} \right) & \text{if } \gamma_{23} \neq 0 \text{ and } \gamma_{22} > \gamma_{33}
+    0                                                                                                 & \text{if } \gamma_{12} = 0 \text{ and } \gamma_{11} < \gamma_{22}    \\
+    \frac{\pi}{2}                                                                                     & \text{if } \gamma_{12} = 0 \text{ and } \gamma_{11} > \gamma_{22}    \\
+    \frac{1}{2} \cot^{-1} \left( \frac{\gamma_{11}-\gamma_{22}}{2\gamma_{12}} \right)                 & \text{if } \gamma_{12} \neq 0 \text{ and } \gamma_{11} < \gamma_{22} \\
+    \frac{\pi}{2} + \frac{1}{2} \cot^{-1} \left( \frac{\gamma_{11}-\gamma_{22}}{2\gamma_{12}} \right) & \text{if } \gamma_{12} \neq 0 \text{ and } \gamma_{11} > \gamma_{22}
   \end{cases}
   .
   \label{eq:arbitrary_penrose_ellipse_angle}
 \end{equation}
-%
+
 With these quantities, it is possible to describe the ellipse in terms of an arbitrary parameter $\Theta \in \left[0,2\pi\right]$, that is,
 %
 \begin{align}
-  V^{1}\left(\Theta\right) & =  V^{1}_\circ + \alpha_{+} \cos\Theta\cos\phi - \alpha_{-}\sin\Theta\sin\phi                                                  \label{eq:arbitrary_penrose_ellipse_parametric_1} \\
-  V^{2}\left(\Theta\right) & = V^{2}_\circ + \alpha_{-} \sin\Theta\cos\phi + \alpha_{+}\cos\Theta\sin\phi, \label{eq:arbitrary_penrose_ellipse_parametric_2}
+  V^{1}_{\Theta}(0) & =  V^{1}_\circ + \alpha_{+} \cos\Theta\cos\phi - \alpha_{-}\sin\Theta\sin\phi                                                  \label{eq:arbitrary_penrose_ellipse_parametric_1} \\
+  V^{2}_{\Theta}(0) & = V^{2}_\circ + \alpha_{-} \sin\Theta\cos\phi + \alpha_{+}\cos\Theta\sin\phi, \label{eq:arbitrary_penrose_ellipse_parametric_2}
 \end{align}
 %
-and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:arbitrary_penrose_V_norm} is reduced to that of evaluating the right-hand side of Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1} - \eqref{eq:arbitrary_penrose_ellipse_parametric_2} for some value of $\Theta$, effectively reducing the ``degrees of freedom'' of the problem.
+and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:arbitrary_penrose_V_norm} is reduced to that of evaluating the right-hand side of Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1} - \eqref{eq:arbitrary_penrose_ellipse_parametric_2} for some value of $\Theta$, effectively reducing the degrees of freedom of the problem.
 
 Utilizing this parametrization of velocities, the general workflow for finding explicit examples of the PP with our code is as follows:
 
