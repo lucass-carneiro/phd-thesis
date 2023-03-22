@@ -6,7 +6,7 @@ Furthermore, Ref.~\cite{PhysRevD.104.044041} compares the superimposed metric wi
 
 Our ultimate aim is to demonstrate the applicability of the framework presented in this section to a wider range of spacetime metrics than the initial mathematical tool set utilized in the PP for static spacetimes. Our primary objective is not to provide quantitatively precise arguments about the behavior of the PP in astrophysical binaries. We only required a model in which two Kerr black holes follow a specific trajectory, breaking the time translation symmetry of the spacetime metric, and the SKS metric offers this model with greater ease than the PN matching counterparts.
 
-Our construction of the SKS metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter$a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) \mu}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
+Our construction of the SKS metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter $a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) \mu}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
 %
 \begin{equation}
   s^{(i) \mu} = \left( (-1)^{i + 1}\frac{b}{2}\cos\Omega t,\, (-1)^{i + 1}\frac{b}{2}\sin\Omega t,\, 0 \right),
@@ -20,7 +20,7 @@ where
   \label{eq:arbitrary_penrose_sks_angular_velocity}
 \end{equation}
 %
-is the orbital angular velocity of the system and $b$ is the coordinate distance (in global coordinates) between the two black hole origins. From Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories}, we can compute the black hole velocity vector $v^(i) \mu = \ud s^{(i) \mu} / \ud t$ and obtain
+is the orbital angular velocity of the system and $b$ is the coordinate distance (in global coordinates) between the two black hole origins. From Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories}, we can compute the black hole velocity vector $v^{(i)} \mu = \ud s^{(i) \mu} / \ud t$ and obtain
 %
 \begin{equation}
   v^{(i) \mu} = \left( (-1)^i \frac{b\Omega}{2} \sin \Omega t,\, (-1)^{i+1} \frac{b\Omega}{2} \cos\Omega t,\, 0 \right),
@@ -74,7 +74,7 @@ To summarize, the algorithm one must employ in order to construct the SKS metric
 %
 \begin{enumerate}
   \item Compute the value of $\Omega$ from the metric parameters (masses and separation) via Eq.~\eqref{eq:arbitrary_penrose_sks_angular_velocity}.
-  \item Using the previous step, compute $\gamma$ via Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_orbit_lorentz_factor}.
+  \item Compute $\gamma$ via Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_orbit_lorentz_factor}.
   \item Compute each component of the trajectory velocity vector $v^{(i) \mu}$ and normal vector $n^{(i) \mu}$ via Eqs.~\eqref{eq:arbitrary_penrose_sks_keplerian_velocities} and \eqref{eq:arbitrary_penrose_sks_keplerian_velocities_norms}, respectively.
   \item Construct the Lorentz boost matrix via Eq.~\eqref{eq:arbitrary_penrose_sks_lorentz_boost}.
   \item Boost the ``black hole part'' of the Kerr-Schild metric, that is, replace  $\mathcal{M}_{\mu\nu} = H l_\mu l_\nu$ by $\overline{\mathcal{M}}^{(i)}_{\mu\nu} = H^{(i)} \tens{\Lambda}{(i) \alpha}{\mu} \tens{\Lambda}{(i) \beta}{\nu} l^{(i)}_\alpha l^{(i)}_\beta$ for each black hole.
