@@ -54,7 +54,7 @@ and the extrinsic curvature is
 %
 where $D_i$ is the covariant derivative associated with $\gamma_{ij}$.
 
-We will now summarize the parameter choices made that provide an explicit example of energy extraction. In this example, we have chosen $M = 0.5$ and $a = 0.49$, a rather large spin parameter, chosen to facilitate the process of finding suitable orbits. The break-up point was chosen at coordinates $X^i = (1, 0, 0)$ and the background sphere radius was chosen to be $1.0\times 10^6$. Table~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} summarizes the initial energy and mass of the participating particles. The first, second and third rows contain data relative to the entry, Penrose and exit orbits, respectively. The parameters for the entry and Penrose orbits are chosen explicitly via configuration file fed to the code, while the parameters of the exit orbit are computed via the conservation of 4-momentum at the break-point. Note that the masses are explicitly chosen in order to satisfy Eq.~\eqref{eq:mass_constraint} and to provide a way of computing initial velocities via Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1}-\eqref{eq:arbitrary_penrose_ellipse_parametric_2}
+We will now summarize the parameter choices made that provide an explicit example of energy extraction. In this example, we have chosen $M = 0.5$ and $a = 0.49$, a rather large spin parameter, chosen to facilitate the process of finding suitable orbits. The break-up point was chosen at coordinates $X^i = (1, 0, 0)$ and the background sphere radius was chosen to be $1.0\times 10^6$. Table~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} summarizes the initial energy and mass of the participating particles. The first, second and third rows contain data relative to the entry, Penrose and exit orbits, respectively. The parameters for the entry and Penrose orbits are chosen explicitly, while the parameters of the exit orbit are computed via the conservation of 4-momentum at the break-point. Note that the masses are explicitly chosen in order to satisfy Eq.~\eqref{eq:mass_constraint} and to provide a way of computing initial velocities via Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1}-\eqref{eq:arbitrary_penrose_ellipse_parametric_2}
 
 \begin{table}[]
   \centering
@@ -65,11 +65,11 @@ We will now summarize the parameter choices made that provide an explicit exampl
     $8.0 \times 10^{-3}$                & $1.0 \times 10^{-4}$                \\
     $9.9199999999999999 \times 10^{-1}$ & $9.5800493929138735 \times 10^{-3}$ \\ \hline\hline
   \end{tabular}
-  \caption{Initial energy and masses for the particles participating in the PP example. The first two rows are given explicitly via configuration value and represent the ingoing and Penrose trajectories, respectively. The third row represents the exit trajectory and is computed via conservation of 4-momentum.}
+  \caption{Initial energy and mass of particles for the entry, Penrose, and exit orbits.}
   \label{tab:arbitrary_penrose_kerr_example_energy_mass}
 \end{table}
 
-Table~\ref{tab:arbitrary_penrose_kerr_example_velocities} summarize the initial velocities of the participating particles. Here, the values of the first two rows (representing the ingoing and Penrose trajectories, respectively), were computed via the parametrization described in the previous section together with data from Tab.~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} while data on the third row, representing the outgoing particle, was computed via conservation of 4-momentum. The third column in this table shows the value of the ellipse parameter chosen for each orbit (except the exit orbit).
+Table~\ref{tab:arbitrary_penrose_kerr_example_velocities} summarizes the initial velocities of the participating particles. Here, the values of the first two rows (representing the ingoing and Penrose trajectories, respectively), were computed via the parametrization described in the previous section together with data from Tab.~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} while data on the third row, representing the outgoing particle, was computed via conservation of 4-momentum. The third column in this table shows the value of the ellipse parameter chosen for each orbit. Note the absence for a value of $\Theta$ in the exit orbit. Although the calculation can be easily performed after applying conservation laws, it does not provide any additional information, as only the parameters related to the ingoing and Penrose orbit are necessary to reproduce and replicate results.
 
 \begin{table}[]
   \centering
@@ -80,11 +80,11 @@ Table~\ref{tab:arbitrary_penrose_kerr_example_velocities} summarize the initial 
     $0.5948571400034293$  & $-0.3343724878526367$ & $-100/200 \pi$ \\
     $0.67761242094739838$ & $0.68213425986659171$ & ---            \\ \hline\hline
   \end{tabular}
-  \caption{Initial velocities for the particles participating in the PP example. The first two rows are computed using the ellipse parametrization described in the previous section with data provided in Tab.~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} together with the parameter provided in the third column and represent the ingoing and Penrose trajectories, respectively. The third row represents the exit trajectory and is computes via conservation of 4-momentum.}
+  \caption{Initial velocities for the particles participating in the PP example.}
   \label{tab:arbitrary_penrose_kerr_example_velocities}
 \end{table}
 
-Table~\ref{tab:arbitrary_penrose_kerr_example_results} summarizes the two energy measures (local and global on the first and second column, respectively) at the time when they hit the background sphere. The first row contains data relative to the ingoing orbit while the second contains data relative to the outgoing orbit. Note that $t_f$ does not necessarily coincide for the two orbits, since they might take arbitrarily long paths before escaping to infinity. The third column shows the absolute difference between global and local energies at the background sphere.
+Table~\ref{tab:arbitrary_penrose_kerr_example_results} summarizes the two energy measures (local and global on the first and second column, respectively) at the time when ingoing and outgoing particle hit the background sphere. The first row contains data relative to the ingoing orbit while the second contains data relative to the outgoing orbit. Note that $t_f$ does not necessarily coincide for the two orbits, since they might take arbitrarily long paths before escaping to infinity. The third column shows the absolute difference between global and local energies at the background sphere.
 
 \begin{table}[]
   \centering
@@ -96,7 +96,7 @@ Table~\ref{tab:arbitrary_penrose_kerr_example_results} summarizes the two energy
       $3.8515962539170862 \times 10^{-1}$ & $3.8515904777176790 \times 10^{-1}$ & $5.776199407114824 \times 10^{-7}$  \\ \hline\hline
     \end{tabular}
   }
-  \caption{Energy measures at the time of collision with the background sphere. The first and second row represent the ingoing and the outgoing orbits, respectively. The third column shows the absolute difference between energy measures at the background sphere radius. Note that $t_f$ is not necessarily the same for both trajectories.}
+  \caption{Energy measures at the time of collision with the background sphere. Note that $t_f$ is not necessarily the same for both trajectories.}
   \label{tab:arbitrary_penrose_kerr_example_results}
 \end{table}
 
@@ -120,4 +120,4 @@ Finally, Table~\ref{tab:arbitrary_penrose_kerr_example_efficiency} summarizes th
   \label{tab:arbitrary_penrose_kerr_example_efficiency}
 \end{table}
 
-Even tough the parameters chose in this example lead to a tiny amount of energy being extracted from the system with a low overall efficiency, we consider it to be a success as a whole: It works as a proof of concept and demonstrates how the proposed framework can be used for studying the PP in a broader context than what was known up until now.
+Although the chosen parameters in this example result in a small amount of energy being extracted from the system with low overall efficiency, we consider the example as a success as a whole. It serves as a proof of concept and demonstrates how the proposed framework can be utilized to study the PP in a wider context than previously known. The efficiency of the extraction could have been increased by adjusting the initial parameters, but we decided to stick with this configuration to facilitate comparison with an analogous setup in the case of a Kerr binary, which we will present in the next section, and to better understand the influence of a second black hole on the efficiency. Moreover, our objective is not to maximize the energy extracted by a single PP but to showcase the newly developed method in action.
