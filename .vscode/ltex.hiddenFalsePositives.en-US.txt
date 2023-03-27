@@ -173,3 +173,6 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe main motivation for investigating the spin \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q field perturbation is the Rarita-Schwinger theory.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe primary motivation for exploring perturbations of the spin \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q field is the Rarita-Schwinger theory.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QIn contrast, a numeric BBH model is obtained only at a certain coordinate time hypersurface (typically \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) by solving the Arnowit-Deser-Misner (ADM) constraint equations for a vacuum configuration numerically.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTo aid in the conversion of each component of these equations into C code for the FieldPerturbations Thorn, we utilized the computer algebra system Wolfram Mathematica.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code used in this process can be found in Notebooks/equations.nb of the Thorn's repository in Ref.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q KleinGordon folder.\\E$"}
