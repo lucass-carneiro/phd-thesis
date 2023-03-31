@@ -1,6 +1,6 @@
-INFO:  latexindent version 3.17.2, 2022-04-14, a script to indent .tex files
+INFO:  latexindent version 3.20.3, 2023-02-19, a script to indent .tex files
        latexindent lives here: /usr/share/texmf-dist/scripts/latexindent/
-       Fri Mar 31 02:20:09 2023
+       Fri Mar 31 17:27:17 2023
        Filename: /home/lucas/phd-thesis/src/chapters/wave_scattering/__latexindent_temp_multipatch.tex
 INFO:  Processing switches:
        -y|--yaml: YAML settings specified via command line
@@ -9,10 +9,10 @@ INFO:  Directory for backup files and /home/lucas/phd-thesis/src//indent.log:
        /home/lucas/phd-thesis/src/
 INFO:  YAML settings read: defaultSettings.yaml
        Reading defaultSettings.yaml from /usr/share/texmf-dist/scripts/latexindent/defaultSettings.yaml
-INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
-       Home directory is /home/lucas (didn't find either indentconfig.yaml or .indentconfig.yaml)
-       To specify user settings you would put indentconfig.yaml here: /home/lucas/indentconfig.yaml
-       Alternatively, you can use the hidden file .indentconfig.yaml as: /home/lucas/.indentconfig.yaml
+INFO:  YAML reading settings
+       Home directory is /home/lucas
+       latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
+       see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
 INFO:  YAML settings read: -y switch
        YAML setting: defaultIndent:'  '
        single-quoted string found in -y switch: '  ', substitute to   
