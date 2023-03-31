@@ -1,1 +1,35 @@
-Talk about multipatch
+In order to simulate wave scattering phenomena in binary black hole systems accurately, it is imperative to extract the wave components that are far away from the sources. This is necessary to ensure precise modeling of real-world detectors and to minimize the impact of numerical reflections that occur when multiple grid resolutions are used in adaptive mesh refinement (as is the case in our simulation) and near the boundaries of the computational domain.
+
+To achieve this, it is essential to locate a radius $r_d$ that is sufficiently far from the computational boundary radius $r_b$, such that incoming data from the boundaries does not interfere with the simulated ``measurement'' of the signal. Figure \ref{wave_scattering_multipatch_signal} is a schematic representation of these desired distance relationships, adapted from Ref.~\cite{Reisswig2010}.
+
+\begin{figure}[h]
+  \centering
+  \includesvg[width=\linewidth]{img/wave_scattering/multipatch_signal.svg}
+  \caption{Schematic representation of distance relationships and data propagation in a BBH simulation. Adapted from Ref.~\cite{Reisswig2010}.}
+  \label{fig:wave_scattering_multipatch_signal}
+\end{figure}
+
+The requirement to position the computational boundary at a significant distance from the measurement location exposes a limitation of utilizing a solitary cubical Cartesian domain for simulation. To explicitly demonstrate this limitation, let us examine a simulation performed within a cubical domain that is mapped with Cartesian coordinates, and extends from $-L$ to $L$ in all three spatial dimensions, while containing $N_A$ grid points and uniform grid spacing $h=2L/N$. The total number of points $N_{PA}$ encompassed within this domain, which must be stored in the computer's memory for the simulation to proceed, is determined by
+%
+\begin{equation}
+  N_{PA} = \left( \frac{2L}{h} \right)^3 = N_A^3.
+  \label{eq:wave_scattering_npa}
+\end{equation}
+
+Let us consider the scenario where the size of the domain is increased by a factor of $\delta$ in each dimension, resulting in each coordinate falling within the range of $[-L-\delta, L+\delta]$. In order to preserve a constant grid spacing $h$, the number of grid points required in this configuration, denoted as $N_B$, must be determined by
+%
+\begin{equation}
+  N_{B} = \frac{N_A(L + \delta)}{L}
+  \label{eq:wave_scattering_npa}
+\end{equation}
+%
+and thus the total number of points $N_{PB}$ encompassed within this domain is given by
+%
+\begin{equation}
+  N_{PB} = \left(\frac{N_A(L + \delta)}{L}\right)^3
+  \label{eq:wave_scattering_npa}
+\end{equation}
+
+As an illustrative example, let us consider an initial grid that spans $[-1,1]$ with $N_A=20$, yielding a grid spacing of $h=0.1$. We will now increase the size of this grid by a factor of $\delta=9$, resulting in an expanded grid spanning $[-10,10]$. To maintain the grid spacing at $h=0.1$, we must select $N_B=200$ grid points. Considering that each numerical value stored in the simulation grid is represented by a 64-bit precision floating-point value requiring 8 B of storage, we can conclude that the memory requirements for each grid configuration are $N_{PA}=64$ KB and $N_{PB}=64$ MB of storage per grid function, respectively.
+
+It is noteworthy that even a small increase in the domain size leads to a significant rise in memory requirements, with the latter increasing by $63.93600$ MB. To provide a sense of scale, the entire evolved system for the first grid configuration (comprising two grid functions) could fit into a single 8-inch Memorex 650 floppy disk, the first commercial model made in the year 1972, whereas the second configuration would require approximately $370$ units of the same model to store a single grid function.
