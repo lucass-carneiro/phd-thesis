@@ -1,6 +1,10 @@
-The implementation supports three distinct initial conditions for the scalar field and its canonical momentum. These include a plane wave, an exact Gaussian, and a multipolar Gaussian function. The plane wave and exact Gaussian initial data were developed for the purpose of testing multipatch derivatives in flat spacetime, which will be elaborated on further in subsequent sections. The exact Gaussian initial data is named as such to reflect the fact that it is an exact solution of the Klein-Gordon equation in flat spacetime.
+The implementation supports three distinct initial conditions for the scalar field and its canonical momentum. These include a plane wave, an exact Gaussian, and a multipolar Gaussian function.
 
-The multipolar Gaussian function is a basic Gaussian function that is multiplied by a linear combination of real spherical harmonics. This particular function was the one chosen during our ``production'' runs as it has the ability to excite specific modes in the system based on the chosen parameters for the linear combination. The development of this initial data is based on the methodology presented in Ref.~\cite{PhysRevD.87.043513}. In order to construct it, let us first introduce its components. We start with the Gaussian function $G(r, \sigma)$, given by
+The plane wave and exact Gaussian initial data were developed for the purpose of testing the projections of derivative operators detailed in Sec.\ref{ch:wave_scattering:sec:multipatch}. The exact Gaussian initial data is named as such to reflect the fact that it is an exact solution of the Klein-Gordon equation in flat spacetime.
+
+The multipolar Gaussian function is a basic Gaussian function that is multiplied by a linear combination of real spherical harmonics. This particular function was the one chosen during our production runs\footnote{A production run refers to the execution of a program that is intended to generate results, in contrast to testing runs or benchmarking runs where the purpose is to evaluate the code or measure its performance characteristics.} as it has the ability to excite specific modes in the system based on the chosen parameters for the linear combination.
+
+The development of this initial data is based on the methodology presented in Ref.~\cite{PhysRevD.87.043513}. In order to construct it, let us first introduce its components. We start with the Gaussian function $G(r, \sigma)$, given by
 %
 \begin{equation}
   G(r, \sigma) = \exp\left( -\frac{1}{2} \left( \frac{r}{\sigma} \right)^2  \right).

@@ -42,7 +42,7 @@ Fig.~\ref{fig:wave_scattering_multipatch_coords} depicts a schematic representat
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{img/wave_scattering/multipatch_coords}
+  \includegraphics[width=0.60\linewidth]{img/wave_scattering/multipatch_coords}
   \caption{Schematic representation of the \texttt{Thornburg04} coordinate system employed in the simulations. Adapted from Ref.~\cite{Reisswig2010}.}
   \label{fig:wave_scattering_multipatch_coords}
 \end{figure}
@@ -63,6 +63,8 @@ and
   \label{eq:wave_scattering_projection_2}
 \end{equation}
 %
-respectively, where $\partial_i$ denotes derivatives with respect to $a^i$ and $\hat{\partial}_i$ denotes derivatives with respect to $\x^i$.
+respectively, where $\partial_i$ denotes derivatives with respect to $a^i$ and $\hat{\partial}_i$ denotes derivatives with respect to $x^i$.
 
-It should be noted that, in order to perform the required calculations, not only the Jacobian of local coordinates is necessary, but also the Jacobian derivatives. \texttt{Llama} provides both components of the Jacobian and its derivative at each point on the grid during the evolution process so that the user can project the results according to Eqs~\eqref{eq:wave_scattering_projection_1} and \eqref{eq:wave_scattering_projection_2} manually. Alternatively, \texttt{Llama} provides a convenience \texttt{Thorn} called \texttt{GlobalDerivatives} that automatically performs the projections for the user. However, in our \texttt{Thorn}, we have opted to perform these projections manually, as \texttt{GlobalDerivatives} does not offer a way to directly compute second-order spatial derivatives. Once again, we have employed Wolfram Matheamatica for generating the C code responsible for projecting derivatives into global coordinates.
+It should be noted that, in order to perform the required calculations, not only the Jacobian of local coordinates is necessary, but also the Jacobian derivatives. \texttt{Llama} provides both components of the Jacobian and its derivative at each point on the grid during the evolution process so that the user can project the results according to Eqs~\eqref{eq:wave_scattering_projection_1} and \eqref{eq:wave_scattering_projection_2} manually.
+
+Alternatively, \texttt{Llama} provides a convenience \texttt{Thorn} called \texttt{GlobalDerivatives} that automatically performs the projections for the user. However, in our \texttt{Thorn}, we have opted to perform these projections manually, as \texttt{GlobalDerivatives} does not offer a way to directly compute second-order spatial derivatives. Once again, we have employed Wolfram Matheamatica for generating the C code responsible for projecting derivatives into global coordinates.
