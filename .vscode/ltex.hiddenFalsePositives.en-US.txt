@@ -176,3 +176,6 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTo aid in the conversion of each component of these equations into C code for the FieldPerturbations Thorn, we utilized the computer algebra system Wolfram Mathematica.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe code used in this process can be found in Notebooks/equations.nb of the Thorn's repository in Ref.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q KleinGordon folder.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and wave_scattering_a3c within the EinsteinToolkit, their right-hand sides (RHSs) mus be computed at every time step using metric quantities.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and wave_scattering_a3c within the EinsteinToolkit, their right-hand sides (RHSs) must be computed at every time step using metric quantities.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDuring the spacetime evolution, the metric evolution Thorns make use of the ADMBase thorn, which provides the \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q decomposition variables in every grid point and time step.\\E$"}
