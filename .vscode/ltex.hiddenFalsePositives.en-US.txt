@@ -187,3 +187,14 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QAlternatively, Llama provides a convenience Thorn called GlobalDerivatives that automatically performs the projections for the user.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHowever, in our Thorn, we have opted to perform these projections manually, as GlobalDerivatives does not offer a way to directly compute second-order spatial derivatives.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QOnce again, we have employed Wolfram Matheamatica for generating the C code responsible for projecting derivatives into global coordinates.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q) was used as a basis and modified in order to accommodate the KleinGordon thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, was used as a basis and modified in order to accommodate the KleinGordon thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTo set up the gravitational initial data, the TwoPunctures Thorn \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q was utilized and spacetime evolution was performed using MLBSSN \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe motion of the BHs during the evolution was tracked via the PunctureTracker Thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QOnce the BHs were moved by a certain configurable threshold, Carpet “regrided” the simulation domain, that is, it updated the positions of the refinement boxes so that they keep following the BHs.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QWe have utilized the newly developed KleinGordon Thorn, to evolve a massless scalar field with initial data provided by a multipolar Gaussian function, centered around the origin with \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, which is large enough to engulf both BHs in their initial configuration.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, KleinGordon handcrafted 8th order central finite difference derivative operators were utilized and projected onto global coordinates utilizing the Jacobian and Jacobian derivative components provided by Llama.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QArtificial Kreiss-Oliger dissipation was added to the evolved Klein-Gordon fields via the Dissipation Thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QRadiating boundary conditions were employed in the outer boundaries via the NewRad Thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe time integration scheme utilized in this was method of lines, provided by the MoL Thorn.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe parameter file used for this evolution can be located in the specified GitHub repository under KleinGordon/par/GW150914/GW150914Scalarfield.par in Ref \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

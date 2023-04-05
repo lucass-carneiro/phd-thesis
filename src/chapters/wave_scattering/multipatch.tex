@@ -20,14 +20,14 @@ Let us consider the scenario where the size of the domain is increased by a fact
 %
 \begin{equation}
   N_{B} = \frac{N_A(L + \delta)}{L}
-  \label{eq:wave_scattering_npa}
+  \label{eq:wave_scattering_nb}
 \end{equation}
 %
 and thus the total number of points $N_{PB}$ encompassed within this domain is given by
 %
 \begin{equation}
   N_{PB} = \left(\frac{N_A(L + \delta)}{L}\right)^3
-  \label{eq:wave_scattering_npa}
+  \label{eq:wave_scattering_npb}
 \end{equation}
 
 As an illustrative example, let us consider an initial grid that spans $[-1,1]$ with $N_A=20$, yielding a grid spacing of $h=0.1$. We will now increase the size of this grid by a factor of $\delta=9$, resulting in an expanded grid spanning $[-10,10]$. To maintain the grid spacing at $h=0.1$, we must select $N_B=200$ grid points. Considering that each numerical value stored in the simulation grid is represented by a 64-bit precision floating-point value requiring 8 B of storage, we can conclude that the memory requirements for each grid configuration are $N_{PA}=64$ KB and $N_{PB}=64$ MB of storage per grid function, respectively.
@@ -36,7 +36,7 @@ It is noteworthy that even a small increase in the domain size leads to a signif
 
 The phenomenon occurs due to the coupling of coordinates in Cartesian space, making it impossible to solely increase one dimension and achieve a radius expansion. In contrast, if one employs spherical coordinates, the situation is altered, as the angular and radial resolutions become uncoupled. As a result, only one dimension requires modification to attain a delta radius expansion, which is memory-efficient. Additionally, the utilization of spherical coordinates exploits the spherical symmetry present in BBH merger processes.
 
-Within the context of the \texttt{Einstein Toolkit}, the simulation domain's coordinates may be altered by utilizing the \texttt{Llama} infrastructure~\cite{Reisswig2010}. \texttt{Llama} is recognized as a \textit{multipatch system} which envelops the simulation domain with distinct coordinate patches. These patches are subsequently combined to describe the global simulation domain. The \texttt{Thornburg04} coordinate system is the chosen system for our simulations within \texttt{Llama}. It comprises six spherical wedge patches and an additional central Cartesian patch. It should be noted that the usage of the six spherical patches is to ensure coverage of the sphere without the introduction of coordinate singularities.
+Within the context of the \texttt{Einstein Toolkit}, the simulation domain's coordinates may be altered by utilizing the \texttt{Llama} infrastructure~\cite{Reisswig2010,PhysRevD.83.044045}. \texttt{Llama} is recognized as a \textit{multipatch system} which envelops the simulation domain with distinct coordinate patches. These patches are subsequently combined to describe the global simulation domain. The \texttt{Thornburg04} coordinate system is the chosen system for our simulations within \texttt{Llama}. It comprises six spherical wedge patches and an additional central Cartesian patch. It should be noted that the usage of the six spherical patches is to ensure coverage of the sphere without the introduction of coordinate singularities.
 
 Fig.~\ref{fig:wave_scattering_multipatch_coords} depicts a schematic representation of a 2D slice of the \texttt{Thornburg04} used in our simulations. It is worth noting that in \texttt{Llama}, the coordinate patches overlap, allowing for a certain region of the domain to be covered by more than one patch at a time. This technical design choice facilitates data communication between patches, but is not essential to create a multipatch system. However, in Fig.~\ref{fig:wave_scattering_multipatch_coords}, the overlap between the central Cartesian patch and the surrounding spherical wedge patches is represented by a light blue region. Within the central Cartesian patch, additional AMR may occur, as indicated in the figure by the two squares inside the central patch.
 
@@ -65,6 +65,6 @@ and
 %
 respectively, where $\partial_i$ denotes derivatives with respect to $a^i$ and $\hat{\partial}_i$ denotes derivatives with respect to $x^i$.
 
-It should be noted that, in order to perform the required calculations, not only the Jacobian of local coordinates is necessary, but also the Jacobian derivatives. \texttt{Llama} provides both components of the Jacobian and its derivative at each point on the grid during the evolution process so that the user can project the results according to Eqs~\eqref{eq:wave_scattering_projection_1} and \eqref{eq:wave_scattering_projection_2} manually.
+It should be noted that, in order to perform the required calculations, not only the Jacobian of local coordinates is necessary, but also the Jacobian derivatives. \texttt{Llama} provides both the components of the Jacobian and its derivatives at each point on the grid during the evolution process so that the user can project the results according to Eqs~\eqref{eq:wave_scattering_projection_1} and \eqref{eq:wave_scattering_projection_2} manually.
 
-Alternatively, \texttt{Llama} provides a convenience \texttt{Thorn} called \texttt{GlobalDerivatives} that automatically performs the projections for the user. However, in our \texttt{Thorn}, we have opted to perform these projections manually, as \texttt{GlobalDerivatives} does not offer a way to directly compute second-order spatial derivatives. Once again, we have employed Wolfram Matheamatica for generating the C code responsible for projecting derivatives into global coordinates.
+Alternatively, \texttt{Llama} provides a convenience \texttt{Thorn} called \texttt{GlobalDerivatives} that automatically performs the projections for the user. However, in our \texttt{Thorn}, we have opted to perform these projections manually, as \texttt{GlobalDerivatives} does not offer a way to directly compute second-order spatial derivatives. Once again, we have employed Wolfram Matheamatica for generating the \texttt{C} code responsible for projecting derivatives into global coordinates.
