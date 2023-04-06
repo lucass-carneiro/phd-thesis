@@ -67,3 +67,4 @@ ODEs
 observables
 Jacobian
 Jacobians
+Ficarra

@@ -198,3 +198,5 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QRadiating boundary conditions were employed in the outer boundaries via the NewRad Thorn.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe time integration scheme utilized in this was method of lines, provided by the MoL Thorn.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe parameter file used for this evolution can be located in the specified GitHub repository under KleinGordon/par/GW150914/GW150914Scalarfield.par in Ref \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q under img/wavescattering/scattering.gif.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe time integration scheme utilized was the method of lines \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, provided by the MoL Thorn.\\E$"}
