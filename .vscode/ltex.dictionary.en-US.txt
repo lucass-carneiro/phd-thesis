@@ -68,3 +68,4 @@ observables
 Jacobian
 Jacobians
 Ficarra
+superradiance

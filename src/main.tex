@@ -329,7 +329,7 @@ I would also like to express my heartfelt gratitude to Dr. Erik Schnetter, my in
 
 \vspace{0.5cm}
 
-ABSTRACT HERE.
+This thesis explores classical phenomena in multiple models of black hole binaries using numerical, analytical, and semi-analytical techniques. Our study provides insights into energy extraction, quasinormal modes, and wave scattering around black hole binaries, and demonstrates how the presence of a binary alters these phenomena compared to their single black hole counterparts. The study develops innovative techniques and numerical packages, including a technique for studying energy extraction in the context of general spacetime metrics, an Asymptotic Iteration Method-based code for computing quasinormal frequencies of black hole spacetimes, and a new \texttt{EinsteinToolkit Thorn} for the numerical evolution of a scalar field superimposed on a dynamically evolving metric. The results demonstrate enhanced efficiency of energy extraction in the presence of a secondary object, and the successful computation of new quasinormal frequencies for spin $5/2$ perturbations of a Schwarzschild black hole. Preliminary findings of the scattering of a massless field over the GW150914 binary collision demonstrate valuable insights but are subject to further testing and development. Future research directions include incorporating the proposed approach for studying the Penrose process in dynamic spacetimes into fully dynamical simulations, further exploring the numerical simulation of the scalar field on top of the GW150914 binary, and considering the backreaction of the spacetime metric to enhance the realism of the simulations. The thesis's contributions enhance confidence in the accuracy and potential of numerical methods for addressing novel problems in binary black hole spacetime models.
 
 \vspace{0.5cm}
 
@@ -360,7 +360,7 @@ ABSTRACT HERE.
 \vspace{0.5cm}
 
 \begin{portuguese}[variant=brazilian]
-  RESUMO AQUI.
+  Esta tese explora fenômenos clássicos em múltiplos modelos de binários de buracos negros utilizando técnicas numéricas, analíticas e semi-analíticas. Nosso estudo fornece percepções sobre a extração de energia, modos quasinormais e o espalhamento ondulatório ao redor binários de buracos negros, e demonstra como a presença de um binário altera estes fenômenos quando comparados às suas contrapartidas na presença de um único buraco negro. O estudo desenvolve técnicas inovadoras e pacotes numéricos, incluindo uma técnica para o estudo da extração de energia no contexto de espaços-tempos gerais, um código baseado no Método da Iteração Assintótica para o cálculo de frequências quasinormais de espaços-tempos de buracos negros a um novo \texttt{Thorn} para o \texttt{EinsteinTookit} para a evolução numérica de um campo escalar superimposto em uma métrica de evolução dinâmica. Estes resultados demonstram aumento da eficiência da extração de energia na presença de um objeto secundário e o cálculo bem-sucedido de novas frequências para perturbações de spin $5/2$ para o buraco negro de Schwarzschild. Descobertas preliminares do espalhamento de um campo escalar sem massa no binário do evento de colisão GW150914 demonstram percepções valiosas, mas estão sujeitas a mais testes e desenvolvimentos. Direções futuras de pesquisa incluem a incorporação da proposta de estudo do Processo de Penrose em espaços-tempos dinâmicos em simulações completamente dinâmicas, maior exploração da simulação numérica do campo escalar no topo do evento GW150914 e a inclusão de \textit{backreaction} da métrica para o aumento do realismo das simulações. As contribuições dessa tese aumentam a confiança na precisão e no potencial de métodos numéricos para a resolução de novos problemas em modelos de binários de buracos negros.
 \end{portuguese}
 
 \vspace{0.5cm}
@@ -411,16 +411,16 @@ ABSTRACT HERE.
 \myclearpage
 \par
 
-\chapter{Quasinormal Modes and the Asymptotic Iteration Method}
-\label{ch:qnm_aim}
-\input{src/chapters/qnm_aim/qnm_aim.tex}
+\chapter{Numerical Scalar Wave Scattering in GW150914}
+\label{ch:wave_scattering}
+\input{src/chapters/wave_scattering/wave_scattering.tex}
 
 \myclearpage
 \par
 
-\chapter{Numerical Scalar Wave Scattering in GW150914}
-\label{ch:wave_scattering}
-\input{src/chapters/wave_scattering/wave_scattering.tex}
+\chapter{Quasinormal Modes and the Asymptotic Iteration Method}
+\label{ch:qnm_aim}
+\input{src/chapters/qnm_aim/qnm_aim.tex}
 
 \myclearpage
 \par
@@ -437,6 +437,6 @@ ABSTRACT HERE.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BIBLIOGRAPHY
 \bibliographystyle{apsrev4-2}
-\bibliography{src/ref_aim.bib,src/ref_books.bib,src/ref_owned.bib,src/ref_penrose.bib,src/ref_wave_scattering.bib}
+\bibliography{src/ref_aim.bib,src/ref_books.bib,src/ref_intro.bib,src/ref_owned.bib,src/ref_penrose.bib,src/ref_wave_scattering.bib}
 
 \end{document}
