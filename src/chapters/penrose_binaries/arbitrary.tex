@@ -1,12 +1,12 @@
 In the previous sections, all of our considerations depended upon the existence of a conserved negative and ``global'' (as seen by a static observer at infinity) energy. This is only possible if the spacetime under consideration is stationary. 
 
-In this section we will demonstrate how one can still observe the PP even in cases where this assumption is relaxed and there is no global and conserved energy available to be explored, thus, looking only at locally defined quantities. This technique allows one to study the Penrose mechanism even when the spacetime metric is defined numerically, such as is the case in numerical simulations of binary black hole collisions.
+In this section we will demonstrate how one can still observe the \ac{PP} even in cases where this assumption is relaxed and there is no global and conserved energy available to be explored, thus, looking only at locally defined quantities. This technique allows one to study the Penrose mechanism even when the spacetime metric is defined numerically, such as is the case in numerical simulations of binary black hole collisions.
 
 \subsection{3+1 split of the geodesic equation}
 
-To understand our proposed technique, it is first fundamental to understand how General Relativity can be reformulated by explicitly separating its spatial and temporal components. This decomposition know as a ``3+1 split'' is very commonly used in Numerical Relativity and was motivated by the first attempts of posing GR as a Cauchy problem. Numerical Relativity codes very often provide ways to access the spacetime metrics being evolved in terms of its 3+1 components.
+To understand our proposed technique, it is first fundamental to understand how General Relativity can be reformulated by explicitly separating its spatial and temporal components. This decomposition know as a ``3+1 split'' is very commonly used in Numerical Relativity and was motivated by the first attempts of posing \ac{GR} as a Cauchy problem. Numerical Relativity codes very often provide ways to access the spacetime metrics being evolved in terms of its 3+1 components.
 
-In this section, we will assume familiarity of the reader with this concept which can be readily reviewed in Refs.~\cite{Alcubierre2012-xp, 9780521514071, 9781108928250}. Given that the PP requires us to investigate the trajectories of particles in a background spacetime, we must now solve the geodesic equation taking into account that the spacetime metric (and its derivatives) will be provided via 3+1 split components. 
+In this section, we will assume familiarity of the reader with this concept which can be readily reviewed in Refs.~\cite{Alcubierre2012-xp, 9780521514071, 9781108928250}. Given that the \ac{PP} requires us to investigate the trajectories of particles in a background spacetime, we must now solve the geodesic equation taking into account that the spacetime metric (and its derivatives) will be provided via 3+1 split components. 
 
 The need to solve the geodesic equation in this context overlaps with works that are interested in simulating an image of a black hole, that is, determining what a camera would capture if it was pointed towards a black hole. In this type of simulation a technique called \emph{backwards ray tracing} is employed, which consists in choosing a position and orientation of a model camera and integrating the trajectory of the photons that hit the camera's ``film'' backwards in time. In the event that the photon is assimilated by the system, the corresponding pixel within the image will appear black. If the photon ``collides'' with an obstacle such as a distant star or even an artificially colored background, the hue of the pixel is equivalent to the hue of that specific obstacle.
 
@@ -59,7 +59,7 @@ Finally, parametrizing the particle's position vector $X^i$ by the coordinate ti
 %
 where ${}^3\Gamma^{i}_{jk}$ are the Christoffel symbols associated with $\gamma_{ij}$.
 
-\subsection{Penrose process}
+\subsection{Penrose Process}
 
 Henceforth, $E$ shall be designated as the \emph{local energy}, given that it is gauged locally by the observer that is orthogonal to the foliation (the Eulerian Observer). In Sections~\ref{ch:penrose_binaries:sec:penrose_review}-\ref{ch:penrose_binaries:sec:cmmr_penrose}, we have been addressing what shall henceforth be referred to as the \emph{global energy}, i.e., the energy measured by a static observer stationed at infinity, which we shall now denote by $\varepsilon$. Our investigation necessitates the establishment of a connection between these two quantities, and we shall proceed to do so at this point. The global energy, $\varepsilon$ is defined as
 %
@@ -208,7 +208,7 @@ With these quantities, it is possible to describe the ellipse in terms of an arb
 %
 and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:arbitrary_penrose_V_norm} is reduced to that of evaluating the right-hand side of Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1} - \eqref{eq:arbitrary_penrose_ellipse_parametric_2} for some value of $\Theta$, effectively reducing the degrees of freedom of the problem.
 
-Utilizing this parametrization of velocities, the general workflow for finding explicit examples of the PP with our code is as follows:
+Utilizing this parametrization of velocities, the general workflow for finding explicit examples of the \ac{PP} with our code is as follows:
 
 \begin{enumerate}
   \item Chose a break-up point. This will be the initial position of all three particle participating in the process. We know that in order to extract energy this break-up must occur inside the ergosphere. In general, when the spacetime under study does not possess a global time-like killing vector field, we consider the ergosphere to be the now observer dependent region where the metric component $\mtrtens{t}{t}$ changes sign.
@@ -221,9 +221,9 @@ Utilizing this parametrization of velocities, the general workflow for finding e
 
 The scheme described above was implemented in a public \texttt{C++} code available in Ref.~\cite{GRLensingRepo}. Compilation and usage instructions are provided within the repository.
 
-The code was originally created with the intent of producing Gravitational Lensing images (hence the name) but was later adapted to investigate the PP. The code consists of a \emph{kernel} using the ARKODE~\cite{ARKODE} infrastructure for integrating the geodesic equation and verifying the stopping criteria of Eqs.~\eqref{eq:arbitrary_penrose_background_sphere_cplision_condition} and \eqref{eq:arbitrary_penrose_swallowing_condition} for an arbitrary spacetime metric.
+The code was originally created with the intent of producing Gravitational Lensing images (hence the name) but was later adapted to investigate the \ac{PP}. The code consists of a \emph{kernel} using the ARKODE~\cite{ARKODE} infrastructure for integrating the geodesic equation and verifying the stopping criteria of Eqs.~\eqref{eq:arbitrary_penrose_background_sphere_cplision_condition} and \eqref{eq:arbitrary_penrose_swallowing_condition} for an arbitrary spacetime metric.
 
-The kernel expects only to receive a set of functions that compute the ADM quantities of the spacetime metric (lapse, shift, extrinsic curvature and a few derivatives of these objects). Each spacetime metric is then a \emph{plugin} (a dynamically loaded library) that provides such functions at runtime. This allows the integration problem to be separated from the problem of determining the ADM quantities of a given spacetime metric. Users can focus on the latter, since the kernel solves the former for an arbitrary input metric. 
+The kernel expects only to receive a set of functions that compute the \ac{ADM} quantities of the spacetime metric (lapse, shift, extrinsic curvature and a few derivatives of these objects). Each spacetime metric is then a \emph{plugin} (a dynamically loaded library) that provides such functions at runtime. This allows the integration problem to be separated from the problem of determining the \ac{ADM} quantities of a given spacetime metric. Users can focus on the latter, since the kernel solves the former for an arbitrary input metric. 
 
 In addition to spacetime metrics being plugins, file readers and writers are also plugins in the same way. This allows the user to implement different input/output data formats for the trajectories according to their needs. Currently, only a simple \texttt{ASCII} file writer is available, but that is enough for our current needs.
 
@@ -238,11 +238,11 @@ Additional configuration files are required in certain modes (for instance, desc
   \item \texttt{penrose-breakup}: Integrates a particle breakup process by using two particle configurations and obtaining a third from conservation of 4-momentum.
 \end{itemize}
 %
-Several utility scripts are also provided in the program repository under the \texttt{resources} folder. These scripts serve multiple purposes, from plotting trajectories, energies, the ADM quantities of dumped spacetime metrics or even generating a skeleton of a metric plugin that can be filled by users. It also includes an assortment of papers and notes required in the development of the code.
+Several utility scripts are also provided in the program repository under the \texttt{resources} folder. These scripts serve multiple purposes, from plotting trajectories, energies, the \ac{ADM} quantities of dumped spacetime metrics or even generating a skeleton of a metric plugin that can be filled by users. It also includes an assortment of papers and notes required in the development of the code.
 
 \subsection{Kerr Metric}
 \label{ch:kerr_example}
 \input{src/chapters/penrose_binaries/arbitrary_kerr_example.tex}
 
-\subsection{SKS Metric}
+\subsection{\ac{SKS} Metric}
 \input{src/chapters/penrose_binaries/arbitrary_SKS_example.tex}

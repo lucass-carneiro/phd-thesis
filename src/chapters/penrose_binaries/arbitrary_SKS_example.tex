@@ -1,12 +1,12 @@
-In this section we will further illustrate our framework by considering a different spacetime metric approximating an astrophysical binary black hole system referred to as the Superimposed Kerr-Schild solution, or SKS solution. The idea behind its construction is rather simple: One simply adds two Kerr solutions in Kerr-Schild coordinates and subtracts from this a Minkowski metric. After that, the black hole terms are further boosted and transformed in order to add motion to the individual black holes.
+In this section we will further illustrate our framework by considering a different spacetime metric approximating an astrophysical binary black hole system referred to as the Superimposed Kerr-Schild solution, or \ac{SKS} solution. The idea behind its construction is rather simple: One simply adds two Kerr solutions in Kerr-Schild coordinates and subtracts from this a Minkowski metric. After that, the black hole terms are further boosted and transformed in order to add motion to the individual black holes.
 
-This prescription, of course, does not produce an exact solution of Einstein's field equations, nevertheless it can still be a valuable model for describing astrophysical binaries under certain conditions. The construction and motivation for using this approximation is extensively discussed in Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, where it was  used in numerical simulations of accretion disks around BH binaries. Ref~\cite{Armengol:2021shd}, in particular, discusses the success of using superimposed solutions for computing initial data for numerical simulations of black hole mergers and shows that the expansion of the superimposed metric agrees with the lowest Post-Newtonian expansion of the metric of spinning binaries.
+This prescription, of course, does not produce an exact solution of Einstein's field equations, nevertheless it can still be a valuable model for describing astrophysical binaries under certain conditions. The construction and motivation for using this approximation is extensively discussed in Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, where it was  used in numerical simulations of accretion disks around \ac{BH} binaries. Ref~\cite{Armengol:2021shd}, in particular, discusses the success of using superimposed solutions for computing initial data for numerical simulations of black hole mergers and shows that the expansion of the superimposed metric agrees with the lowest Post-Newtonian expansion of the metric of spinning binaries.
 
 Furthermore, Ref.~\cite{PhysRevD.104.044041} compares the superimposed metric with other approximate solutions to binary black holes constructed with a much more mathematically involved technique called ``asymptotic matching'', that combines Post-Newtonian and other types of solutions in different regions of the spacetime and matches them together into a single solution. It shows that the violations of the Einstein field equations for the models constructed by matching and superposition are very similar in their order of magnitude and profile, with the matching solutions being more well-behaved and smooth at larger distances from the binary black holes. This leads them to conclude that given the mathematical simplicity of constructing a superimposed solution, they are more advantageous to matching solutions from a computational perspective.
 
-Our ultimate aim is to demonstrate the applicability of the framework presented in this section to a wider range of spacetime metrics than the initial mathematical tool set utilized in the PP for static spacetimes. Our primary objective is not to provide quantitatively precise arguments about the behavior of the PP in astrophysical binaries. We only required a model in which two Kerr black holes follow a specific trajectory, breaking the time translation symmetry of the spacetime metric, and the SKS metric offers this model with greater ease than the PN matching counterparts.
+Our ultimate aim is to demonstrate the applicability of the framework presented in this section to a wider range of spacetime metrics than the initial mathematical tool set utilized in the \ac{PP} for static spacetimes. Our primary objective is not to provide quantitatively precise arguments about the behavior of the \ac{PP} in astrophysical binaries. We only required a model in which two Kerr black holes follow a specific trajectory, breaking the time translation symmetry of the spacetime metric, and the \ac{SKS} metric offers this model with greater ease than the PN matching counterparts.
 
-Our construction of the SKS metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter $a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) \mu}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
+Our construction of the \ac{SKS} metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter $a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) \mu}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
 %
 \begin{equation}
   s^{(i) \mu} = \left( (-1)^{i + 1}\frac{b}{2}\cos\Omega t,\, (-1)^{i + 1}\frac{b}{2}\sin\Omega t,\, 0 \right),
@@ -70,7 +70,7 @@ by virtue of Eqs.~\eqref{eq:arbitrary_penrose_sks_keplerian_velocities}-\eqref{e
   z & = Z \label{eq:arbitrary_penrose_sks_nonlinear_transformation_4}
 \end{align}
 
-To summarize, the algorithm one must employ in order to construct the SKS metric in global coordinates $(t,x,y,z)$ with black holes that are following the Keplerian trajectories given by Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories} and possess mass and spin parameters $M^{(1,2)}$ and $a^{(1,2)}$, respectively, and coordinate separation $b$ is as follows:
+To summarize, the algorithm one must employ in order to construct the \ac{SKS} metric in global coordinates $(t,x,y,z)$ with black holes that are following the Keplerian trajectories given by Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories} and possess mass and spin parameters $M^{(1,2)}$ and $a^{(1,2)}$, respectively, and coordinate separation $b$ is as follows:
 %
 \begin{enumerate}
   \item Compute the value of $\Omega$ from the metric parameters (masses and separation) via Eq.~\eqref{eq:arbitrary_penrose_sks_angular_velocity}.
@@ -83,13 +83,13 @@ To summarize, the algorithm one must employ in order to construct the SKS metric
   \item The final metric components are given by $\mtrtens{\mu}{\nu}(t,x,y,z) = \eta_{\mu\nu} + \overline{\mathcal{H}}^{(1)}_{\mu\nu} + \overline{\mathcal{H}}^{(2)}_{\mu\nu}$.
 \end{enumerate}
 
-We have implemented the SKS solution as a plugin in \texttt{GRLensing} and validated the implementation by comparing plots of the metric components against the results of Ref.~\cite{PhysRevD.104.044041}. We have also constructed the metric analytically using a \texttt{Mathematica} notebook that was also used in order to independently check the components as implemented in the \texttt{C++} code and cross-check those results against Ref.~\cite{PhysRevD.104.044041}.
+We have implemented the \ac{SKS} solution as a plugin in \texttt{GRLensing} and validated the implementation by comparing plots of the metric components against the results of Ref.~\cite{PhysRevD.104.044041}. We have also constructed the metric analytically using a \texttt{Mathematica} notebook that was also used in order to independently check the components as implemented in the \texttt{C++} code and cross-check those results against Ref.~\cite{PhysRevD.104.044041}.
 
 Furthermore, we have also used this notebook to identify the region where the $\mtrtens{t}{t}$ component changes its sign. This region can be understood as the ``ergosphere'' viewed by an observer living in the global reference frame labeled by $(t,x,y,z)$. Note however, that strictly speaking the use of the word ``ergosphere'' in this context is an abuse of nomenclature, since it does not refer to a region that is globally defined via the existence of the time-like killing vector field. Nevertheless, we can observe this region as the spacetime metric parameters change, similarly to our work in Sections \ref{ch:penrose_binaries:sec:mp_penrose} and \ref{ch:penrose_binaries:sec:cmmr_penrose}.
 
-The general features of the local ergosphere in the SKS metric resemble that of the CMMR metric, presented in Sec.~\ref{ch:penrose_binaries:sec:cmmr_penrose}, with the remarkable difference that the Lorentz boosts required for the construction of the SKS spacetime make the ergospheres ``flattened'' in the direction of the motion of the holes. This is a well-known effect that can be observed even in the Lorentz boosted Schwarzschild spacetime, as demonstrated in Ref.~\cite{PhysRevD.91.084044}.
+The general features of the local ergosphere in the \ac{SKS} metric resemble that of the \ac{CMMR} metric, presented in Sec.~\ref{ch:penrose_binaries:sec:cmmr_penrose}, with the remarkable difference that the Lorentz boosts required for the construction of the \ac{SKS} spacetime make the ergospheres ``flattened'' in the direction of the motion of the holes. This is a well-known effect that can be observed even in the Lorentz boosted Schwarzschild spacetime, as demonstrated in Ref.~\cite{PhysRevD.91.084044}.
 
-Fig.~\ref{fig:sks_ergo_plot} illustrates relevant regions in the SKS spacetime with black holes masses $M^{(1)} = M^{(2)} = 1/2$, spin parameters $a^{(1)} = a^{(2)} = 1/4$ and separation parameter $b = 3$. The boundary of the local ergosphere is marked in red, the approximate location of the event horizons in gray, the singular region in black and the black hole centers are indicated by black crosshairs. As was previously mentioned, the boundary of the ergosphere is marked as the surface where the $\mtrtens{t}{t}$ component changes its sign. The event horizons and singular regions are given by~\cite{Armengol:2021shd}
+Fig.~\ref{fig:sks_ergo_plot} illustrates relevant regions in the \ac{SKS} spacetime with black holes masses $M^{(1)} = M^{(2)} = 1/2$, spin parameters $a^{(1)} = a^{(2)} = 1/4$ and separation parameter $b = 3$. The boundary of the local ergosphere is marked in red, the approximate location of the event horizons in gray, the singular region in black and the black hole centers are indicated by black crosshairs. As was previously mentioned, the boundary of the ergosphere is marked as the surface where the $\mtrtens{t}{t}$ component changes its sign. The event horizons and singular regions are given by~\cite{Armengol:2021shd}
 %
 \begin{equation}
   r^{(1,2)} = 2 M^{(1,2)} \left( M^{(1,2)} + \sqrt{M^{(1,2)} - \left(a^{(1,2)}\right)^2} \right)
@@ -108,7 +108,7 @@ respectively, where $r^{(1,2)}$ is the coordinate distance measured from one of 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\linewidth]{img/penrose_binaries/sks_regions.pdf}
-  \caption{Regions of interest in the $t=0$ SKS metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$}
+  \caption{Regions of interest in the $t=0$ \ac{SKS} metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$}
   \label{fig:sks_ergo_plot}
 \end{figure}
 
@@ -128,7 +128,7 @@ Once again, the first, second and third rows contain data relative to the entry,
     $8.0 \times 10^{-3}$                & $1.0 \times 10^{-4}$                \\
     $9.9199999999999999 \times 10^{-1}$ & $9.5800493929022838 \times 10^{-3}$ \\ \hline\hline
   \end{tabular}
-  \caption{Initial energy and masses for the particles participating in the PP example in the SKS background.}
+  \caption{Initial energy and masses for the particles participating in the \ac{PP} example in the \ac{SKS} background.}
   \label{tab:arbitrary_penrose_sks_example_energy_mass}
 \end{table}
 
@@ -143,7 +143,7 @@ Once more, following Table~\ref{tab:arbitrary_penrose_kerr_example_velocities}, 
     $0.5948571400034293$  & $-0.3343724878526367$ & $-100/200 \pi$ \\
     $0.66011565390809868$ & $0.68380243736284951$ & ---            \\ \hline\hline
   \end{tabular}
-  \caption{Initial velocities for the particles participating in the PP example in the SKS background.}
+  \caption{Initial velocities for the particles participating in the \ac{PP} example in the \ac{SKS} background.}
   \label{tab:arbitrary_penrose_sks_example_velocities}
 \end{table}
 
@@ -159,7 +159,7 @@ As Table~\ref{tab:arbitrary_penrose_kerr_example_results}, Table~\ref{tab:arbitr
       $3.4638508542318119 \times 10^{-1}$ & $3.4638400572434974 \times 10^{-1}$ & $1.0796988314520917 \times 10^{-6}$ \\ \hline\hline
     \end{tabular}
   }
-  \caption{Energy measures at the time of collision with the background sphere in the SKS background}
+  \caption{Energy measures at the time of collision with the background sphere in the \ac{SKS} background}
   \label{tab:arbitrary_penrose_sks_example_results}
 \end{table}
 
@@ -173,7 +173,7 @@ Finally, following Table~\ref{tab:arbitrary_penrose_kerr_example_efficiency}, Ta
     $\eta_E$                                                 & $0.41653495863897544$ \\
     $\eta_\varepsilon$                                       & $0.41652966700464295$ \\ \hline\hline
   \end{tabular}
-  \caption{Energy difference and extraction efficiency of the process given different energy measures in the SKS background.}
+  \caption{Energy difference and extraction efficiency of the process given different energy measures in the \ac{SKS} background.}
   \label{tab:arbitrary_penrose_sks_example_efficiency}
 \end{table}
 
@@ -198,7 +198,7 @@ In this example, we repeat the run detailed in Sec.~\ref{ch:sks_example_1} while
     7.52 & $0.3205512719659607$ & $0.3205458837844264$ \\
     7.21 & $0.1207168410527975$ & $0.1207122709189437$ \\ \hline\hline
   \end{tabular}
-  \caption{Energy extraction efficiency for the configuration detailed in Sec~\ref{ch:sks_example_1} while varying the distance parameter $b$ and keeping the break-up point at $1.3$ coordinate distance unites to the right of the rightmost black hole in the SKS backround.}
+  \caption{Energy extraction efficiency for the configuration detailed in Sec~\ref{ch:sks_example_1} while varying the distance parameter $b$ and keeping the break-up point at $1.3$ coordinate distance unites to the right of the rightmost black hole in the \ac{SKS} background.}
   \label{tab:arbitrary_penrose_sks_example_results_d_variation}
 \end{table}
 

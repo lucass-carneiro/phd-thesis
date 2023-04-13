@@ -68,6 +68,8 @@ colorlinks=false
 
 \usepackage{multirow}
 
+\usepackage[withpage]{acronym}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATH MACROS
 
@@ -140,6 +142,8 @@ colorlinks=false
 %%% DOCUMENT START
 
 \begin{document}
+
+\pagenumbering{gobble}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% AUTHOR'S NAME
@@ -260,7 +264,7 @@ colorlinks=false
   {\large{}\thispagestyle{empty}}{\large\par}
   \par\end{center}
 \begin{portuguese}
-  Dedico esse trabalho à memória da minha amada avó, Inês de Sousa Timotheo, que faleceu durante a elaboração do mesmo e que durante toda a sua vida representou um exemplo inabalável de força moral e superação das piores adversidades as quais um ser humano pode ser submetido. O seu exemplo e as suas palavras estarão eternamente gravados na minha memória e no meu coração.
+  Dedico esse trabalho à memória da minha amada avó, Ignez de Sousa Timotheo, que faleceu durante a elaboração do mesmo e que durante toda a sua vida representou um exemplo inabalável de força moral e superação das piores adversidades as quais um ser humano pode ser submetido. O seu exemplo e as suas palavras estarão eternamente gravados na minha memória e no meu coração.
 
   Maior que o seu exemplo, era talvez somente o amor que tivera pelos filhos, e por mim, o seu único neto. Tal amor era refletido no orgulho que ela sentia em ter um neto que seria o primeiro da nossa família a tornar-se doutor. Por conta do curso natural da nossa breve existência, ela não poderá presenciar fisicamente a conclusão desse trabalho que ela vira se iniciar. Entretanto, acredito e sinto que de alguma forma, ela estará comigo, não só na minha defesa, mas indubitavelmente no meu coração e acompanhando os meus paços durante toda a minha vida.
 \end{portuguese}
@@ -291,7 +295,7 @@ colorlinks=false
 
   Agradeço, de forma igualmente carinhosa, o restante dos meus familiares, cujas características que atribuí aos meus pais de apoio, amor e a admiração que sinto por eles também se aplicam: a minha avó Marisa, o meu avô Luis e às minhas tias, Sandra e Márcia.
 
-  Gostaria de expressar o meu sincero agradecimento a uma pessoa muito especial, que tive a sorte de conhecer durante a elaboração desse trabalho: a minha amada companheira, Thalia. Agradeço-lhe por todo o apoio e incentivo que você me deu durante o processo de elaboração da minha tese. Sem a sua ajuda, eu não teria conseguido concluir este trabalho. A sua presença foi, e ainda é, fundamental para o meu sucesso. Eu não poderia ter pedido por uma companheira mais amorosa, solidária e compreensiva nesta jornada. Este é um momento importante para mim e você contribuiu enormemente para eu chegar até aqui. Obrigado por ser minha namorada e a minha inspiração. Espero que possamos continuar a apoiar um ao outro nos nossos futuros desafios e conquistas, e que o nosso amor se fortaleça cada vez mais com os muitos anos que teremos pela frente.
+  Gostaria de expressar o meu sincero agradecimento a uma pessoa muito especial, que tive a sorte de conhecer durante a elaboração desse trabalho: a minha amada companheira, Thalía. Agradeço-lhe por todo o apoio e incentivo que você me deu durante o processo de elaboração da minha tese. Sem a sua ajuda, eu não teria conseguido concluir este trabalho. A sua presença foi, e ainda é, fundamental para o meu sucesso. Eu não poderia ter pedido por uma companheira mais amorosa, solidária e compreensiva nesta jornada. Este é um momento importante para mim e você contribuiu enormemente para eu chegar até aqui. Obrigado por ser minha namorada e a minha inspiração. Espero que possamos continuar a apoiar um ao outro nos nossos futuros desafios e conquistas, e que o nosso amor se fortaleça cada vez mais com os muitos anos que teremos pela frente.
 
   A vida, sem bons amigos, seria um erro. É por isso que agradeço profundamente àqueles que decidiram fazer parte da minha vida, minha luta e minha trajetória por livre e espontânea vontade e aqui permanecem ao meu lado mesmo dadas as dificuldades da convivência do dia a dia. São eles: Bruna, Caio, Gabriel, Karen, Rafaela, Thiago e por fim, mas não menos importante, Iara, a quem além dos anos de amizade devo agradecimentos pela troca de discussões, ajuda, opiniões, apoio e suporte, tanto em assuntos acadêmicos quanto em assuntos pessoais que foram essenciais à elaboração desse trabalho e durante a minha carreira. Que possamos continuar sempre nos apoiando em todos os aspectos das nossas vidas.
 
@@ -300,9 +304,24 @@ colorlinks=false
 
 I would also like to express my heartfelt gratitude to Dr. Erik Schnetter, my international collaborator and mentor. Your expertise in the field of numerical relativity is unparalleled, and your dedication to your research is truly inspiring. I feel incredibly fortunate to have had the opportunity to work with you and learn from you. You have not only taught me the intricacies of numerical relativity but also provided me with the necessary guidance and support to succeed in our research endeavors. Your enthusiasm for our projects has been infectious, and I have been constantly motivated by your passion for advancing scientific knowledge. I hope to continue working with you for many years to come, building on the foundation we have established together.
 
-\begin{portuguese}[variant=brazilian]
-  Agradeço à CAPES e à UFABC pelo apoio financeiro.
-\end{portuguese}
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CAPES
+
+\begin{center}
+  This study was financed in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior – Brasil (CAPES) – Finance Code 001
+\end{center}
 
 \begin{center}
   {\large{}\thispagestyle{empty}}{\large\par}
@@ -324,37 +343,7 @@ I would also like to express my heartfelt gratitude to Dr. Erik Schnetter, my in
   \par\end{center}
 
 \begin{center}
-  \textbf{\Large{}Abstract}{\Large\par}
-  \par\end{center}
-
-\vspace{0.5cm}
-
-This thesis explores classical phenomena in multiple models of black hole binaries using numerical, analytical, and semi-analytical techniques. Our study provides insights into energy extraction, quasinormal modes, and wave scattering around black hole binaries, and demonstrates how the presence of a binary alters these phenomena compared to their single black hole counterparts. The study develops innovative techniques and numerical packages, including a technique for studying energy extraction in the context of general spacetime metrics, an Asymptotic Iteration Method-based code for computing quasinormal frequencies of black hole spacetimes, and a new \texttt{EinsteinToolkit Thorn} for the numerical evolution of a scalar field superimposed on a dynamically evolving metric. The results demonstrate enhanced efficiency of energy extraction in the presence of a secondary object, and the successful computation of new quasinormal frequencies for spin $5/2$ perturbations of a Schwarzschild black hole. Preliminary findings of the scattering of a massless field over the GW150914 binary collision demonstrate valuable insights but are subject to further testing and development. Future research directions include incorporating the proposed approach for studying the Penrose process in dynamic spacetimes into fully dynamical simulations, further exploring the numerical simulation of the scalar field on top of the GW150914 binary, and considering the backreaction of the spacetime metric to enhance the realism of the simulations. The thesis's contributions enhance confidence in the accuracy and potential of numerical methods for addressing novel problems in binary black hole spacetime models.
-
-\vspace{0.5cm}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% KEYWORDS 1
-
-\textbf{Keywords: Black Holes, Penrose Process, Energy Extraction, Quasinormal Modes, \texttt{EinsteinTookit}, Numerical Relativity}
-
-\begin{center}
-  {\large{}\thispagestyle{empty}}{\large\par}
-  \par\end{center}
-
-\begin{center}
-  \myclearpage
-  \par\end{center}
-
-\begin{center}
-  \textbf{\large{}\rule[0.5ex]{1\columnwidth}{1pt}}{\large\par}
-  \par\end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% ABSTRACT 2
-
-\begin{center}
-  \textbf{\Large{}\textportuguese{Resumo}}{\Large\par}
+  \textbf{\Large{}Resumo}{\Large\par}
   \par\end{center}
 
 \vspace{0.5cm}
@@ -366,7 +355,7 @@ This thesis explores classical phenomena in multiple models of black hole binari
 \vspace{0.5cm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% KEYWORDS 2
+%%% KEYWORDS 1
 
 \textbf{\textportuguese{Palavras-chave: Buracos Negros, Processo de Penrose, Extração de Energia, Modos Quasinormais, \texttt{EinsteinTookit}, Relatividade Numérica}}
 
@@ -374,14 +363,120 @@ This thesis explores classical phenomena in multiple models of black hole binari
   {\large{}\thispagestyle{empty}}{\large\par}
   \par\end{center}
 
+\newpage
+
 \begin{center}
-  \myclearpage
+  {\large{}\thispagestyle{empty}}{\large\par}
   \par\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ABSTRACT 2
+
+\begin{center}
+  \textbf{\large{}\rule[0.5ex]{1\columnwidth}{1pt}}{\large\par}
+  \par\end{center}
+
+\begin{center}
+  \textbf{\Large{}Abstract}{\Large\par}
+  \par\end{center}
+
+\vspace{0.5cm}
+
+This thesis explores classical phenomena in multiple models of black hole binaries using numerical, analytical, and semi-analytical techniques. Our study provides insights into energy extraction, quasinormal modes, and wave scattering around black hole binaries, and demonstrates how the presence of a binary alters these phenomena compared to their single black hole counterparts. The study develops innovative techniques and numerical packages, including a technique for studying energy extraction in the context of general spacetime metrics, an Asymptotic Iteration Method-based code for computing quasinormal frequencies of black hole spacetimes, and a new \texttt{EinsteinToolkit Thorn} for the numerical evolution of a scalar field superimposed on a dynamically evolving metric. The results demonstrate enhanced efficiency of energy extraction in the presence of a secondary object, and the successful computation of new quasinormal frequencies for spin $5/2$ perturbations of a Schwarzschild black hole. Preliminary findings of the scattering of a massless field over the GW150914 binary collision demonstrate valuable insights but are subject to further testing and development. Future research directions include incorporating the proposed approach for studying the Penrose process in dynamic spacetimes into fully dynamical simulations, further exploring the numerical simulation of the scalar field on top of the GW150914 binary, and considering the backreaction of the spacetime metric to enhance the realism of the simulations. The thesis's contributions enhance confidence in the accuracy and potential of numerical methods for addressing novel problems in binary black hole spacetime models.
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% KEYWORDS 2
+
+\textbf{Keywords: Black Holes, Penrose Process, Energy Extraction, Quasinormal Modes, \texttt{EinsteinTookit}, Numerical Relativity}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LIST OF FIGURES
+
+\thispagestyle{empty}
+\listoffigures
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LIST OF TABLES
+
+\listoftables
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LIST OF ACRONYMS
+
+\chapter*{List of Acronyms}
+
+\begin{acronym}
+  \acro{GR}{General Relativity}
+  \acro{BH}{Black Hole}
+  \acro{BBH}{Binary Black Hole}
+  \acro{PP}{Penrose Process}
+  \acro{SKS}{Super Imposed Kerr Metric in Kerr-Schild Coordinates}
+  \acro{NR}{Numerical Relativity}
+  \acro{QNM}{Quasinormal Mode}
+  \acro{ADM}{Arnowit, Deser and Misner}
+  \acro{AMR}{Adaptive Mesh Refinement}
+  \acro{CAS}{Computer Algebra System}
+  \acro{AIM}{Asymptotic Iteration Method}
+  \acro{API}{Application Programming Interface}
+  \acro{ODE}{Ordinary Differential Equation}
+  \acro{MP}{Majumdar and Papapetrou}
+  \acro{CMMR}{Cabrera-Munguia, Manko and Ruiz}
+\end{acronym}
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
+
+\begin{center}
+  {\large{}\thispagestyle{empty}}{\large\par}
+  \par\end{center}
+
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% TABLE OF CONTENTS
-
-\setcounter{page}{13}
 
 \tableofcontents{}
 
@@ -389,15 +484,20 @@ This thesis explores classical phenomena in multiple models of black hole binari
   {\large{}\thispagestyle{empty}}{\large\par}
   \par\end{center}
 
+\newpage
 
 \begin{center}
-  \myclearpage
+  {\large{}\thispagestyle{empty}}{\large\par}
   \par\end{center}
+
+\newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CHAPTERS
 
-\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{35}
+\chapter*{Introduction}
 \label{ch:introduction}
 \input{src/chapters/intro.tex}
 

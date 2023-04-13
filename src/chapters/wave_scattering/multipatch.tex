@@ -5,7 +5,7 @@ To achieve this, it is essential to locate a radius $r_d$ that is sufficiently f
 \begin{figure}[h]
   \centering
   \includesvg[width=\linewidth]{img/wave_scattering/multipatch_signal.svg}
-  \caption{Schematic representation of distance relationships and data propagation in a BBH simulation. Adapted from Ref.~\cite{Reisswig2010}.}
+  \caption{Schematic representation of distance relationships and data propagation in a \ac{BBH} simulation. Adapted from Ref.~\cite{Reisswig2010}.}
   \label{fig:wave_scattering_multipatch_signal}
 \end{figure}
 
@@ -34,7 +34,7 @@ As an illustrative example, let us consider an initial grid that spans $[-1,1]$ 
 
 It is noteworthy that even a small increase in the domain size leads to a significant rise in memory requirements, with the latter increasing by $63.93600$ MB. To provide a sense of scale, the entire evolved system for the first grid configuration (comprising two grid functions) could fit into a single 8-inch Memorex 650 floppy disk, the first commercial model made in the year 1972, whereas the second configuration would require approximately $370$ units of the same model to store a single grid function.
 
-The phenomenon occurs due to the coupling of coordinates in Cartesian space, making it impossible to solely increase one dimension and achieve a radius expansion. In contrast, if one employs spherical coordinates, the situation is altered, as the angular and radial resolutions become uncoupled. As a result, only one dimension requires modification to attain a delta radius expansion, which is memory-efficient. Additionally, the utilization of spherical coordinates exploits the spherical symmetry present in BBH merger processes.
+The phenomenon occurs due to the coupling of coordinates in Cartesian space, making it impossible to solely increase one dimension and achieve a radius expansion. In contrast, if one employs spherical coordinates, the situation is altered, as the angular and radial resolutions become uncoupled. As a result, only one dimension requires modification to attain a delta radius expansion, which is memory-efficient. Additionally, the utilization of spherical coordinates exploits the spherical symmetry present in \ac{BBH} merger processes.
 
 Within the context of the \texttt{Einstein Toolkit}, the simulation domain's coordinates may be altered by utilizing the \texttt{Llama} infrastructure~\cite{Reisswig2010,PhysRevD.83.044045}. \texttt{Llama} is recognized as a \textit{multipatch system} which envelops the simulation domain with distinct coordinate patches. These patches are subsequently combined to describe the global simulation domain. The \texttt{Thornburg04} coordinate system is the chosen system for our simulations within \texttt{Llama}. It comprises six spherical wedge patches and an additional central Cartesian patch. It should be noted that the usage of the six spherical patches is to ensure coverage of the sphere without the introduction of coordinate singularities.
 
