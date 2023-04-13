@@ -1,4 +1,4 @@
-\section*{The relevance of binary systems}
+\section{The relevance of binary systems}
 
 The astrophysical black hole (\ac{BH}) is a vacuum solution of Einstein's field equations, and its mathematical description depends on two parameters: its mass and angular momentum~\cite{1986bhmp.book.....T}. Hence, \acp{BH} are one of the simplest objects in astrophysics from a mathematical standpoint.
 
@@ -12,7 +12,7 @@ So far, no analytic description of a binary system in \ac{GR} is known. This is 
 
 One of the objectives of this thesis is to investigate interaction effects in General Relativity that are well understood in spacetimes containing a single astrophysical object (such as a star or a black hole) and extend them to binary systems.
 
-\section*{Modeling binary systems}
+\section{Modeling binary systems}
 
 Our work employs different types of models to describe binary systems. Each of these models has different characteristics and nomenclature.  We will now define precisely the terms that will be used throughout the text to refer to different binary black hole models.
 
@@ -28,7 +28,7 @@ Our work employs different types of models to describe binary systems. Each of t
   An \textbf{analytic} \ac{BBH} model is one whose entire spacetime metric is analytically known at all points and times. In contrast, a \textbf{numeric} \ac{BBH} model is obtained only at a certain coordinate time hypersurface (typically $t=0$) by solving the Arnowit-Deser-Misner (\ac{ADM}) constraint equations for a vacuum configuration numerically. Note that even tough such numerical solutions contain errors, and thus do not strictly solve the vacuum field equations (giving rise to constraint violations), we do not consider these to be approximate, since it is possible (at least in theory but not in practice due to physical limitation of machines and computational resources) to obtain these solutions with arbitrarily small constraint violations given that they are convergent. For more information on solving the \ac{ADM} constraint equations and obtaining initial data in Numerical Relativity, see for instance Chapter 3 of Ref~\cite{Alcubierre2012-xp}
 \end{definition}
 
-\section*{The Penrose process}
+\section{The Penrose process}
 
 One instance of a black hole \ac{BH} interaction with its surrounding that will be extensively discussed is the Penrose Process (\ac{PP}). The first incarnation of the \ac{PP} arose as a consequence of the Kerr metric. The Kerr metric is the best-known mathematical description of rotating black holes given by the theory of General Relativity~\cite{Visser:2007fj,Bambi:2011mj,Teukolsky:2014vca,berti}.
 
@@ -46,7 +46,7 @@ Recognizing these already discussed difficulties of modeling astrophysical binar
 
 This discussion can be found in Chapter \ref{ch:penrose_binaries}, where we discuss energy extraction via the Penrose mechanism of different binary black hole models. The contents of Sec.~\ref{ch:penrose_binaries:sec:mp_penrose} and \ref{ch:penrose_binaries:sec:cmmr_penrose}, regarding non-coalescing binaries, have been published in Ref.~\cite{PhysRevD.104.124025}. The contents of Sec.~\ref{ch:penrose_binaries:sec:arbitrary_penrose} extend the discussion to non-static binaries and present novel preliminary results that we intend to publish soon.
 
-\section*{Black Hole Perturbations and Quasinormal Modes - Wave Scattering}
+\section{Black Hole Perturbations and Quasinormal Modes - Wave Scattering}
 
 When a closed physical system (like a guitar string) is perturbed, it relaxes by emitting certain natural frequencies know as \emph{normal modes}. If, however, the system is open (and therefore energy is being somehow dissipated away), its emitted natural frequencies will decay with time (like for instance sounding a bell in a church). These decaying modes are called \emph{quasinormal modes} (\acp{QNM}).
 
@@ -64,7 +64,7 @@ The outcomes reported in this chapter are preliminary and exploratory in nature.
 
 It should be noted that while we were drafting this chapter, another PhD thesis authored by G. Ficarra was made publicly available and can be found in Ref.~\cite{Ficarra2023}. In his thesis, Ficarra has carried out similar work with significantly more detail and precision, as his findings are not preliminary and his thesis is wholly dedicated to that topic. It is not our intention to compete with his work. Rather, we aim to highlight the contributions we have made and the skills gained in doing so. If one is interested in sophisticated analysis of binary systems interacting with scalar fields, including instances where the gravitational potential is influenced by the scalar cloud, we recommend reading his thesis.
 
-\section*{Black Hole Perturbations and Quasinormal Modes - \texttt{QuasinormalModes.jl}}
+\section{Black Hole Perturbations and Quasinormal Modes - \texttt{QuasinormalModes.jl}}
 
 Frequently, the task of computing quasinormal modes of a given system can be reduced to determining the discrete set of eigenvalues of a second-order differential equation subject to appropriate boundary conditions and asymptotic behavior~\cite{review3}. Several techniques can be employed to address such problems, but Leaver's continued fraction method~\cite{Leaver1985} stands out as the most widely used and successful method for a broad range of spacetimes.
 
