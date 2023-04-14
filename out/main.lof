@@ -39,11 +39,13 @@
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Penrose's process in the $z=0$ plane of a \ac {CMMR} spacetime with $M_1=M_2=0.5$, $a_1=a_2=0.65$, and $R=1$. The incoming trajectory $T_{(0)}$ (black curve) splits at the black point ($\mitrho /M_T=0.25$, $\mitphi =0$) into the negative energy orbit $T_{(1)}$ (red curve) and the trajectory of the escaping fragment $T_{(2)}$ (purple curve). The parameters that generate these trajectories are shown in Table \ref {tab:cmmr_penrose_example}. The blue region is the $z=0$ section of the ergosphere (for particle 1).\relax }}{79}{figure.caption.41}%
 \setforeignlanguage {english}
 \setforeignlanguage {english}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Arbitrary ellipse in the $V^1(0)$-$V^2(0)$ plane, centered around $\left (V^1_\circ ,V^2_\circ \right )$, with semi major and minor axis $\mitalpha _\pm $, respectively, and rotation angle $\mitphi $ with $V^1(0)$.\relax }}{86}{figure.caption.43}%
 \setforeignlanguage {english}
 \setforeignlanguage {english}
 \setforeignlanguage {english}
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {2.17}{\ignorespaces Regions of interest in the $t=0$ \ac {SKS} metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$\relax }}{96}{figure.caption.47}%
+\setforeignlanguage {english}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Regions of interest in the $t=0$ \ac {SKS} metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$\relax }}{97}{figure.caption.48}%
 \setforeignlanguage {english}
 \setforeignlanguage {english}
 \setforeignlanguage {english}
@@ -52,34 +54,34 @@
 \setforeignlanguage {english}
 \addvspace {10\p@ }
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic representation of distance relationships and data propagation in a \ac {BBH} simulation. Adapted from Ref.~\cite {Reisswig2010}.\relax }}{103}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schematic representation of distance relationships and data propagation in a \ac {BBH} simulation. Adapted from Ref.~\cite {Reisswig2010}.\relax }}{103}{figure.caption.55}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Schematic representation of the \texttt {Thornburg04} coordinate system employed in the simulations. Adapted from Ref.~\cite {Reisswig2010}.\relax }}{106}{figure.caption.55}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Schematic representation of the \texttt {Thornburg04} coordinate system employed in the simulations. Adapted from Ref.~\cite {Reisswig2010}.\relax }}{106}{figure.caption.56}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Demonstration of the plane wave initial data with parameters $K_x = K_y = Kz = 1$ and $t_0 = x_0 = y_0 = z_0 = 0$ at time $t=0$ and $z=0$.\relax }}{108}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Demonstration of the plane wave initial data with parameters $K_x = K_y = Kz = 1$ and $t_0 = x_0 = y_0 = z_0 = 0$ at time $t=0$ and $z=0$.\relax }}{108}{figure.caption.57}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Demonstration of the multipolar exact Gaussian data at different time intervals. For all panels, $\mitsigma = 1$. Panel \textbf {A} displays the function at $t=0$, Panel \textbf {B}, at $t = 1.5$, and Panel \textbf {C} at $t=3$.\relax }}{109}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Demonstration of the multipolar exact Gaussian data at different time intervals. For all panels, $\mitsigma = 1$. Panel \textbf {A} displays the function at $t=0$, Panel \textbf {B}, at $t = 1.5$, and Panel \textbf {C} at $t=3$.\relax }}{109}{figure.caption.58}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Demonstration of the multipolar Gaussian function with different parameters. For all panels, $x_0 = y_0 = z_0 = 0$ and $R_0 = 5$. In Panel \textbf {A} displays the only nonzero coefficient is $c_{00} = 1/A_{00}$, in Panel \textbf {B}, $c_{11} = 1/A_{11}$, and in Panel \textbf {C}, $c_{22} = 1/(3A_{22})$.\relax }}{111}{figure.caption.58}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Demonstration of the multipolar Gaussian function with different parameters. For all panels, $x_0 = y_0 = z_0 = 0$ and $R_0 = 5$. In Panel \textbf {A} displays the only nonzero coefficient is $c_{00} = 1/A_{00}$, in Panel \textbf {B}, $c_{11} = 1/A_{11}$, and in Panel \textbf {C}, $c_{22} = 1/(3A_{22})$.\relax }}{111}{figure.caption.59}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Scalar field $\mitPhi $ scattering of the GW150914 binary merger in three moments in time. Panel \textbf {A} corresponds to $t = 0$, panel \textbf {B} represents $t = 8.811$, and panel \textbf {C} corresponds to $t = 55.068$.\relax }}{113}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Scalar field $\mitPhi $ scattering of the GW150914 binary merger in three moments in time. Panel \textbf {A} corresponds to $t = 0$, panel \textbf {B} represents $t = 8.811$, and panel \textbf {C} corresponds to $t = 55.068$.\relax }}{113}{figure.caption.60}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Top panels: Plot of the multipolar field component $l=2,m=0$ at $r=40$ for the whole simulation time. Bottom panels: Same quantities as in the top panels but restricted to the $t=[67.2, 136.5]$ time period. The right panels plot the logarithm of the absolute value of the field.\relax }}{114}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Top panels: Plot of the multipolar field component $l=2,m=0$ at $r=40$ for the whole simulation time. Bottom panels: Same quantities as in the top panels but restricted to the $t=[67.2, 136.5]$ time period. The right panels plot the logarithm of the absolute value of the field.\relax }}{114}{figure.caption.61}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Left panel: The original data is plotted against a fit to a quasinormal mode model. Fitted frequencies are displayed in the plot. Right panel: Plot of the absolute value of the difference between original and fitted data (fit residual). \relax }}{116}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Left panel: The original data is plotted against a fit to a quasinormal mode model. Fitted frequencies are displayed in the plot. Right panel: Plot of the absolute value of the difference between original and fitted data (fit residual). \relax }}{116}{figure.caption.62}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Periodogram of the simulated signal with peak frequency indicated in the plot.\relax }}{117}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Periodogram of the simulated signal with peak frequency indicated in the plot.\relax }}{117}{figure.caption.63}%
 \addvspace {10\p@ }
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematic representation of the \ac {AIM} for computing the $c^i_n$ matrix. Each row of matrices represent an \ac {AIM} step. Coefficients circled in red are currently being computed, while coefficients marked in blue withe arrows are the coefficients required for that computation. Notice how the lower-right triangle of coefficients is never used.\relax }}{130}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematic representation of the \ac {AIM} for computing the $c^i_n$ matrix. Each row of matrices represent an \ac {AIM} step. Coefficients circled in red are currently being computed, while coefficients marked in blue withe arrows are the coefficients required for that computation. Notice how the lower-right triangle of coefficients is never used.\relax }}{130}{figure.caption.64}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Schematic representation of the \ac {AIM} for computing the $d^i_n$ matrix. The first two row of matrices represent \ac {AIM} steps and the third row represents the computation of $d^o_1$, which is required in computing $c^0_2$. Coefficients circled in red are currently being computed, while coefficients marked in blue withe arrows are the coefficients required for that computation. Notice how the lower-right triangle of coefficients is never used.\relax }}{131}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Schematic representation of the \ac {AIM} for computing the $d^i_n$ matrix. The first two row of matrices represent \ac {AIM} steps and the third row represents the computation of $d^o_1$, which is required in computing $c^0_2$. Coefficients circled in red are currently being computed, while coefficients marked in blue withe arrows are the coefficients required for that computation. Notice how the lower-right triangle of coefficients is never used.\relax }}{131}{figure.caption.65}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Representation of \ac {AIM} steps for an $n=2$ sized example. Arrays are represented by a sequence of blue (for storing $c^i_n$ coefficient) and red (for storing $d^i_n$ coefficients) squares, wherein each square is an array element. Each column represents, respectively, initial, current and previous data. Colored arrows indicate index dependencies. Hatches indicate ignored data.\relax }}{133}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Representation of \ac {AIM} steps for an $n=2$ sized example. Arrays are represented by a sequence of blue (for storing $c^i_n$ coefficient) and red (for storing $d^i_n$ coefficients) squares, wherein each square is an array element. Each column represents, respectively, initial, current and previous data. Colored arrows indicate index dependencies. Hatches indicate ignored data.\relax }}{133}{figure.caption.66}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Error of the fundamental $s=l=0$ Schwarzschild \ac {QNM} vs. the number of \ac {AIM} iterations. Reference values obtained in Ref.~\cite {BertiQNMData}. The y-axis of the plot is in logarithmic scale.\relax }}{135}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Error of the fundamental $s=l=0$ Schwarzschild \ac {QNM} vs. the number of \ac {AIM} iterations. Reference values obtained in Ref.~\cite {BertiQNMData}. The y-axis of the plot is in logarithmic scale.\relax }}{135}{figure.caption.67}%
 \setforeignlanguage {english}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Time taken (average of 20 repetitions) vs. the number of \ac {AIM} iterations taken to compute the fundamental Schwarzschild \ac {QNM}. The plot is in a log-log scale.\relax }}{136}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Time taken (average of 20 repetitions) vs. the number of \ac {AIM} iterations taken to compute the fundamental Schwarzschild \ac {QNM}. The plot is in a log-log scale.\relax }}{136}{figure.caption.68}%
 \setforeignlanguage {english}
 \setforeignlanguage {english}
 \setforeignlanguage {english}

@@ -14,7 +14,7 @@ In spite of divergent objectives, the mathematical instruments utilized in backw
 
 Initially, we consider a globally hyperbolic spacetime that can be characterized by a metric tensor $\mtrtens{\mu}{\nu}$. Since it is globally hyperbolic, it allows for a foliation of constant coordinate time $t$ hypersurfaces that can be specified as $\Sigma_t$. We shall assume that the spacetime is equipped with coordinates\footnote{Our convention entails that Greek indices encompass all four coordinates, whereas Latin indices include only spatial coordinates.} that are adapted to the foliation, such that $x^0=t$ and $x^i$ ranges over $\Sigma_t$.
 
-The unit time-like (directed towards the future) normal vector of $\Sigma_t$ shall be identified as $n^\mu$. This vector coincides with the four-velocity of an observer, known as the \emph{Eulerian Observer} or $\mathcal{O}E$, whose worldlines are orthogonal to $\Sigma_t$. The spatial metric induced in $\Sigma_t$ is designated as $\gamma{\mu\nu}$, and its associated covariant derivative is $D_i$. The extrinsic curvature tensor is $K_{ij}$, the lapse function is $N$, and the shift vector is $\beta^\mu$. The line element of the $3+1$ decompose metric then becomes
+The unit time-like (directed towards the future) normal vector of $\Sigma_t$ shall be identified as $n^\mu$. This vector coincides with the four-velocity of an observer, known as the \emph{Eulerian Observer} or $\mathcal{O}E$, whose worldlines are orthogonal to $\Sigma_t$. The spatial metric induced in $\Sigma_t$ is designated as $\gamma_{ij}$, and its associated covariant derivative is $D_i$. The extrinsic curvature tensor is $K_{ij}$, the lapse function is $N$, and the shift vector is $\beta^\mu$. The line element of the $3+1$ decompose metric then becomes
 %
 \begin{equation}
   \ud s^2 = -N^2 \ud t^2 + \gamma_{ij}(\ud x^i + \beta^i \ud t)(\ud x^j + \beta^j \ud t).
@@ -42,6 +42,8 @@ where $E$ represents the particle's energy as measured by $\mathcal{O}_E$ (by de
   \label{eq:arbitrary_penrose_3_momentum}
 \end{equation}
 %
+Note that even though $V$, $P$ and $\gamma$ are spatial quantities, we attribute to them Greek indices. This is to be understood as a simple extension of these quantities where temporal components are identically zero for notational reasons.
+
 The normalization of $p^\mu$ and $n_\mu$, together with the orthogonality relation $n_\mu V^\mu = 0$ and Eq.~\eqref{eq:arbitrary_penrose_p_decomp} imposes
 %
 \begin{equation}
@@ -86,7 +88,6 @@ Given the aforementioned constraints, how can the local energies of particles en
 In the limit where spatial coordinates approach infinity, the components of the spatial metric $\gamma_{ij}$ approach those of the Minkowski metric $\eta_{ij}$, the shift vector $\beta^i$ approaches zero, and the lapse function $N$ approaches one. Therefore, according to Eq.~\eqref{eq:arbitrary_penrose_local_global_energy_relation}, the global energy $\varepsilon$ and the local energy $E$ coincide at infinity. This means that if the spacetime is asymptotically flat, the global energy is still physically meaningful at infinity. Moreover, Eq.~\eqref{eq:arbitrary_penrose_geodesic_eq_E} implies that $K_{ij}$ approaches zero and $N$ approaches one as the Minkowski solution is approached, so both global and local energies are conserved at infinity.
 
 In practical terms (and especially when analyzing spacetime metrics obtained from numerical simulation codes) it is not possible to integrate a trajectory to spatial infinity since the coordinates commonly employed are not compactified and such compactification schemes are often difficult or impossible to perform in practice.
-
 Instead of attempting to do so, our technique follows again a practice common in backward ray tracing works, more specifically, we follow the prescription given by Ref.~\cite{Bohn:2014xxa}. Given a set of initial conditions $X^i(0), V^i(0), E(0)$, we evolve the system formed by Eqs.~\eqref{eq:arbitrary_penrose_geodesic_eq_X}-\eqref{eq:arbitrary_penrose_geodesic_eq_E} numerically until the particle reaches a sphere of predetermined radius that we denominate the \emph{background sphere}. The radius of this sphere is chosen so that the difference between global and local energy becomes smaller than a certain threshold $\delta_E$, that is, 
 %
 \begin{equation}
@@ -97,7 +98,7 @@ Instead of attempting to do so, our technique follows again a practice common in
 where $t_f$ represents the final integration coordinate time. Additionally, we also stop integrating if the particle is absorbed by the system at a given time of ``swallowing'' $t_S$. A particle is considered absorbed if the difference of its local energy at $t_S$ and at $t=0$ gets larger than a certain swallowing threshold $\delta_S$, that is, 
 %
 \begin{equation}
-  |E(t_S) - E(0)|/E(0) = \delta_S.
+  |E(t_S) - E(0)|/E(0) > \delta_S.
   \label{eq:arbitrary_penrose_swallowing_condition}
 \end{equation}
 
@@ -174,7 +175,16 @@ If one has
   \Delta / I < 0,
 \end{align}
 %
-the quadratic of Eq.~\eqref{eq:arbitrary_penrose_general_quadratic_form} describes a non-degenerate real ellipse in the $V^1(0)$-$V^2(0)$ plane~\cite{Hart2002}. The center coordinates of this ellipse will be denoted as $V^1(0)_\circ$ and $V^2(0)_\circ$, while the lengths of its semi-major and semi-minor axes will be represented as $\alpha_+$ and $\alpha_-$, respectively. Additionally, the angle of rotation, which is measured counterclockwise from the $V^1$ axis to the semi-major axis $\alpha_+$, will be designated as $\phi$. From the coefficients of the quadratic, we can then explicitly write~\cite{Larson2006, Young2010, Lawrence2014}
+the quadratic of Eq.~\eqref{eq:arbitrary_penrose_general_quadratic_form} describes a non-degenerate real ellipse in the $V^1(0)$-$V^2(0)$ plane~\cite{Hart2002}. The center coordinates of this ellipse will be denoted as $V^1_\circ$ and $V^2_\circ$, while the lengths of its semi-major and semi-minor axes will be represented as $\alpha_+$ and $\alpha_-$, respectively. Additionally, the angle of rotation, which is measured counterclockwise from the $V^1$ axis to the semi-major axis $\alpha_+$, will be designated as $\phi$. This general ellipse is sketched in Fig.~\ref{fig:arbitrary_penrose_ellipse}.
+
+\begin{figure}[!ht]
+  \centering
+  \includesvg[width=0.6\linewidth]{img/penrose_binaries/ellipse.svg}
+  \caption{Arbitrary ellipse in the $V^1(0)$-$V^2(0)$ plane, centered around $\left(V^1_\circ,V^2_\circ\right)$, with semi major and minor axis $\alpha_\pm$, respectively, and rotation angle $\phi$ with $V^1(0)$.}
+  \label{fig:arbitrary_penrose_ellipse}
+\end{figure}
+
+From the coefficients of the quadratic, we can then explicitly write~\cite{Larson2006, Young2010, Lawrence2014}
 %
 \begin{equation}
   V^1_\circ = V^2_\circ = 0,
@@ -211,7 +221,7 @@ and thus the problem of finding initial velocities that satisfy Eq.~\eqref{eq:ar
 Utilizing this parametrization of velocities, the general workflow for finding explicit examples of the \ac{PP} with our code is as follows:
 
 \begin{enumerate}
-  \item Chose a break-up point. This will be the initial position of all three particle participating in the process. We know that in order to extract energy this break-up must occur inside the ergosphere. In general, when the spacetime under study does not possess a global time-like killing vector field, we consider the ergosphere to be the now observer dependent region where the metric component $\mtrtens{t}{t}$ changes sign.
+  \item Chose a break-up point. This will be the initial position of all three particle participating in the process. We know that in order to extract energy this break-up must occur inside the ergosphere. In general, when the spacetime under study does not possess a global time-like killing vector field, we consider the ergosphere to be the observer dependent region where the metric component $\mtrtens{t}{t}$ changes sign.
   \item Chose initial velocities and energy for the ingoing particle in such a way that it is an escaping orbit when integrated forward and backward in time. Requiring that the orbit is escaping in both ``temporal directions'' makes it more likely that one of the particles produced after the break-up will escape to infinity.
   \item Choose initial velocities and energy for the particle that is absorbed by the black whole and will be the equivalent of the negative energy orbit. These parameters are chosen so that the particle is counter-rotating with the black whole that will absorb it, so that its angular momentum can actually be decreased upon absorption.
   \item The escape orbit parameters are computed automatically by the code via 4-momentum conservation at the break-up point.
@@ -219,7 +229,7 @@ Utilizing this parametrization of velocities, the general workflow for finding e
 
 \subsection{\texttt{GRLensing}}
 
-The scheme described above was implemented in a public \texttt{C++} code available in Ref.~\cite{GRLensingRepo}. Compilation and usage instructions are provided within the repository.
+The scheme described above was implemented in a public \texttt{C++} code available in Ref.~\cite{GRLensingRepo}. Compilation and usage instructions are provided within the repository. In this section we shall explain the inner workings of the code in more detail. The reader is free to skip over to the next section without any loss of relevant physical discussions if they not be interested in such computational details.
 
 The code was originally created with the intent of producing Gravitational Lensing images (hence the name) but was later adapted to investigate the \ac{PP}. The code consists of a \emph{kernel} using the ARKODE~\cite{ARKODE} infrastructure for integrating the geodesic equation and verifying the stopping criteria of Eqs.~\eqref{eq:arbitrary_penrose_background_sphere_cplision_condition} and \eqref{eq:arbitrary_penrose_swallowing_condition} for an arbitrary spacetime metric.
 
@@ -227,7 +237,7 @@ The kernel expects only to receive a set of functions that compute the \ac{ADM} 
 
 In addition to spacetime metrics being plugins, file readers and writers are also plugins in the same way. This allows the user to implement different input/output data formats for the trajectories according to their needs. Currently, only a simple \texttt{ASCII} file writer is available, but that is enough for our current needs.
 
-The behavior of the program is driven at runtime by a command line interface, \texttt{YAML} configuration files and the available dynamic libraries implementing spacetime metrics and writers. A basic configuration file named \texttt{grlensing\_config.yaml} is expected to be present, detailing various ARKODE internal settings, such as error tolerances, max. number of iterations, etc. It also details the metric and file writer plugins to be loaded and made available at runtime as well as settings of the \texttt{dump-metric} command. 
+The behavior of the program is driven at runtime by a command line interface, \texttt{YAML} configuration files and the available dynamic libraries implementing spacetime metrics and writers. A basic configuration file named \texttt{grlensing\_config.yaml} is expected to be present, detailing various ARKODE internal settings, such as error tolerances, maximum number of iterations, etc. It also details the metric and file writer plugins to be loaded and made available at runtime as well as settings of the \texttt{dump-metric} command. 
 
 Additional configuration files are required in certain modes (for instance, describing a certain spacetime parameters and initial conditions of a particle). Through the command line, the user selects the operation mode of the code. At the time of writing, the available modes of operation are (these can be viewed by invoking the program with \texttt{--help})
 %

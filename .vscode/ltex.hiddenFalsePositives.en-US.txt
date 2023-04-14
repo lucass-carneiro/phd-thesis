@@ -208,3 +208,5 @@
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[width=]img/penrose_binaries/kerr_surfaces.svg Mathematically accurate representation of a Kerr black hole of mass \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and spin \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q plotted in Cartesian Kerr-Schild coordinates.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[width=]img/penrose_binaries/kerr_breakup.svg Schematic representation of a \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
 {"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[width=]img/wave_scattering/multipatch_signal.svg Schematic representation of distance relationships and data propagation in a \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q simulation.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[width=0.6]img/penrose_binaries/kerr_breakup.svg Schematic representation of a \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[width=0.6]img/penrose_binaries/kerr_surfaces.svg Mathematically accurate representation of a Kerr black hole of mass \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q and spin \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q plotted in Cartesian Kerr-Schild coordinates.\\E$"}
