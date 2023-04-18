@@ -15,9 +15,9 @@ where $M$ is the mass of the black hole, and $r$ is the radial coordinate which,
 
 The coordinates employed in the metric described by Eq.~\eqref{eq:Metric} are commonly known as Schwarzschild coordinates. This metric features an event horizon located at $r=2M$ and a physical singularity at $r=0$. In the asymptotic region, namely as $r$ approaches infinity, the metric reduces to a flat metric. For the purposes of examining quasinormal modes in this black hole spacetime, the relevant region of the spacetime is the range of the radial coordinate $r$ between $2M$ and infinity.
 
-Our analysis of linear perturbations in the Schwarzschild black hole spacetime described by \eqref{eq:Metric} follows the standard procedure. After selecting a specific perturbation field, we reduce the corresponding partial differential equations to a unique Schrödinger-like ordinary differential equation using a series of transformations. In this approach, the perturbation functions were decomposed into Fourier modes of the form $e^{i\omega t}=e^{i(\omega_{Re}-i \omega_{Im})}=e^{\omega_{Im} t}\cos{\left(\omega_{Re} t\right)}$. This eliminated the time derivatives from the differential equations, while the angular dependence was handled through expansion in spherical harmonics.
+Our analysis of linear perturbations in the Schwarzschild black hole spacetime described by \eqref{eq:Metric} follows the standard procedure. After selecting a specific perturbation field, we reduce the corresponding partial differential equations to a unique Schrödinger-like ordinary differential equation using a series of transformations. In this approach, the perturbation functions were decomposed into Fourier modes of the form $e^{i\omega t}=e^{i(\omega_{Re}-i \omega_{Im})t}=e^{\omega_{Im} t}\cos{\left(\omega_{Re} t\right)}$. This eliminated the time derivatives from the differential equations, while the angular dependence was handled through expansion in spherical harmonics.
 
-It is important to be reminded at this point that ordinary \acp{QNM} are characterized by frequencies with both non-zero real and imaginary components and represent oscillatory solutions that are exponentially suppressed by the imaginary component of the frequency. In contrast, modes with purely imaginary frequencies, where the real part of the frequency is zero, correspond to purely damping solutions since the respective perturbation functions decay as $ e^{i\omega,t}=e^{,\omega_{Im},t}$.
+It is important to be reminded at this point that ordinary \acp{QNM} are characterized by frequencies with both non-zero real and imaginary components and represent oscillatory solutions that are exponentially suppressed by the imaginary component of the frequency. In contrast, modes with purely imaginary frequencies, where the real part of the frequency is zero, correspond to purely damping solutions since the respective perturbation functions decay as $ e^{i\omega t}=e^{\omega_{Im} t}$.
 
 \subsection{Spin $0$, $1$ and $2$ perturbations}
 
@@ -35,15 +35,16 @@ where the potential function $V_{s}(r)$ is given by
     +\left(1-s^2\right)\frac{2M}{r^3}\right],
 \end{equation}
 %
-and the tortoise coordinate $r_*$ is defined in terms of the areal coordinate $r$ by $dr_*=dr/f(r)$.The problem of calculating quasinormal frequencies is therefore reduced to an eigenvalue problem, which can be solved by either expanding the function $\psi$ in a base composed of special functions or solving the second-order differential equation directly once appropriate asymptotic boundary conditions have been specified.
+and the tortoise coordinate $r_*$ is defined in terms of the areal coordinate $r$ by $dr_*=dr/f(r)$. The problem of calculating quasinormal frequencies is therefore reduced to an eigenvalue problem, which can be solved by either expanding the function $\psi$ in a base composed of special functions or solving the second-order differential equation directly once appropriate asymptotic boundary conditions have been specified.
 
-It is important to note, that the potential function in Eq.~\eqref{Eq:IntegerSpinPot} is zero at the horizon because $f(r_h)=0$. Thus, the Schr\"odinger-like equation reduces to a single harmonic oscillator problem, whose solutions are given by
+It is important to note that the potential function in Eq.~\eqref{Eq:IntegerSpinPot} is zero at the horizon because $f(r_h)=0$. Thus, the Schr\"odinger-like equation reduces to a single harmonic oscillator problem, whose solutions are given by
 %
-\begin{equation} \label{eq:sol1}
+\begin{equation}
   \psi_{s}(r)=c_1\, e^{-i\omega r_*}+c_2\, e^{i\omega r_*}, \quad r\to r_h.
+  \label{eq:sol1}
 \end{equation}
 %
-The first of these solutions is interpreted as an ingoing wave, i.e., a wave that travels inward and eventually falls into the black hole event horizon. The second solution is interpreted as an outgoing wave, i.e., a wave that travels outward with respect to the black hole and can escape to spatial infinity. Considering that perturbation theory is implemented using classical assumptions, nothing is expected to come out from the black hole interior, thus, in the following analysis we impose ingoing solutions as boundary conditions at the horizon and discarding outgoing solutions altogether. This is accomplished by setting  $c_2=0$.
+The first term in Eq.~\eqref{eq:sol1} is interpreted as an ingoing wave, i.e., a wave that travels inward and eventually falls into the black hole event horizon. The second term is interpreted as an outgoing wave, i.e., a wave that travels outward with respect to the black hole and can escape to spatial infinity. Considering that perturbation theory is implemented using classical assumptions, nothing is expected to come out from the black hole interior, thus, in the following analysis we impose ingoing solutions as boundary conditions at the horizon and discarding outgoing solutions altogether. This is accomplished by setting  $c_2=0$.
 
 At spatial infinity, however, one has $f(r)\to 1$ and the effective potential of Eq.~\eqref{Eq:IntegerSpinPot} also vanishes. Thus, in such a limit the general solutions to the wave equation \eqref{Eq:IntegerSpin} have the same form as the function given in Eq.~\ref{eq:sol1}, i.e.,
 %
@@ -51,7 +52,7 @@ At spatial infinity, however, one has $f(r)\to 1$ and the effective potential of
   \psi_{s}(r_*)=c_3\, e^{-i\omega r_*}+c_4\, e^{i\omega r_*}, \quad r\to \infty.
 \end{equation}
 %
-The first solution can be interpreted as waves that originate sufficiently far away from the black hole and can be avoided by setting $c_3=0$. Conversely, the second solution can be interpreted as waves that leave the universe, serving as the boundary condition at spatial infinity. It is important to note that neither the angular momentum $\ell$ nor the spin have an explicit influence on the boundary conditions.
+The first solution can be interpreted as waves that originate sufficiently far away from the black hole and can be avoided by setting $c_3=0$. Conversely, the second solution can be interpreted as waves that leave the universe, serving as the boundary condition at spatial infinity. It is important to note that neither the angular momentum $\ell$ nor the perturbing field's spin have an explicit influence on the boundary conditions.
 
 It is interesting to note that close to the event horizon, the tortoise coordinate becomes
 %
@@ -146,7 +147,7 @@ We then implement the same transformations applied in the integer spin cases. Fi
   \!\!V_{\scriptscriptstyle{1/2}}=\left(1+\ell\right)u^2\sqrt{f(u)} \left[\left(1+\ell\right)\sqrt{f(u)}+\frac{3u}{2} -1\right].
 \end{equation}
 
-It is interesting pointing out that the asymptotic solutions do not depend on the spin of the field, and therefore the asymptotic solutions for this problem are the same as those obtained in Eqs.~\eqref{Eq:AsympHorion} and \eqref{Eq:AsymInfinite}. Similar transformations as those given in Eqs.~\eqref{Eq:TransN1} and~\eqref{Eq:FinalTrans} can then also be applied. Thus, the differential equation to be solved is given by
+It is interesting to point out that the asymptotic solutions do not depend on the spin of the field, and therefore the asymptotic solutions for this problem are the same as those obtained in Eqs.~\eqref{Eq:AsympHorion} and \eqref{Eq:AsymInfinite}. Similar transformations as those given in Eqs.~\eqref{Eq:TransN1} and~\eqref{Eq:FinalTrans} can then also be applied. Thus, the differential equation to be solved is given by
 %
 \begin{equation}\label{eq:onda-s12}
   \begin{split}

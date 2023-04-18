@@ -49,7 +49,7 @@ Fig.~\ref{fig:wave_scattering_multipatch_coords} depicts a schematic representat
 
 To preserve the structure of the evolution equations, \texttt{Llama} employs both \textit{local} and \textit{global} coordinate systems. Equations and derivatives are consistently expressed in terms of their respective patch-local coordinates, enabling the use of standard forms of equations and approximations for derivative operators. However, \texttt{Llama} internally stores quantities in a Cartesian global coordinate system in which each patch is embedded. To convert local derivatives (and other vector or tensor quantities, if they exist) to this global coordinate system, it is necessary to project each derivative operator using the Jacobians of the coordinate transformations.
 
-Assuming $x^k$ represent the global Cartesian coordinate system and $a^k$ denotes the local coordinates, the construction of the Jacobian $\tens{J}{i}{k} = \partial a^i / x^k$ permits the expression of first and second order derivatives in the global coordinate system as
+Assuming $x^k$ represents the global Cartesian coordinate system and $a^k$ denotes the local coordinates, the construction of the Jacobian $\tens{J}{i}{k} = \partial a^i / x^k$ permits the expression of first and second order derivatives in the global coordinate system as
 %
 \begin{equation}
   \hat{\partial}_k = \tens{J}{i}{k} \partial_i
@@ -67,4 +67,4 @@ respectively, where $\partial_i$ denotes derivatives with respect to $a^i$ and $
 
 It should be noted that, in order to perform the required calculations, not only the Jacobian of local coordinates is necessary, but also the Jacobian derivatives. \texttt{Llama} provides both the components of the Jacobian and its derivatives at each point on the grid during the evolution process so that the user can project the results according to Eqs~\eqref{eq:wave_scattering_projection_1} and \eqref{eq:wave_scattering_projection_2} manually.
 
-Alternatively, \texttt{Llama} provides a convenience \texttt{Thorn} called \texttt{GlobalDerivatives} that automatically performs the projections for the user. However, in our \texttt{Thorn}, we have opted to perform these projections manually, as \texttt{GlobalDerivatives} does not offer a way to directly compute second-order spatial derivatives. Once again, we have employed Wolfram Matheamatica for generating the \texttt{C} code responsible for projecting derivatives into global coordinates.
+Alternatively, \texttt{Llama} provides a convenience \texttt{Thorn} called \texttt{GlobalDerivatives} that automatically performs the projections for the user. However, in our \texttt{Thorn}, we have opted to perform these projections manually, as \texttt{GlobalDerivatives} does not offer a way to directly compute second-order spatial derivatives. Once again, we have employed Wolfram Mathematica for generating the \texttt{C} code responsible for projecting derivatives into global coordinates.
