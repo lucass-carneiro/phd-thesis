@@ -56,7 +56,10 @@ colorlinks=false
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,urlcolor=NavyBlue,linkcolor=NavyBlue,citecolor=CornflowerBlue,naturalnames=true,hypertexnames=true}
 
-\usepackage[numbers]{natbib}
+\usepackage{doi}
+
+\usepackage[comma]{natbib}
+\setcitestyle{numbers,square}
 
 \usepackage{svg}
 
@@ -69,6 +72,8 @@ colorlinks=false
 \usepackage{multirow}
 
 \usepackage[withpage]{acronym}
+
+\usepackage{doi}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MATH MACROS
@@ -537,7 +542,7 @@ This thesis explores classical phenomena in multiple models of black hole binari
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% BIBLIOGRAPHY
-\bibliographystyle{apsrev4-2}
+\bibliographystyle{apsrev4-1}
 \bibliography{src/ref_aim.bib,src/ref_books.bib,src/ref_intro.bib,src/ref_owned.bib,src/ref_penrose.bib,src/ref_wave_scattering.bib}
 
 \end{document}
