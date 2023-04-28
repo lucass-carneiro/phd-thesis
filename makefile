@@ -16,6 +16,14 @@ pdf:
 	pdftk A=${out_dir}/${main_file_name}_2.pdf B=img/ata_defesa.pdf cat A1-4 B1-2 A5-end output ${out_dir}/${outputname}.pdf
 	rm ${out_dir}/${main_file_name}.pdf ${out_dir}/${main_file_name}_1.pdf ${out_dir}/${main_file_name}_2.pdf
 
+pdf-clean:
+	mkdir -p out
+	lualatex -shell-escape -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
+	bibtex ${out_dir}/${main_file_name}||true
+	lualatex -shell-escape -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
+	lualatex -shell-escape -halt-on-error -aux-directory=${out_dir} -output-directory=${out_dir} ${source_dir}/${main_file_name}
+	mv ${out_dir}/${main_file_name}.pdf ${out_dir}/${outputname}-clean.pdf
+
 clean:
 	rm -f ${out_dir}/${main_file_name}.{acn,aux,bbl,blg,glo,ist,lot,log,out,toc}
 
