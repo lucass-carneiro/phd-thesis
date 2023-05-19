@@ -1,0 +1,79 @@
+\documentclass[margin=10pt]{standalone}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmainfont{Tex Gyre Pagella}
+\setmathfont{TeX Gyre Pagella Math}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage{svg}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% MATH MACROS
+
+% Upright d
+\newcommand{\ud}{\mathrm{d}}
+
+% Integration element
+\usepackage{xifthen}
+\newcommand{\intelm}[2] {
+  \ifthenelse{\isempty{#2}}
+    {\ud #1 \,}
+    {\ud^{#2} {#1} \,}
+}
+
+% Derivatives
+\newcommand{\der}[2]{\frac{\ud #1}{\ud #2}}
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\nder}[3]{\frac{\ud^{#3} #1}{\ud {#2}^{#3}}}
+\newcommand{\ndel}[3]{\frac{\partial^{#3} #1}{\partial {#2}^{#3}}}
+
+% Tensors
+\newcommand{\tens}[3]{#1^{#2}_{\phantom{#2} #3}}
+\newcommand{\itens}[3]{#1_{#3}^{\phantom{#3} #2}}
+
+% Covariant derivative
+\newcommand{\covd}[1]{\tens{\nabla}{}{#1}}
+\newcommand{\ucovd}[1]{\tens{\nabla}{#1}{}}
+
+% Metric tensor
+\newcommand{\g}{\textsl{g}}
+\newcommand{\mtrtens}[2]{\tens{\g}{}{#1#2}}
+\newcommand{\umtrtens}[2]{\tens{\g}{#1#2}{}}
+
+% Kronecker delta
+\newcommand{\kdelta}[2]{\tens{\delta}{#1}{#2}}
+
+% Connection symbols
+\newcommand{\chris}[3]{\tens{\Gamma}{#1}{#2 #3}}
+
+% Index partial derivative
+\newcommand{\indexdel}[1]{\tens{\partial}{}{#1}}
+
+% References
+\newcommand{\myref}[1]{Eq. (\ref{#1})}
+
+% Definitions, theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+
+% "Fat" table cells
+\newcommand{\tlt}[2]{\begin{tabular}[c]{@{}c@{}}#1\\ #2\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%% DOCUMENT START
+
+\begin{document}
+
+\includesvg[scale=1.0]{energies_general_penrose_plots.svg}
+%$\varepsilon = (N - \gamma_{ij}\beta^iV^j)E$
+
+\end{document}
