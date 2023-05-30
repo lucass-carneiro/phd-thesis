@@ -1,0 +1,268 @@
+Slide 0
+Hello,
+
+Firstly I would like to thank everyone for taking the time to come to my PhD defense.
+Today I will be presenting to you the main results from the work Me and my advisor Mauricio have been developping over the last 4 years.
+Our work is entitled Energy Extraction and Quasinormal Modes of Black Hole Binaries: An analytical and numerical study.
+
+Slide 1:
+This presentation will be divied in the following topics.
+Read topics.
+Note that slides are numbered in the lower left corner of the screen, in order to facilitate discussions later on.
+
+Slide 2:
+We will now talk about why binary systems are relevant in general relativity and astrophysics, motivating our work.
+Read 2 paragraphs.
+Demonstrate phenomena using picture
+Read third paragraph.
+
+Slide 3:
+When modeling binary systems, we believe that there are 3 main choices to be made.
+We devide binary black hole models in static or dynamic, exact or approximate and analitic or numeric
+Read each box in pairs
+
+Slide 4:
+We will now review the Penrose process in the context of the Kerr spacetime.
+Read paragraphs 1 and 2
+Point in the figure outer and killing horizons.
+Read paragraph 3.
+Point the ergosphere in the picture.
+
+Slide 5:
+Read 3 paragraphs
+Point to the figure. Mention 4-momentum conservation in point b
+
+Slide 6:
+We will now extend the Penrose process to binary black holes.
+We will start by modeling binary systems with the Majumdar Papapetrou solution.
+Read slide.
+The line element and metric potential are defined as follows.
+The metric also has an associated electromagnetic potential vector defined as follows.
+In this coordinate system, the black hole's event horions are points located alog plus and minus a, in the z axis.
+
+Slide 7:
+Read slides.
+This defines a region where particles may have negative energies.
+We call such a region a generalized ergosphere.
+
+Slide 8:
+The panel on the left show two distinc regions on the mu/Mr parameter space.
+In the red region, ergospheres are disconnected.
+In the green region, ergospheres are a disjoint union of two connected regions.
+The black line represents the limit in the parameter space where ergosphere splitting occurs.
+The black dots were selected in order to illustrate the features of the generalized ergosphere in several regions of the parameter space.
+Each dot is represented on the right panel.
+Note that the ergosphere becomes more evenly distributed around the black holes when the mass ratio approaches one.
+Note also that if −mu is sufficiently large, there will be
+a single ergosphere surrounding the binary black hole.
+
+Slide 9:
+We have studied negative energy orbits in two planes of motion.
+On the top panels, we can see the examples of 2 negative energy orbits in the plane that contains both holes.
+These orbits are closed, but highly unstable, meaning that any smal deviation from initial conditions lead them to be absorbed by the holes.
+We have also looked at orbits in the z=0 plane, in between both holes.
+These orbits are easilly understood by introducing an effective potential and effective energy.
+Read slides
+Show the effective energy and potential plots.
+There are two turning points in the orbit, which looks like this (point to the right plot)
+
+Slide 10:
+Finally, using these orbits we can construct explicit examples of energy extraction.
+On the left panel, we construct an example using an orbit in the plane that contains both holes
+On the right panel we construct an example using an orbit in the z=0 plane.
+The data used for each orbit is detailed in the tables below.
+Note that the particle leaving the system has more energy than the particle entering the system.
+
+Slide 11:
+We will now extend this idea to a static kerr binary model.
+Read slides
+The line element in cylindrical coordinates is given by.
+The metric potential are complicated real functions, and therefore are ommited.
+This solution is described by five parameters: Two masses, two angular momenta and a separation parameter R.
+We normalize angular momenta by black hole masses and introduce a total mass and angular momentum parameters.
+Point  to left diagram.
+In these coordinates, the event horizons are lines along the z axis with half-length sigma one and two.
+In order to describe black holes, we choose parameters that produce real horizon semi-lenghts in both holes, while also having L>0 and producing a single real solution for a*, which is an extra parameter, depending on the freely specifiable 5 parameters constrained by this equation.
+
+Slide 12:
+Read slide
+Say that this is where gtt changes sign.
+
+Slide 13:
+Once again, we sketch the ergosphere for various metric parameters.
+The top row of the figure (panels A-C) exhibits the effect of changing the mass ratio of the system while keeping
+the total mass, both spins and the separation parameter fixed. It shows that, analogously to the MP case, initially disjoint ergospheres may merge into a single connected ergosphere when the mass ratio increases. 
+The middle row on the other hand, shows the effect of changing the spin parameter of the top black hole while keeping all other parameters fixed. We observe that when initially aligned spins become anti-aligned, the ergosphere becomes thinner and elongated along the symmetry axis.
+Finally, the bottom row (panels G-H) illustrates the effect of increasing the separation parameter when all other parameters are kept fixed. Similarly to what happens in the MP case, if the distance between the black holes is sufficiently large, there will be two disconnected ergospheres,one for each black hole.
+
+Slide 14:
+Once again, we have employed the effective energy formalism in order to study orbits on the plane in between both holes.
+We have found a set of closed orbits with two turning points that poses negative energy and thus are suitable for extracting energy from the holes.
+The table shows the data with an explicit example of energy extraction in this setting.
+
+Slide 15:
+We will now investigate how we can extande this analysis to non-stationary spacetimes.
+The work in this section is being prepared for publication.
+Read slide.
+This decomposition entails foliating the spacetime of intersest with constant coordinate time hypersurfaces.
+Each hypersurface then has an induced 3-metric.
+The time lapse betwen two surfaces is denoted by the lapse function N.
+The positional change of a point between two slices is denoted by the shift vector beta.
+The general line element of such a spacetime is then (point to equation)
+
+Slide 16:
+We wish to study particle motion in this general spacetime.
+For that we will borrow from the formalism of backwards ray tracing, employied in shadow computations.
+Consider a particle P, of for momentum pmu describing an orang world line
+Consider an Eurelian observer OE, that moves orthogonally through the hypersurfaces.
+By definition, the normal vector of the hypersurfaces is the 4-velocity of OE.
+Point to equations.
+Considering that, we will say that our particle my be a photon (delta = 0) or a massive particle (delta = -1)
+The for momentum of the particle is then given by
+Where E is the local energy as measured by OE, and is by definition this equation.
+V represents the 3-velocty of the particle as measured by OE.
+It is  by definition spatial and orthogonal to n, and must be normalized according to.
+In this context, the geodesic equation, a set of 4 second order ODEs, can be decomposed into six first order ODEs for the particle's position and 3-velocities.
+Adittionally, the energy of the particle as measured by OE evolves according to (point to equation)
+
+Slide 17:
+Read slides
+
+Slide 18:
+Read slides
+
+Slide 19:
+To simulate spatial infinity, we will evolve the particle trajectories until they collide with a background sphere, located at radius R
+Starting at point B, we choose parameters for the ingoing and absorbed orbits. The outgoing orbit is computed via conservation of 4-momentum.
+The ingoing orbit is evolved backwards in time until it hits the background sphere.
+The absorbed orbit is evolved forward in time until its energy becomes larger than a threshold.
+The outgoing orbit is evolved forward in time until it reaches the background sphere.
+At the righ panel we can observe the general behaviour of the local energy during a particle decay process.
+Note that local energy always assymptotes to global energy.
+
+Slide 20:
+In order to illustrate and callibrate our method, we have performed these numerical integrations on the Kerr spactime with KS coordinates.
+Table 1 shows energies and masses for the ingoing, absorbed and outgoing particles.
+Table 2 table shows the initial 3-velocities chosen, for the same particle order.
+Table 3 shows the ingoing and outgoing energies when these orbits collide with the background sphere (10^6). Note that the energy difference is small.
+This energy difference can be made arbitrarylly small with larger radii backgrounds
+Table 4 shows the energy differences between outgoing and ingoing orbits, along with energy extraction efficiencies.
+
+Slide 21:
+We have also applyied our method in a non-stationary binary black hole model, given by the SKS solution.
+The SKS solution consists of the addition of two lorentz boosted Kerr metrics in KS coordinates, followed by a non-linear coordinate transformation.
+This is not a vacuum solution of Einsteins Field Equations, but it represents a solution without a global time-like Killing vector field.
+This solution has no ergosphere in the traditional terms, but we can still understand the obsrver-dependent ergosphere where the gtt component changes sign.
+The figure shows the ergosphere in red and event horizons in grey for the SKS solution. Note the ergosphere is compressed in the direction of motion of the holes.
+Once again, we have chosen parameters that demonstrate energy extraction via our proposed scheme.
+Note in particular the last two tables, that show that indeed global and local energy coincide at infinity and that a positive net gain of energy can be observed.
+
+Slide 22:
+We will now shift our focus to the perturbation of a binary system by a scalar field.
+Read slides.
+This system is simply the KG equation 3+1 decomposed
+
+Slide 23:
+There two main difficulties in performing large scale simulations in 3D
+The first difficulty concerans the fact that computational domains must be artificially limited and artificial boundary conditions must be imposed.
+There is no perfect numerical boundary condition, thus we must take into account that the outer boundary will contaminate measurements if it is not placed far enough from the measurement radius.
+Explain right panel.
+Furthermore, the resolutions required for the simulation imply high memory usage in cartesian coordinates.
+Explain left panel.
+
+Slide 24:
+To mitigate these difficulties, we employ multipatch coordinates via llama.
+More specifically, we employ the Thornburg6 coordinate system.
+This consistis of a cartesian cube where Carpet AMR takes place, surrounded by six spherical patches.
+The outer spheriacal coordinas allow us toplace outer boundaries far away without incurring heavy memory penalties, since spherical coordinates decouple radial and angular resolutions.
+
+Slide 25:
+In llama, finite difference derivatives are taken in local coordinates, but llama stores data with respect to a global cartesian coordinate system.
+It is necessary to project derivatives from local to global coordinates using the coordinate transformation jacobians and jacobian derivatives.
+We have chosen to implement this projection manually in our code.
+In order to test this projection, we have employed Plane wave initial data, represented here.
+Once the grid is initialized with this data, we compute the RHS of the evolution system and dump the data to disk.
+By comparing the theoretical RHS with the one actually computed inside the ET, we can validate our derivative projection operators.
+
+Slide 26:
+Another validation test was made using exact gaussian initial data.
+This initial data corresponds to the exact solution of the KG equation in a flat spacetime.
+By comparing the evolution of this data using a minkowski background to the theoretical expression, we could validate the evolution code.
+
+Slide 27:
+Finally, for our production runs we have chosen to evolve multipolar gaussian initial data.
+This initial data is essentially a gaussian pulse modulated by a sum of real spherical harmonics.
+Show monopolar, dipolar, quadrupolar data.
+This data allows us to excite specific modes during evolution.
+
+Slide 28:
+We will now see a 2D animation of the wave front interacting with the binary
+Show movie.
+Following the initial interaction, the black holes generate a wavefront in a pattern resembling a cardioid, where the cusp coincides with the hole location and propagates in alternating directions.
+This shape resembles that observed in wave scattering by a single black Schwarzschild hole  however, in the case of a merging
+binary, we can observe clear effects arising from the rotation of the holes and interference from the waves produced by each hole
+
+Slide 29:
+In addition to pure field values, we have extracted the multipolar components of the field at various radii during the simulation.
+The signal has a “blip” between t = 0 and t = 50 due to the fact that our multipolar Gaussian initial data splits in half at t = 0, resulting
+in an outgoing component of the initial data the gets detected first by the decomposition. 
+After t = 50, we observe a nonlinear signal resulting from the field’s interaction with the binary, which settles down after a number of oscillations.
+We also plot the logarithm of the absolute value of the field in order to identify regions where quasinormal ringdown might be taking place in the  t = 60 to 140 interval
+To better visualize this decaying oscillation, we plot on the bottom panels the same quantities as described on the top panels but in between t = 67.2 and t = 136.5.
+Even though the signal is clearly oscillating in a damped manner, it is difficult to identify the shape of the plot of the bottom right panel to
+the classical shape of the quasinormal ringdown.
+There are very prominent deformations on the shapes of the oscillation “crests” and at times their periods seem to be of variable size.
+The departure from the quasi-normal ringdown is more noticeable when attempting to fit a damped cossine to the data between t = 67.2 and t = 136.5. The plots shows the fitting and its residual, that is, the absolute value of the difference between the simulated data and the data obtained by substituting the fit parameters back into the model.
+
+Slide 30:
+In conclusion, a spectral analysis of the signal has been conducted using the periodogram in the plot which depicts the Power Spectral Density (PSD) of all frequency components in the simulated signal.
+The plot indicates a peak frequency at around f ≈ 0.13.
+Our aim in performing this analysis is to enhance the identification of oscillation frequencies in the signal in a more precise manner.
+Unlike approaches that rely on assumptions regarding the nature of the ringdown or starting times for model fitting, a periodogram analyzes all frequency components present in the signal.
+
+Slide 31:
+Our final topic of discussion will be quasinormal mode finding via the assymptotic iteration method.
+The method is based on the fact that (read slides)
+
+Slide 32:
+Read slide
+
+Slide 33:
+These diagrams show how the recursion relations mix coefficients to compute new coefficients.
+Here, we arrange each coefficient in a matrix for better visualization.
+Each row of matrices represents a step in the method with 2 iterations.
+On the left diagram, note that the lower triangle of the c matrix is never used.
+On the right diagram note that the right triangle of the d matrix is never used.
+Note that to compute a coefficient in col. i we need the results of col 0 and of the previous col.
+The first col contains the coefficients to the taylor expasion.
+This motivates us to see the algorithim as an "iterative evolution" of the first col using the recursion relations.
+
+Slide 34:
+Here we present a diagram representing the algorithim for performing 2 aim iterations.
+Explain the abreviations in the array names
+1,2,3 - Construct arrays and fill initial arrays with data from the taylor expansion.
+4 - Initialize the current data arrayis with the data on the initial data arrays.
+5(a,b) - Copy the content from current into previous
+5(c) - Apply the recursion relations to evolve the current data. Some coefficients don't need to be evolved.
+5(a,b) - Copy the content from current into previous
+5(c) - Apply the recursion relations to evolve the current data. Some coefficients don't need to be evolved.
+After that we can compute the quantization condition.
+
+Slide 35:
+For validation, we plot the absolute error in computing the fundamental Schwarzschild QNM vs the number of AIM iterations.
+The reference value is obteined via Leaver's continued fraction method.
+We also plot the time required to perform a certain number of iterations in log-log scale.
+This time is the avg of 20 repetitions.
+
+Slide 36:
+The method was implemented in a Julia Package, called QuasinormalModes.jl
+We have utilized the package to revisit the QNM problem in the Schwarzschild metric.
+We have computed several QN frequencies for perturbations with spins 0, 1, 2, 1/2, 3/2 and 5/2.
+We have compared all results with those obtained via Chebyshev pseudo-spectral methods.
+When available, we have also compared our results against results available in the literature.
+Here we report spin 5/2 values computed for the first time.
+In all our computations, we've found that the results produced by QuasinormalModes.jl is in excelent agreement with those in the literature and those obtained via pseudospectral methods.
+In particular, we were able to observe, with all methods, purely imaginary frequencies, also reported for the first time with spin 5/2.
+
+Slide 37:
+In conclusion, (read slides)
