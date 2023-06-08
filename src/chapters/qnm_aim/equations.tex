@@ -21,7 +21,7 @@ It is important to be reminded at this point that ordinary \acp{QNM} are charact
 
 \subsection{Spin $0$, $1$ and $2$ perturbations}
 
-The computation of perturbations of integer spin, including scalar, vector, and gravitational perturbations in the Schwarzschild black hole spacetime, is a well understood and solved problem with a significant body of literature dedicated to it. This literature is of great interest for our purposes, which involve comparisons and calibrations. In fact, it has been shown that the equations of motion can be expressed in a concise form known as Schrödinger-like differential equations (see, for instance, \cite{review3}). Thus, for massless scalar ($s=0$), electromagnetic ($s=1$), and vector-type gravitational perturbations ($s=2$), the Schrödinger-like equations take the following form:
+The computation of perturbations of integer spin, including scalar, vector, and gravitational perturbations in the Schwarzschild black hole spacetime, is a well understood and solved problem with a significant body of literature dedicated to it. This literature is of great interest for our purposes, which involves comparisons and calibrations. In fact, it has been shown that the equations of motion can be expressed in a concise form known as Schrödinger-like differential equations (see, for instance, \cite{review3}). Thus, for massless scalar ($s=0$), electromagnetic ($s=1$), and vector-type gravitational perturbations ($s=2$), the Schrödinger-like equations take the following form:
 %
 \begin{equation}\label{Eq:IntegerSpin}
   \frac{d^2 \psi_{{s}}(r)}{d r_*^2}
@@ -46,13 +46,13 @@ It is important to note that the potential function in Eq.~\eqref{Eq:IntegerSpin
 %
 The first term in Eq.~\eqref{eq:sol1} is interpreted as an ingoing wave, i.e., a wave that travels inward and eventually falls into the black hole event horizon. The second term is interpreted as an outgoing wave, i.e., a wave that travels outward with respect to the black hole and can escape to spatial infinity. Considering that perturbation theory is implemented using classical assumptions, nothing is expected to come out from the black hole interior, thus, in the following analysis we impose ingoing solutions as boundary conditions at the horizon and discarding outgoing solutions altogether. This is accomplished by setting  $c_2=0$.
 
-At spatial infinity, however, one has $f(r)\to 1$ and the effective potential of Eq.~\eqref{Eq:IntegerSpinPot} also vanishes. Thus, in such a limit the general solutions to the wave equation \eqref{Eq:IntegerSpin} have the same form as the function given in Eq.~\ref{eq:sol1}, i.e.,
+At spatial infinity, however, one has $f(r)\to 1$ and the effective potential of Eq.~\eqref{Eq:IntegerSpinPot} also vanishes. Thus, in such a limit the general solutions to the wave equation \eqref{Eq:IntegerSpin} have the same form as the function given in Eq.~\eqref{eq:sol1}, i.e.,
 %
 \begin{equation}
   \psi_{s}(r_*)=c_3\, e^{-i\omega r_*}+c_4\, e^{i\omega r_*}, \quad r\to \infty.
 \end{equation}
 %
-The first solution can be interpreted as waves that originate sufficiently far away from the black hole and can be avoided by setting $c_3=0$. Conversely, the second solution can be interpreted as waves that leave the universe, serving as the boundary condition at spatial infinity. It is important to note that neither the angular momentum $\ell$ nor the perturbing field's spin have an explicit influence on the boundary conditions.
+The first solution can be interpreted as waves that originate sufficiently far away from the black hole and can be avoided by setting $c_3=0$. Conversely, the second solution can be interpreted as waves that leave the computational domain, serving as the boundary condition at spatial infinity. It is important to note that neither the angular momentum $\ell$ nor the perturbing field's spin have an explicit influence on the boundary conditions.
 
 It is interesting to note that close to the event horizon, the tortoise coordinate becomes
 %
@@ -66,7 +66,7 @@ Thus, when written in terms of the radial coordinate, the boundary condition at 
   \psi_s(r)\sim e^{-i\omega \frac{\ln{(r-r_h)}}{f'(r_h)}}\sim \left(r-r_h\right)^{-i\frac{\omega}{f'(r_h)}}.
 \end{equation}
 %
-In turn, the tortoise coordinate at the spatial infinity becomes
+In turn, the tortoise coordinate at spatial infinity becomes
 %
 \begin{equation}
   r_*=\int \frac{dr}{f(r)}\approx r+r_h\,\ln{r},\quad r\to \infty
@@ -133,7 +133,7 @@ where we have used $\lambda=\omega M=\omega/2$. The final differential equation 
 
 \subsection{Spin $1/2$ perturbations}
 
-The differential equations for half-integer spin perturbations are quite distinct from Eq.~\eqref{Eq:IntegerSpin3}. See Ref.~\cite{Chandrasekhar1998-le} and references therein the mathematical foundations of black hole perturbation theory for higher spin fields. The equation for the spin $1/2$ Dirac field as a perturbation on the Schwarzschild background was derived in Ref.~\cite{Cho:2003qe} by using the Newman-Penrose formalism. The analysis was generalized for arbitrary half-integer spin in Ref.~\cite{Shu:2005fw}. The resulting equation of motion for the perturbations may be written in the Schr\"odinger-like form of Eq.~\eqref{Eq:IntegerSpin}, where the potential for the massless spin 1/2 field is given by
+The differential equations for half-integer spin perturbations are quite distinct from Eq.~\eqref{Eq:IntegerSpin3}. See Ref.~\cite{Chandrasekhar1998-le} and references therein for the mathematical foundations of black hole perturbation theory for higher spin fields. The equation for the spin $1/2$ Dirac field as a perturbation on the Schwarzschild background was derived in Ref.~\cite{Cho:2003qe} by using the Newman-Penrose formalism. The analysis was generalized for arbitrary half-integer spin in Ref.~\cite{Shu:2005fw}. The resulting equation of motion for the perturbations may be written in the Schr\"odinger-like form of Eq.~\eqref{Eq:IntegerSpin}, where the potential for the massless spin 1/2 field is given by
 %
 \begin{equation}\label{eq:pot-s12}
   V_{\scriptscriptstyle{1/2}}= \frac{\left(1+\ell\right)\sqrt{f(r)}}{r^{2}} \left[\left(1+\ell\right)\sqrt{f(r)}+\frac{3M}{r}-1\right].

@@ -6,10 +6,10 @@ Furthermore, Ref.~\cite{PhysRevD.104.044041} compares the superimposed metric wi
 
 Our ultimate aim is to demonstrate the applicability of the framework presented in this section to a wider range of spacetime metrics than the initial mathematical tool set utilized in the \ac{PP} for static spacetimes. Our primary objective is not to provide quantitatively precise arguments about the behavior of the \ac{PP} in astrophysical binaries. We only required a model in which two Kerr black holes follow a specific trajectory, breaking the time translation symmetry of the spacetime metric, and the \ac{SKS} metric offers this model with greater ease than the PN matching counterparts.
 
-Our construction of the \ac{SKS} metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter $a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) \mu}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
+Our construction of the \ac{SKS} metric follows closely Refs.~\cite{Armengol:2021shd, PhysRevD.104.044041}, but we shall summarize the procedure here for the sake of clarity. We start by considering two Kerr metrics in Kerr-Schild coordinates $(T^{(i)}, X^{(i)}, Y^{(i)}, Z^{(i)})$ that describe each black hole, labeled by the index $(i) = 1,2$ and characterized by their masses $M^{(i)}$ and spin parameter $a^{(i)}$ in their rest frame. Let us now suppose there exists a global coordinate frame labeled by coordinates $(t,x,y,z)$ where the constituent black holes follow trajectories $s^{(i) j}(t, x, y, z)$. Following Ref.~\cite{Armengol:2021shd}, we will consider that the black holes follow a Keplerian orbit, given by
 %
 \begin{equation}
-  s^{(i) \mu} = \left( (-1)^{i + 1}\frac{b}{2}\cos\Omega t,\, (-1)^{i + 1}\frac{b}{2}\sin\Omega t,\, 0 \right),
+  s^{(i) j} = \left((-1)^{i + 1}\frac{b}{2}\cos\Omega t,\, (-1)^{i + 1}\frac{b}{2}\sin\Omega t,\, 0 \right),
   \label{eq:arbitrary_penrose_sks_keplerian_trajectories}
 \end{equation}
 %
@@ -20,24 +20,24 @@ where
   \label{eq:arbitrary_penrose_sks_angular_velocity}
 \end{equation}
 %
-is the orbital angular velocity of the system and $b$ is the coordinate distance (in global coordinates) between the two black hole origins. From Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories}, we can compute the black hole velocity vector $v^{(i) \mu} = \ud s^{(i) \mu} / \ud t$ and obtain
+is the orbital angular velocity of the system and $b$ is the coordinate distance (in global coordinates) between the two black hole origins. From Eq.~\eqref{eq:arbitrary_penrose_sks_keplerian_trajectories}, we can compute the black hole velocity vector $v^{(i) j} = \ud s^{(i) j} / \ud t$ and obtain
 %
 \begin{equation}
-  v^{(i) \mu} = \left( (-1)^i \frac{b\Omega}{2} \sin \Omega t,\, (-1)^{i+1} \frac{b\Omega}{2} \cos\Omega t,\, 0 \right),
+  v^{(i) j} = \left( (-1)^i \frac{b\Omega}{2} \sin \Omega t,\, (-1)^{i+1} \frac{b\Omega}{2} \cos\Omega t,\, 0 \right),
   \label{eq:arbitrary_penrose_sks_keplerian_velocities}
 \end{equation}
 %
 which can be normalized to yield
 %
 \begin{equation}
-  n^{(i) \mu} = \left( (-1)^i \sin\Omega t,\, (-1)^{i+1}\cos\Omega t,\, 0 \right)
+  n^{(i) j} = \left( (-1)^i \sin\Omega t,\, (-1)^{i+1}\cos\Omega t,\, 0 \right)
   \label{eq:arbitrary_penrose_sks_keplerian_velocities_norms}
 \end{equation}
 %
 with norm
 %
 \begin{equation}
-  v^2 \equiv \sum_{\mu = 0}^{2} v^{(i) \mu} = \frac{b^2 \Omega^2}{4}.
+  v^2 \equiv \sum_{j = 0}^{2} v^{(i) j} = \frac{b^2 \Omega^2}{4}.
   \label{eq:arbitrary_penrose_sks_keplerian_velocities_norm}
 \end{equation}
 %
@@ -89,7 +89,7 @@ Furthermore, we have also used this notebook to identify the region where the $\
 
 The general features of the local ergosphere in the \ac{SKS} metric resemble that of the \ac{CMMR} metric, presented in Sec.~\ref{ch:penrose_binaries:sec:cmmr_penrose}, with the remarkable difference that the Lorentz boosts required for the construction of the \ac{SKS} spacetime make the ergospheres ``flattened'' in the direction of the motion of the holes. This is a well-known effect that can be observed even in the Lorentz boosted Schwarzschild spacetime, as demonstrated in Ref.~\cite{PhysRevD.91.084044}.
 
-Fig.~\ref{fig:sks_ergo_plot} illustrates relevant regions in the \ac{SKS} spacetime with black holes masses $M^{(1)} = M^{(2)} = 1/2$, spin parameters $a^{(1)} = a^{(2)} = 1/4$ and separation parameter $b = 3$. The boundary of the local ergosphere is marked in red, the approximate location of the event horizons in gray, the singular region in black and the black hole centers are indicated by black crosshairs. As was previously mentioned, the boundary of the ergosphere is marked as the surface where the $\mtrtens{t}{t}$ component changes its sign. The event horizons and singular regions are given by~\cite{Armengol:2021shd}
+Fig.~\ref{fig:sks_ergo_plot} illustrates relevant regions in the \ac{SKS} spacetime with black hole masses $M^{(1)} = M^{(2)} = 1/2$, spin parameters $a^{(1)} = a^{(2)} = 1/4$ and separation parameter $b = 3$. The boundary of the local ergosphere is marked in red, the approximate location of the event horizons in gray, the singular region in black and the black hole centers are indicated by black crosshairs. As was previously mentioned, the boundary of the ergosphere is marked as the surface where the $\mtrtens{t}{t}$ component changes its sign. The event horizons and singular regions are given by~\cite{Armengol:2021shd}
 %
 \begin{equation}
   r^{(1,2)} = 2 M^{(1,2)} \left( M^{(1,2)} + \sqrt{M^{(1,2)} - \left(a^{(1,2)}\right)^2} \right)
@@ -108,7 +108,7 @@ respectively, where $r^{(1,2)}$ is the coordinate distance measured from one of 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=\linewidth]{img/penrose_binaries/sks_regions.pdf}
-  \caption{Regions of interest in the $t=0$ \ac{SKS} metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$}
+  \caption{Regions of interest in the $t=0$ \ac{SKS} metric. The red region marks the boundary of the local ergosphere while the gray and black regions mark, respectively, the event horizons and singularities. The black crosshairs mark the centers of the black holes. The spacetimes parameters were chosen to be $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 1/4$ and $b = 3$.}
   \label{fig:sks_ergo_plot}
 \end{figure}
 
@@ -117,7 +117,7 @@ respectively, where $r^{(1,2)}$ is the coordinate distance measured from one of 
 
 For our first example, we have chosen the system parameters as $M^{(1)} = M^{(2)} = 1/2$, $a^{(1)} = a^{(2)} = 0.49$ and $b = 10$. The break-up point was chosen at coordinates $X^i = (6.3, 0, 0)$ and the background sphere radius was chosen to be $1.0 \times 10^6$. Following the same template of Table~\ref{tab:arbitrary_penrose_kerr_example_energy_mass}, Table~\ref{tab:arbitrary_penrose_sks_example_energy_mass} summarizes the initial energy and mass of the participating particles.
 
-Once again, the first, second and third rows contain data relative to the entry, Penrose and exit orbits, respectively. The parameters for the entry and Penrose orbits are chosen explicitly, while the parameters of the exit orbit are computed via the conservation of 4-momentum at the break-point. The masses are explicitly chosen in order to satisfy Eq.~\eqref{eq:mass_constraint} and to provide a way of computing initial velocities via Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1}-\eqref{eq:arbitrary_penrose_ellipse_parametric_2}
+Once again, the first, second and third rows contain data relative to the entry, Penrose and exit orbits, respectively. The parameters for the entry and Penrose orbits are chosen explicitly, while the parameters of the exit orbit are computed via the conservation of 4-momentum at the break-point. The masses are explicitly chosen in order to satisfy Eq.~\eqref{eq:mass_constraint} and to provide a way of computing initial velocities via Eqs.~\eqref{eq:arbitrary_penrose_ellipse_parametric_1}-\eqref{eq:arbitrary_penrose_ellipse_parametric_2}.
 %
 \begin{table}[]
   \centering
@@ -132,7 +132,7 @@ Once again, the first, second and third rows contain data relative to the entry,
   \label{tab:arbitrary_penrose_sks_example_energy_mass}
 \end{table}
 
-Once more, following Table~\ref{tab:arbitrary_penrose_kerr_example_velocities}, Table~\ref{tab:arbitrary_penrose_sks_example_velocities} summarizes the initial velocities of the participating particles. Here, the values of the first two rows (representing the ingoing and Penrose trajectories, respectively), were computed via the parametrization described in the previous section together with data from Tab.~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} while data on the third row, representing the outgoing particle, was computed via conservation of 4-momentum. The third column in this table shows the value of the ellipse parameter chosen for each orbit (except the exit orbit).
+Once more, following Table~\ref{tab:arbitrary_penrose_kerr_example_velocities}, Table~\ref{tab:arbitrary_penrose_sks_example_velocities} summarizes the initial velocities of the participating particles. Here, the values of the first two rows (representing the ingoing and Penrose trajectories, respectively) were computed via the parametrization described in the previous section together with data from Tab.~\ref{tab:arbitrary_penrose_kerr_example_energy_mass} while data on the third row, representing the outgoing particle, was computed via conservation of 4-momentum. The third column in this table shows the value of the ellipse parameter chosen for each orbit (except the exit orbit).
 %
 \begin{table}[]
   \centering
@@ -180,13 +180,13 @@ Finally, following Table~\ref{tab:arbitrary_penrose_kerr_example_efficiency}, Ta
 \subsubsection{Example 2}
 \label{ch:sks_example_2}
 
-In this example, we repeat the run detailed in Sec.~\ref{ch:sks_example_1} while changing the distance parameter from $b=10.0$ to $b = 7.21$. We have also changed the break-up point coordinates in each run so that it remains at $1.3$ coordinate distance units to the right of the right-most black hole. The results of this variation are summarized in Table~\ref{tab:arbitrary_penrose_sks_example_results_d_variation} where it is possible to see that the efficiency decreases as the black holes get more distant from each other.
+In this example, we repeat the run detailed in Sec.~\ref{ch:sks_example_1} while changing the distance parameter from $b=10.0$ to $b = 7.21$. We have also changed the break-up point coordinates in each run so that it remains at $1.3$ coordinate distance units to the right of the right-most black hole. The results of this variation are summarized in Table~\ref{tab:arbitrary_penrose_sks_example_results_d_variation}.
 
 \begin{table}[]
   \centering
   \begin{tabular}{ccc}
     \hline\hline
-    $d$  & $\eta_E$             & $\eta_\varepsilon$   \\
+    $b$  & $\eta_E$             & $\eta_\varepsilon$   \\
     10.0 & $0.4165349586389754$ & $0.4165293020302941$ \\
     9.69 & $0.4099912589653710$ & $0.4099855399919209$ \\
     9.38 & $0.4042822480170929$ & $0.4042767439403118$ \\
@@ -211,7 +211,7 @@ In this example we vary the mass of the left-most black hole $M^{(2)}$ from $0.5
   \centering
   \begin{tabular}{ccc}
     \hline\hline
-    $M2$  & $\eta_E$             & $\eta_\varepsilon$   \\
+    $M_2$ & $\eta_E$             & $\eta_\varepsilon$   \\
     0.500 & $0.1057279994029897$ & $0.1057236710602922$ \\
     0.475 & $0.0870377969920106$ & $0.0870336429442202$ \\
     0.450 & $0.0712047949044382$ & $0.0712008663973118$ \\
